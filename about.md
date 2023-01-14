@@ -23,7 +23,7 @@ comment: false
 <br>
 
 <div align="center">
-  <img src="http://ghchart.rshah.org/f94f54/Zhenye-Na" alt="Zhenye-Na's Github Chart" />
+  <img src="http://ghchart.rshah.org/f94f54/tkamag" alt="tkamag's Github Chart" />
 </div><br>
 
 ## About Me
