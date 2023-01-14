@@ -19,7 +19,7 @@ key: page-about
 comment: false
 ---
 
-<img src="https://github.com/Zhenye-Na/Zhenye-Na.github.io/blob/master/assets/images/avatar/avatar.jpg?raw=true" class="avatar" vspace="50" />
+<img src="https://github.com/tkamag/tkamag.github.io/blob/main/images/avatar.png?raw=true" class="avatar" vspace="50" />
 <br>
 
 <div align="center">
