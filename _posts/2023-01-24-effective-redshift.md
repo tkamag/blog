@@ -21,11 +21,13 @@ Just a quick overview, what is Amazon Redshift ?
 
 Amazon Redshift is:
 
-* A **SQL compliant cloud datawarehouse**
-* He has **petabyte-scale capacity**, that means that Redshift datawarehouse, a single cluster can be pentabyte scale i.e it can store pentabyte of data inside this datawerouse solution. 
+1. A **SQL compliant cloud datawarehouse**
+
+2. He has **petabyte-scale capacity**, that means that Redshift datawarehouse, a single cluster can be pentabyte scale i.e it can store pentabyte of data inside this datawerouse solution. 
 >So you can run complex queries and analytics and it work with data data visualization tools as well and others services(S3, DynamoDB, Kinesis, EMR)
 * For customers, it's **SOC** compliance, **SOC 1**, **SOC 2**, **SOC 3** and lot mores, and give you an **SLA** of 99.9 % I.e if an entire cluster a single node goes down, it doesn't means that you will loose all your data because of how archirecture is and how he's write data to the secondary nodes.
-* **Amazon Redshift** is basically base on open-source **postgres** database but it's completly and very cost efficient compaare not doing any maintenance of infrastructure, management, all of that.
+
+3. **Amazon Redshift** is basically base on open-source **postgres** database but it's completly and very cost efficient compaare not doing any maintenance of infrastructure, management, all of that.
 ## Item 1: Prefer Query to Scan
 
 First, let's check the definition of scan and query operation in DynamoDB
