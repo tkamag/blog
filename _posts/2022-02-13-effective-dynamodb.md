@@ -3,7 +3,7 @@ layout: article
 title: "What is Amazon Redshift?"
 date: 2022-02-13
 modify_date: 2022-02-13
-excerpt: "Tips for working with Amazon Redshift"
+excerpt: "Is Amazon Redshift only a data warehouse product?"
 tags: [AWS, Redshift]
 mathjax: false
 mathjax_autoNumber: false
