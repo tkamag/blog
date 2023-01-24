@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "AWS DynamoDB Best Practices"
-date: 2022-02-13
-modify_date: 2022-02-13
-excerpt: "Tips for working with AWS DynamoDB"
+title: "AWS DynamoDB Best Practices part2"
+date: 2023-01-24
+modify_date: 2023-01-24
+excerpt: "Tips for working with AWS DynamoDB part 2"
 tags: [AWS, DynamoDB]
 mathjax: false
 mathjax_autoNumber: false
@@ -15,7 +15,7 @@ key: aws-dynamodb-tips
 Just a quick overview, what is DynamoDB ?
 
 DynamoDB is a fully managed **NoSQL database** (key-value pair and document) service provided by AWS that offers fast and predictable performance with seamless scalability
-{:.info}
+
 
 
 ## Item 1: Prefer Query to Scan
