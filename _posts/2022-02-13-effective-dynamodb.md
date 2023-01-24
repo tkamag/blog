@@ -17,7 +17,7 @@ Just a quick overview, what is Amazon Redshift ?
 **Amazon redshift** is a **fully managed asset compliant cloud Datawarehouse service** provided by AWS that offers fast and predictable performance with seamless scalability. So ten of thousands of customers are using Redshift today.
 {:.info}
 
-**Amazon Redshift** is very optimize, in fact he has this **MPP architecture** i.e that's **Massive Paralell Precessing Architecture**. What you are getting at is, whith **Amazon Redshift** today, it support open files formats like ``parquet``, ``JSON`` ``csv``, ``ORC`` and because of it **MPP** ypu get all the performance you need.
+**Amazon Redshift** is very optimize, in fact he has this **MPP architecture** i.e that's **Massive Paralell Precessing Architecture**. What you are getting at is, whith **Amazon Redshift** today, it support open files formats like **parquet, JSON, csv, ORC** and because of it **MPP** ypu get all the performance you need.
 
 ## Item 1: Prefer Query to Scan
 
