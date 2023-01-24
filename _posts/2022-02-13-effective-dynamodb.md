@@ -1,22 +1,23 @@
 ---
 layout: article
-title: "AWS DynamoDB Best Practices"
+title: "What is Amazon Redshift?"
 date: 2022-02-13
 modify_date: 2022-02-13
-excerpt: "Tips for working with AWS DynamoDB"
-tags: [AWS, DynamoDB]
+excerpt: "Tips for working with Amazon Redshift"
+tags: [AWS, Redshift]
 mathjax: false
 mathjax_autoNumber: false
-key: aws-dynamodb-tips
+key: aws-redshift-tips
 ---
 
-## DynamoDB
+## Amazon Redshift
 
-Just a quick overview, what is DynamoDB ?
+Just a quick overview, what is Amazon Redshift ?
 
-DynamoDB is a fully managed **NoSQL database** (key-value pair and document) service provided by AWS that offers fast and predictable performance with seamless scalability
+`Amazon redshift `is a **fully managed asset compliant cloud Datawarehouse service** provided by AWS that offers fast and predictable performance with seamless scalability. So ten of thousands of customers are using Redshift today.
 {:.info}
 
+`Amazon Redshift` is very optimize, in fact he has this **MPP architecture** i.e that's **Massive Paralell Precessing Architecture**. What you are getting at is, whith `Amazon Redshift` today, it support open files formats like `parquet`, `JSON`, `csv`, `ORC` and because of it **MPPùù ypu get all the performance you need.
 
 ## Item 1: Prefer Query to Scan
 
