@@ -71,7 +71,7 @@ Your client applications(if they want to analyze and run analytical queries), co
 ![image](https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png)
 
 <figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png" alt=".." title="Optional title" width="70%" height="70%"/>
+  <img src="https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png" alt=".." title="Optional title" width="50%" height="70%"/>
 	<figcaption></figcaption>
 </figure>
 
