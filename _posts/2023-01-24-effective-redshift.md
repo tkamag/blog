@@ -111,7 +111,20 @@ b. They have a shared nothing architecture these compute nodes as you can see th
 
 c. Compute nodes can even interact with S3 so compute nodes can load data to from S3 into the compute nodes for processing, stored data back to S3, backup data to S3.
 
-d. These compute nodes have their own disks attached to them
+d. These compute nodes have their own disks attached to them.
+
+**For example:**  Let's take a look at one compute node. There are different types of compute nodes to choose, for example this compute node 1 is partitioned into slices so there are two slices right now that it's compute node is made-up of. Depending on the type of node there could be 2, 4, 8, 16, 32 slices as well depending on the type of node. Right now this node has two slices and the slices are the ones that are symmetric multiprocessing.
+
+They basically have their own virtual cores they have their own memory they have their own local disk associated with them as well and these slices they operate in parallel and they only operate on the data that they own but they can request data from other slices if they have to use that to complete all of the processing.
+
+<figure>
+  <img src="="70%"/>
+	<figcaption></figcaption>
+</figure>
+![image](https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
 
 
 
