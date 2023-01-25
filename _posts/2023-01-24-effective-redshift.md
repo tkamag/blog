@@ -37,7 +37,7 @@ Amazon Redshift is:
 
  So if you have long running query and large processing jobs, it really speed performance.
 
-![image](https://user-images.githubusercontent.com/14333637/214535214-ccb00ac1-44f8-44c2-b4c3-2633f88e3802.png)
+![image](https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png)
 
 First, let's check the definition of scan and query operation in DynamoDB
 
