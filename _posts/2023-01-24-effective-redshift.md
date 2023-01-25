@@ -167,6 +167,11 @@ Let's take a look at some differentiating features of Redshift.
 
 ### Item 2.1: Fererated Query
 
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214615804-7305a6fd-752d-4969-b73d-80bd2690d828.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
 before we actually jump into one of the labs and take a look at the redshift and the capabilities of redshift everyone so the first thing that we are looking at over here is some differentiating features in redshift like Federated query and the whole idea of a lake house architecture let's take a look at first what do you mean by this Federated query think 
 
 
