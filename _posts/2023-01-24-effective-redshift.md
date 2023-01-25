@@ -10,6 +10,8 @@ mathjax_autoNumber: false
 key: aws-redshift-tips
 ---
 
+***
+
 ## Amazon Redshift
 
 Just a quick overview, what is Amazon Redshift ?
@@ -73,6 +75,12 @@ Your client applications(if they want to analyze and run analytical queries), co
   <img src="https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png" alt=".." title="Optional title" width="70%" height="70%"/>
 	<figcaption></figcaption>
 </figure>
+
+`Amazon redshift` cluster consists of 1 leader node and it could have multiple compute nodes. 
+- This leader node is automatically provisioned and customers do not pay for this, 
+- it's **completely managed by AWS** and **automatically provisioned in every cluster,  
+- Customers are not charged for the leader node and this leader node is basically your SQL entry point for your clients or for BI tools to access the cluster
+
 
 There are two types of secondary index in DynamoDB:
 
