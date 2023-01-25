@@ -25,10 +25,17 @@ Amazon Redshift is:
 
 2. He has **petabyte-scale capacity**, that means that Redshift datawarehouse, a single cluster can be pentabyte scale i.e it can store pentabyte of data inside this datawerouse solution. 
 >So you can run complex queries and analytics and it work with data data visualization tools as well and others services(S3, DynamoDB, Kinesis, EMR)
-* For customers, it's **SOC** compliance, **SOC 1**, **SOC 2**, **SOC 3** and lot mores, and give you an **SLA** of 99.9 % I.e if an entire cluster a single node goes down, it doesn't means that you will loose all your data because of how archirecture is and how he's write data to the secondary nodes.
 
-3. **Amazon Redshift** is basically base on open-source **postgres** database but it's completly and very cost efficient compaare not doing any maintenance of infrastructure, management, all of that.
-## Item 1: Prefer Query to Scan
+* For customers, it's **SOC** compliance, **SOC 1**, **SOC 2**, **SOC 3**, HIPAA, FedRAMP  and lot mores, and give you an **SLA** of 99.9 % i.g if an entire cluster a single node goes down, it doesn't means that you will lose all your data because of how the architecture is and how it mirrors data to a secondary node.
+
+3. **Amazon Redshift** is basically base on open-source **postgres** database but it's completely rewritten and very cost efficient compared to traditionnal on-premises datawarehouse because customers here are not doing any maintenance of infrastructure, management at all.
+
+> To summarize, **Redshift** it has a **massively  parallel processing architecture** but to put it in a very simple terms, **one job is broken into small jobs and it's distributed accross different nodes
+ to gives you result faster**.
+
+![image](https://user-images.githubusercontent.com/14333637/214501731-37a356b2-a5dd-4c01-956a-00ccecfc466a.png)
+
+ So if you have long running query and large processing jobs, it really speed performance.
 
 First, let's check the definition of scan and query operation in DynamoDB
 
