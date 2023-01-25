@@ -19,10 +19,6 @@ Just a quick overview, what is Amazon Redshift ?
 
 **Amazon Redshift** is very optimize, in fact he has this **MPP architecture** i.e that's **Massive Paralell Precessing Architecture**. What you are getting at is, whith **Amazon Redshift** today, it support open files formats like **parquet, JSON, csv, ORC** and because of it **MPP** ypu get all the performance you need.
 
-![image](https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png)
-
-
-
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png" alt=".." title="Optional title" width="70%" height="70%"/>
 	<figcaption></figcaption>
@@ -45,7 +41,10 @@ Amazon Redshift is:
 
  So if you have long running query and large processing jobs, it really speed performance.
 
-![image](https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png)
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
 
 - `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows. 
 - >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
@@ -55,7 +54,10 @@ Amazon Redshift is:
 
 ## Item 2: Amazon Redshift architecture
 
-![image](https://user-images.githubusercontent.com/14333637/214539972-bc2767d6-239a-41e9-9025-cdcf4804ee6b.png)
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214539972-bc2767d6-239a-41e9-9025-cdcf4804ee6b.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
 
 What we are looking at is a Redshift cluster and this Redshift cluster is made-up of **leader nodes** that is a **single leader node** and **multiple compute nodes** it could be a single compute node or more than one compute node. 
 
@@ -67,6 +69,11 @@ Your client applications(if they want to analyze and run analytical queries), co
 
 ### Leader node
 ![image](https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png)
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
 
 There are two types of secondary index in DynamoDB:
 
