@@ -88,7 +88,32 @@ c. This leader node is basically your SQL entry point for your clients or for BI
 
 d. Your SQL clients they **don't have access to the computer once they will directly connect to the leader node.**
 
-e. Te idea of this leader node is that it will manage the communication between your client application and these compute nodes and it does the coordination of tasks between these different compute nodes as well this leader node is respons
+e. The idea of this leader node is that it will manage the communication between your client application and these compute nodes and it does the coordination of tasks between these different compute nodes as well.
+
+f. This leader node is responsible for storing metadata, it is responsible for compiling queries and it is responsible to coordinate parallel processing across these compute nodes.
+
+**For example:**  Let's say the client application sends a query to the leader node . Leader node will intelligently distribute and coordinate parallel running across compute nodes the SQL job,  so it takes that query and sends these queries to the compute nodes in the backend.
+
+The leader node then will gather the results back from this compute nodes, aggregates them before returning the results back to the client. 
+
+### Compute node
+What customers pay for? and what does all the work in the redshift cluster? **It is actually this compute nodes**, these are the SQL running powerhouses. 
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214580461-5f1460b7-2886-4d51-9065-afc0c5c9aa6b.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
+
+a. Compute nodes might even share data across each other to complete those queries, run those queries, take the results and immediately send the results back to the leader node when the computation is done.
+
+b. They have a shared nothing architecture these compute nodes as you can see there could be one there could be a cluster of compute nodes and you can have 1 to 128 compute nodes depending on the type of nodes.
+
+c. Compute nodes can even interact with S3 so compute nodes can load data to from S3 into the compute nodes for processing, stored data back to S3, backup data to S3.
+
+d. These compute nodes have their own disks attached to them
+
+
 
 There are two types of secondary index in DynamoDB:
 
