@@ -65,11 +65,10 @@ What we are looking at is a Redshift cluster and this Redshift cluster is made-u
 
 Your client applications(if they want to analyze and run analytical queries), could use a JDBC connectivity or ODBC connectivity to your Redshift cluster(leader node).So:
 
-* Client application connect to the leader node
-*
-* Leader node gets all of those queries from the client applications 
-* Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
--> This is a the **basic overview of this architecture or Redshift architecture** 
+a. Client application connect to the leader node
+b. Leader node gets all of those queries from the client applications 
+c. Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
+> This is a the **basic overview of this architecture or Redshift architecture** 
 
 ### Leader node
 
