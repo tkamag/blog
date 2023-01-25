@@ -21,6 +21,14 @@ Just a quick overview, what is Amazon Redshift ?
 
 ![image](https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png)
 
+
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png" alt=".." title="Optional title" width="45%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
+
 Amazon Redshift is:
 
 1. A **SQL compliant cloud datawarehouse**
