@@ -48,9 +48,9 @@ Amazon Redshift is:
 	<figcaption></figcaption>
 </figure>
 
-- `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows. 
-- >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
-- **Each node has its own storage, its own compute and it's independent of other nodes in the cluster** so there are not going to be single point of failures what it also means is **you can easily add new nodes in the cluster or remove based on your required.** 
+* `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows. 
+* >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
+* **Each node has its own storage, its own compute and it's independent of other nodes in the cluster** so there are not going to be single point of failures what it also means is **you can easily add new nodes in the cluster or remove based on your required.** 
 
 ***
 
@@ -64,9 +64,9 @@ Amazon Redshift is:
 What we are looking at is a Redshift cluster and this Redshift cluster is made-up of **leader nodes** that is a **single leader node** and **multiple compute nodes** it could be a single compute node or more than one compute node. 
 
 Your client applications(if they want to analyze and run analytical queries), could use a JDBC connectivity or ODBC connectivity to your Redshift cluster(leader node).So:
-- Client application connect to the leader node
-- Leader node gets all of those queries from the client applications 
-- Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
+* Client application connect to the leader node
+* Leader node gets all of those queries from the client applications 
+* Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
 -> This is a the **basic overview of this architecture or Redshift architecture** 
 
 ### Leader node
