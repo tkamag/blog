@@ -117,15 +117,11 @@ d. These compute nodes have their own disks attached to them.
 
 They basically have their own virtual cores they have their own memory they have their own local disk associated with them as well and these slices they operate in parallel and they only operate on the data that they own but they can request data from other slices if they have to use that to complete all of the processing.
 
+
 <figure>
-  <img src="="70%"/>
+  <img src="https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png" alt=".." title="Optional title" width="70%" height="70%"/>
 	<figcaption></figcaption>
 </figure>
-![image](https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png" alt=".." title="Optional title" width="70%" height="70%"/>
-	<figcaption></figcaption>
-</figure>
-
-
 
 
 There are two types of secondary index in DynamoDB:
