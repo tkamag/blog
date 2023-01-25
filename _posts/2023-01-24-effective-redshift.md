@@ -117,174 +117,24 @@ d. These compute nodes have their own disks attached to them.
 
 They basically have their own virtual cores they have their own memory they have their own local disk associated with them as well and these slices they operate in parallel and they only operate on the data that they own but they can request data from other slices if they have to use that to complete all of the processing.
 
-
+#### What are the type of node? What redshift instance types you're looking at? 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png" alt=".." title="Optional title" width="70%" height="70%"/>
 	<figcaption></figcaption>
 </figure>
 
+a. ``Dense storage or DS2`` are type of nodes that is deprecated now, it's not recommended to use this anymore but if customers have this it's still supported
+
+b. What is recommended now is these two node types, the first of all is the most recommended one which is **RA3**, the second is **DC2**.
+
+c. the first of all is **the most recommended one** is **RA3** which stands for **Redshift analytics 3** type of nodes and they have some features and maby capabilities. 
+
+d. The second one is called **DC-2 or dense compute** and they have their own SSD storage so if you take a look at the **DC2** large has about 160 GB per node **DC28X** large has about 2.6 TB per node.  
+
+e. With **Redshift analytics 3** you can scale the compute and storage independently because these Redshift analytical 3 instances have their own managed S3 storage as well, they can scale up to 64 TB,  so if you have a requirement wherein you might need one or two nodes to make up about 128 TB of storage. It is more economical for you to go in with Redshift analytical 3 but if you're looking at lesser storage which is 160 or within this range or within 2.6 or 10 TB it might be more economical for you to go in with these type of storage that has fixed local SSD storage.
 
 There are two types of secondary index in DynamoDB:
 
-- **Global secondary index (GSI)**: An index with a **partition key** and a **sort key** that can be different from those on the base table.
-  - A global secondary index is considered "global" because queries on the index can span all of the data in the base table, across all partitions.
-- **Local secondary index (LSI)**: An index that has the **same partition key** as the base table, but a **different sort key**.
-  - A local secondary index is "local" in the sense that every partition of a local secondary index is scoped to a base table partition that has the same partition key value.
-
-So the basic difference is the "scope" of each index is different. GSI has the global view while LSI has view only those data share the same partition key
-
-When you use these two types of indexes, there is also a difference when you try to retrieve data back
-
-1. LSI supports Strongly Consistency and Eventual Consistency
-   1. which will always return the latest version of records if you can enable this by changing the `ConsistentRead` property when sending out a query
-2. GSI supports Eventual Consistency
-   1. which might return a stale version of records, and you dont have the option to enable strong consistency
-
-So, how can I choose the correct DDB index? I found this flow chart very helpful:
-
-![](https://user-images.githubusercontent.com/6509926/72526710-a66b7c80-382c-11ea-8923-dbb9c9589881.png)
-
-> Image source: https://www.dynamodbguide.com/local-or-global-choosing-a-secondary-index-type-in-dynamo-db/#the-too-long-didnt-read-version-of-choosing-an-index
-
-
-## Item 3: `SaveBehavior` Configuration
-
-When you use DynamoDB for CRUD operations, you will find out that DynamoDB does not have the actual "Update" concept. However, there is a `SaveBehavior` configuration which serves as the missed role in DynamoDB. Let's take a look.
-
-```java
-DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
-
-// SaveBehavior.UPDATE is the default value
-mapper.save(something, new DynamoDBMapperConfig(SaveBehavior.UPDATE));
-```
-
-There are four different configurations for `SaveBehavior`
-
-- `UPDATE` (default)
-- `UPDATE_SKIP_NULL_ATTRIBUTE`
-- `CLOBBER`
-- `APPEND_SET`
-
-Given this existing record and DynamoDB schema
-
-| AttributeName 	| key    	| modeled_scalar 	| modeled_set 	| unmodeled 	|
-|---------------	|--------	|----------------	|-------------	|-----------	|
-| KeyType       	| Hash   	| Non-key        	| Non-key     	| Non-key   	|
-| AttributeType 	| Number 	| String         	| String set  	| String    	|
-
-```json
-{
-    "key" : "99",
-    "modeled_scalar" : "foo", 
-    "modeled_set" : [
-        "foo0", 
-        "foo1"
-    ], 
-    "unmodeled" : "bar" 
-}
-```
-
-together with this POJO class object
-
-```java
-TestTableItem obj = new TestTableItem();
-obj.setKey(99);
-obj.setModeledScalar(null);
-obj.setModeledSet(Collections.singleton("foo2");
-```
-
-***
-
-**`SaveBehavior.UPDATE`**
-
-`UPDATE` will not affect unmodeled attributes on a save operation, and a `null` value for the modeled attribute will **remove** it from that item in DynamoDB.
-
-so basically after onvoking `mapper.save()`, the record in DDB will be as follows
-
-```json
-{
-  "key" : "99",
-  "modeled_set" : [
-    "foo2"
-  ], 
-  "unmodeled" : "bar" 
-}
-```
-
-You can see that `modeled_set` has been updated, but since `modeled_scalar` is passed in using a `null` value, so it is removed from DDB.
-
-In this case. if you wanna use `SaveBehavior.UPDATE` to update something, you have to include all the fields with proper value in your DynamoDB POJO class. Otherwise, it will be removed from DDB table instead of keep them as is.
-
-***
-
-**`SaveBehavior.UPDATE_SKIP_NULL_ATTRIBUTES`**
-
-`UPDATE_SKIP_NULL_ATTRIBUTES` is similar to `UPDATE`, except that it ignores any `null` value attribute(s) and will **NOT** remove them from that item in DynamoDB.
-
-```json
-{
-  "key" : "99",
-  "modeled_scalar" : "foo",
-  "modeled_set" : [
-    "foo2"
-  ], 
-  "unmodeled" : "bar" 
-}
-```
-
-As you can find out, even though we set `modeled_scalar` to be `null`, this field is still persisted in DDB. So with this configuration, when you trying to update something with only specifying the hashKey and the field you wanna alter, it will properly update the field and keep the others the same without deleting.
-
-***
-
-**`SaveBehavior.CLOBBER`**
-
-CLOBBER will _clear and replace all attributes_, including unmodeled ones
-
-> (delete and recreate) on save.
-
-```json
-{
-  "key" : "99", 
-  "modeled_set" : [
-    "foo2"
-  ]
-}
-```
-
-This is already self-explained. delete the record with same hashKey and re-create a new one with the specified fields.
-
-***
-
-**`SaveBehavior.APPEND_SET`**
-
-`APPEND_SET` treats scalar attributes (String, Number, Binary) the same as UPDATE_SKIP_NULL_ATTRIBUTES does.
-
-However, for **set attributes, it will append to the existing attribute value**, instead of overriding it.
-
-
-```json
-{
-  "key" : "99",
-  "modeled_scalar" : "foo",
-  "modeled_set" : [
-    "foo0", 
-    "foo1", 
-    "foo2"
-  ], 
-  "unmodeled" : "bar" 
-}
-```
-
-Scalar attributes are kept, but set attributes are appended.
-
-***
-
-| SaveBehavior                	| On unmodeled attribute 	| On null-value attribute 	| On set attribute 	|
-|-----------------------------	|------------------------	|-------------------------	|------------------	|
-| UPDATE                      	| keep                   	| remove                  	| override         	|
-| UPDATE_SKIP_NULL_ATTRIBUTES 	| keep                   	| keep                    	| override         	|
-| CLOBBER                     	| remove                 	| remove                  	| override         	|
-| APPEND_SET                  	| keep                   	| keep                    	| append           	|
 
 
 ## References
