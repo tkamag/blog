@@ -131,7 +131,45 @@ c. the first of all is **the most recommended one** is **RA3** which stands for 
 
 d. The second one is called **DC-2 or dense compute** and they have their own SSD storage so if you take a look at the **DC2** large has about 160 GB per node **DC28X** large has about 2.6 TB per node.  
 
-e. With **Redshift analytics 3** you can scale the compute and storage independently because these Redshift analytical 3 instances have their own managed S3 storage as well, they can scale up to 64 TB,  so if you have a requirement wherein you might need one or two nodes to make up about 128 TB of storage. It is more economical for you to go in with Redshift analytical 3 but if you're looking at lesser storage which is 160 or within this range or within 2.6 or 10 TB it might be more economical for you to go in with these type of storage that has fixed local SSD storage.
+e. With **Redshift analytics 3** you can scale the compute and storage independently because these **Redshift analytical 3 instances have their own managed S3 storage as well**, they can scale up to 64 TB,  so if you have a requirement wherein you might need one or two nodes to make up about 128 TB of storage, it is more economical for you to go in with **Redshift analytical 3** but if you're looking at lesser storage which is 160 or within this range or within 2.6 or 10 TB it might be more economical for you to go in with these type of storage (**DC3**) that has fixed local SSD storage.
+
+***
+
+## Item 2: Amazon Redshift Cluster resizing
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214609325-39d185ee-00fe-49cf-8cff-3345854d906c.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
+Remember how a customer may start off with two nodes but they might have a requirement of adding more nodes like another five or six nodes or there might be a requirement wherein now customers want to reduce the amount of nodes as well so initially there were two options which were provided **classic resize** and **elastic resize**.
+
+**``Classic resize``** initially was used to do resizing for those older node types but going forward the recommended approach and method is actually this elastic resize. So going forward whether you want to add a new nodes remove new or remove nodes from the cluster any of resizing that you are doing **this first approach is the recommended approach from AWS** you should always use ``elastic resize`` 
+> Adding or removing nodes to your clusters typically takes about a few minutes within 15 minutes it's achieved the second approach class security size is something that we don't recommend anymore because **elastic resize size can do everything that classic does as well**. So remember this important point as well 
+ 
+## Item 2: Amazon Redshift Interfaces
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214613338-af658a03-56dd-4b4f-9e7f-595b405e5576.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
+``Amazon Redshift`` provides their built-in editor into the console as well so you can actually launch a cluster and there is an editor available for you to connect and run queries on top of your Redshift cluster. So we have the console to run some of these queries but you can also use ``CLI``, you can use ``SQL tools`` you can use ``Redshift  API`` itself these are commonly used by users to query your Redshift cluster. 
+
+## Item 2: Amazon Redshift differentiating features
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/14333637/214615162-62990f35-efc1-4c3d-9d37-01af1f7f5f70.png" alt=".." title="Optional title" width="70%" height="70%"/>
+	<figcaption></figcaption>
+</figure>
+
+Let's take a look at some differentiating features of Redshift.
+
+### Item 2.1: Fererated Query
+
+before we actually jump into one of the labs and take a look at the redshift and the capabilities of redshift everyone so the first thing that we are looking at over here is some differentiating features in redshift like Federated query and the whole idea of a lake house architecture let's take a look at first what do you mean by this Federated query think 
+
+
 
 There are two types of secondary index in DynamoDB:
 
