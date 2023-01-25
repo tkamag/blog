@@ -39,6 +39,9 @@ Amazon Redshift is:
 
 ![image](https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png)
 
+- `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows. 
+- > **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
+
 First, let's check the definition of scan and query operation in DynamoDB
 
 - `Scan` operation always scans the **entire table or secondary index**. It then filters out values to provide the result you want.
