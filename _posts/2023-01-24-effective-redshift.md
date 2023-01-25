@@ -80,10 +80,15 @@ c. Leader node **uses a mechanism to spread the queries across compute nodes**, 
 </figure>
 
 `Amazon redshift` cluster consists of 1 leader node and it could have multiple compute nodes. 
-- This leader node is automatically provisioned and customers do not pay for this, 
-- it's **completely managed by AWS** and **automatically provisioned in every cluster**,  
-+ Customers are not charged for the leader node and this leader node is basically your SQL entry point for your clients or for BI tools to access the cluster
+a. This leader node is automatically provisioned and customers do not pay for this, 
 
+b.- it's **completely managed by AWS** and **automatically provisioned in every cluster**. Customers are not charged for the leader node and this leader node is basically your SQL entry point for your clients or for BI tools to access the cluster.
+
+c. This leader node is basically your SQL entry point for your clients or for BI tools to access the cluster.
+
+d. Your SQL clients they **don't have access to the computer once they will directly connect to the leader node.**
+
+e. Te idea of this leader node is that it will manage the communication between your client application and these compute nodes and it does the coordination of tasks between these different compute nodes as well this leader node is respons
 
 There are two types of secondary index in DynamoDB:
 
