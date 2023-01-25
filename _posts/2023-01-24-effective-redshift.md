@@ -19,7 +19,7 @@ Just a quick overview, what is Amazon Redshift ?
 
 **Amazon Redshift** is very optimize, in fact he has this **MPP architecture** i.e that's **Massive Paralell Precessing Architecture**. What you are getting at is, whith **Amazon Redshift** today, it support open files formats like **parquet, JSON, csv, ORC** and because of it **MPP** ypu get all the performance you need.
 
-![image](https://user-images.githubusercontent.com/14333637/214501731-37a356b2-a5dd-4c01-956a-00ccecfc466a.png)
+![image](https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png)
 
 Amazon Redshift is:
 
