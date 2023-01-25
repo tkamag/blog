@@ -40,25 +40,25 @@ Amazon Redshift is:
 ![image](https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png)
 
 - `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows. 
-- > **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
+- >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
+- **Each node has its own storage, its own compute and it's independent of other nodes in the cluster** so there are not going to be single point of failures what it also means is **you can easily add new nodes in the cluster or remove based on your required.** 
 
-First, let's check the definition of scan and query operation in DynamoDB
+***
 
-- `Scan` operation always scans the **entire table or secondary index**. It then filters out values to provide the result you want.
-- `Query` operation searches **only primary key attribute values** and supports a subset of comparison operators on key attribute values to refine the search process.
+## Item 2: Amazon Redshift architecture
 
-From here, we can easily tell that Scan operation is VERY slow/inefficient and resource consuming (since you need RCU to read all the items in the DDB). So you should design you DDB structure so that query operaion can fit almost all the case of your backend. In case it does not, you can always update your DDB design
+![image](https://user-images.githubusercontent.com/14333637/214539972-bc2767d6-239a-41e9-9025-cdcf4804ee6b.png)
 
-What you can do:
+What we are looking at is a Redshift cluster and this Redshift cluster is made-up of **leader nodes** that is a **single leader node** and **multiple compute nodes** it could be a single compute node or more than one compute node. 
 
-- Utilize Partition Key and Sort Key for the most common request pattern
-- Add LSI or GSI to accomodate advanced query patterns. BUT only add GSI/LSI when needed, since this consume RCU/WCU
+Your client applications(if they want to analyze and run analytical queries), could use a JDBC connectivity or ODBC connectivity to your Redshift cluster(leader node).So:
+- Client application connect to the leader node
+- Leader node gets all of those queries from the client applications 
+- Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
+-> This is a the **basic overview of this architecture or Redshift architecture** 
 
-
-## Item 2: Secondary Indexes
-
-- Rule 1: Keep the number of indexes to a minimum
-- Rule 2: If you have to use an Index, choose wisely
+### Leader node
+![image](https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png)
 
 There are two types of secondary index in DynamoDB:
 
