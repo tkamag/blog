@@ -177,7 +177,7 @@ Let's take a look at some differentiating features of Redshift.
 ``Federated Query`` enables real-time data integration and simplified ETL processing. You can now connect live data sources directly in Amazon Redshift to provide real-time reporting and analysis. Previously, you needed to extract data from your PostgreSQL database to Amazon Simple Storage Service (Amazon S3) and load it to Amazon Redshift using ``COPY`` or query it from Amazon S3 with Amazon Redshift Spectrum. For more information about the benefits of Federated Query, see [Build a Simplified ETL and Live Data Query Solution using Amazon Redshift Federated Query](https://aws.amazon.com/blogs/big-data/build-a-simplified-etl-and-live-data-query-solution-using-redshift-federated-query/).
 
 
-### Item 5.1: Lake House Architecture
+### Item 4.2: Lake House Architecture
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214645477-e0f81dd0-e077-440e-bd80-c44c35bd7af3.png" alt=".." title="Optional title" width="70%" height="70%"/>
