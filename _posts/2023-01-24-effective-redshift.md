@@ -54,7 +54,7 @@ Amazon Redshift is:
 
 ***
 
-## Item 2: Amazon Redshift architecture
+## Item 1: Amazon Redshift architecture
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214539972-bc2767d6-239a-41e9-9025-cdcf4804ee6b.png" alt=".." title="Optional title" width="70%" height="70%"/>
@@ -72,7 +72,7 @@ b. Leader node gets all of those queries from the client applications
 c. Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
 > This is a the **basic overview of this architecture or Redshift architecture** 
 
-### Leader node
+### Item 1.1: Leader node
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png" alt=".." title="Optional title" width="70%" height="70%"/>
@@ -96,7 +96,7 @@ f. This leader node is responsible for storing metadata, it is responsible for c
 
 The leader node then will gather the results back from this compute nodes, aggregates them before returning the results back to the client. 
 
-### Compute node
+### Item 1.2: Compute node
 What customers pay for? and what does all the work in the redshift cluster? **It is actually this compute nodes**, these are the SQL running powerhouses. 
 
 <figure>
@@ -147,7 +147,7 @@ Remember how a customer may start off with two nodes but they might have a requi
 **``Classic resize``** initially was used to do resizing for those older node types but going forward the recommended approach and method is actually this elastic resize. So going forward whether you want to add a new nodes remove new or remove nodes from the cluster any of resizing that you are doing **this first approach is the recommended approach from AWS** you should always use ``elastic resize`` 
 > Adding or removing nodes to your clusters typically takes about a few minutes within 15 minutes it's achieved the second approach class security size is something that we don't recommend anymore because **elastic resize size can do everything that classic does as well**. So remember this important point as well 
  
-## Item 2: Amazon Redshift Interfaces
+## Item 3: Amazon Redshift Interfaces
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214613338-af658a03-56dd-4b4f-9e7f-595b405e5576.png" alt=".." title="Optional title" width="70%" height="70%"/>
@@ -156,7 +156,7 @@ Remember how a customer may start off with two nodes but they might have a requi
 
 ``Amazon Redshift`` provides their built-in editor into the console as well so you can actually launch a cluster and there is an editor available for you to connect and run queries on top of your Redshift cluster. So we have the console to run some of these queries but you can also use ``CLI``, you can use ``SQL tools`` you can use ``Redshift  API`` itself these are commonly used by users to query your Redshift cluster. 
 
-## Item 2: Amazon Redshift differentiating features
+## Item 4: Amazon Redshift differentiating features
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214615162-62990f35-efc1-4c3d-9d37-01af1f7f5f70.png" alt=".." title="Optional title" width="70%" height="70%"/>
@@ -165,7 +165,7 @@ Remember how a customer may start off with two nodes but they might have a requi
 
 Let's take a look at some differentiating features of Redshift.
 
-### Item 2.1: Fererated Query
+### Item 4.1: Fererated Query
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214615804-7305a6fd-752d-4969-b73d-80bd2690d828.png" alt=".." title="Optional title" width="70%" height="70%"/>
@@ -177,7 +177,7 @@ Consider a use case wherein you have set up a data warehousing solution which is
 Now traditionally what would happen without a feature like **Federated query** is now if there is data in S3 and Aurora you would have to go through complex ETL operations and move the data into the data warehouse and then execute the query but with Federated query now you can run the query from your data warehouse and then connect or join this data from your Amazon Aurora database or let's say S3 and combine and get this query result So what you're doing is Federated query so you can query and analyze the data across operational databases data warehouse data leaks and you're not actually moving any data you're not doing any ETL operations so you can integrate queries on live data in RDS for example Aurora combine it with queries across redshift and S3 and Richard will use an intelligent optimizer and push all of the portions of computation directly into those remote operational databases so it reduces data moving over the network itself so that is what is Federated query and one of the differentiating features that Richard came up with long time ago now think about it as taking this next step and understanding this feature called alehouse architecture this is basically an architecture but this architecture is something that a lot of customers today are implementing who are moving to AWS and what do you mean by a Wretch of the lake house architecture is wherein you are combining Amazon redshift with your data leak and now you are running queries across these different data stores without actually moving the data across these data stores so for example if your customers can run queries in Amazon redshift join it with data in S3D so you're with redshift spectrum customers can query open file formats that they already use like avro and CSV JSON hockey and you can query that data that's sitting directly in So what you are going to do is store your highly structured data which is frequently accessed in redshift and you can keep exabytes of data which is structured and unstructured data in Amazon S3 
 
 
-### Item 2.1: Lake House Architecture
+### Item 5.1: Lake House Architecture
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214645477-e0f81dd0-e077-440e-bd80-c44c35bd7af3.png" alt=".." title="Optional title" width="70%" height="70%"/>
