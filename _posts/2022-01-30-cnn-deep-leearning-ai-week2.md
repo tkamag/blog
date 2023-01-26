@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "[Deeplearning.ai] - Week 2 - Convolutional Neural Networks - Coursera Note"
-date: 2018-12-01
-modify_date: 2018-12-01
+date: 2022-01-30
+modify_date: 2022-01-30
 excerpt: "Deep convolutional models: case studies"
 tags: [Deep Learning, Convolutional Neural Networks]
 mathjax: true
