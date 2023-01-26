@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Week 3 lecture note of Coursera - Convolutional Neural Networks from deeplearning.ai"
-date: 2018-12-02
-modify_date: 2018-12-02
+title: "Week 3 Coursera Note - Convolutional Neural Networks from deeplearning.ai"
+date: 2022-02-15
+modify_date: 2022-02-15
 excerpt: "Object detection"
 tags: [Deep Learning, Convolutional Neural Networks, Object detection]
 mathjax: true

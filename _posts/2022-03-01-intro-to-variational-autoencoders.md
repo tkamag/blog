@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Brief Introduction to Variational Autoencoders"
-date: 2018-05-18
-modify_date: 2019-04-23
+title: "Introduction to Variational Autoencoders"
+date: 2022-03-01
+modify_date: 2022-03-01
 excerpt: "Understanding Variational Autoencoders (VAEs) from math and codes"
 tags: [Deep Learning, Machine Learning, Generative models]
 mathjax: true

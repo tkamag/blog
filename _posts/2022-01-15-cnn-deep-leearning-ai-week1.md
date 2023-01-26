@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Week 1 lecture note of Coursera - Convolutional Neural Networks from deeplearning.ai"
-date: 2018-11-30
-modify_date: 2019-04-12
+title: "Week 1 Coursera Note- Convolutional Neural Networks from deeplearning.ai"
+date: 2022-01-15
+modify_date: 2022-01-30
 excerpt: "Foundations of Convolutional Neural Networks"
 tags: [Deep Learning, Convolutional Neural Networks]
 mathjax: true

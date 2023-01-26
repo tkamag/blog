@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Time Series Forecasting Explained"
-date: 2019-06-19
-modify_date: 2019-06-19
+title: "Explained Time Series Forecasting"
+date: 2022-12-30
+modify_date: 202é-12-30
 excerpt: "Introduction to Time Series Forecasting"
 tags: [Time Series]
 mathjax: true

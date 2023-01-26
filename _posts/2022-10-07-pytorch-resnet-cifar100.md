@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Deep Residual Neural Network for CIFAR100 with Pytorch"
-date: 2018-10-07
+date: 2022-10-07
 excerpt: "Deep Residual Neural Network for CIFAR100 with Pytorch"
 tags: [Machine Learning, Deep Learning, Python]
 mathjax: true

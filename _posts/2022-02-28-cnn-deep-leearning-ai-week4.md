@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Week 4 lecture note of Coursera - Convolutional Neural Networks from deeplearning.ai"
-date: 2018-12-09
-modify_date: 2019-04-12
+title: "Week 4 Coursera Note - Convolutional Neural Networks from deeplearning.ai"
+date: 2022-02-28
+modify_date: 2022-02-28
 excerpt: "Special applications: Face recognition & Neural style transfer"
 tags: [Deep Learning, Convolutional Neural Networks, Face recognition, Neural style transfer]
 mathjax: true
