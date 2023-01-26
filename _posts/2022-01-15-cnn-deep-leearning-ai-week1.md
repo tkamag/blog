@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Week 1 Coursera Note- Convolutional Neural Networks from deeplearning.ai"
+title: "[Deeplearning.ai] - Week 1 - Convolutional Neural Networks - Coursera Note"
 date: 2022-01-15
 modify_date: 2022-01-30
 excerpt: "Foundations of Convolutional Neural Networks"

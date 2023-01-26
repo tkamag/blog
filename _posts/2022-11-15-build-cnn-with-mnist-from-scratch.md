@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Build Convolutional Neural Network from scratch with Numpy on MNIST Dataset"
+title: "Build Convolutional Neural Network from scratch on MNIST Dataset"
 date: 2022-11-15
 excerpt: "Build Convolutional Neural Network from scratch with Numpy on MNIST Dataset"
 tags: [Machine Learning, Deep Learning, Python]

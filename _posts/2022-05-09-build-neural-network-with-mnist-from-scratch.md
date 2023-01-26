@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Build Neural Network from scratch with Numpy on MNIST Dataset"
+title: "Build Neural Network from scratch on MNIST Dataset"
 date: 2022-05-09
-excerpt: "Build Neural Network from scratch with Numpy on MNIST Dataset"
+excerpt: "Build Neural Network from scratch on MNIST Dataset"
 tags: [Machine Learning, Deep Learning, Python]
 mathjax: true
 mathjax_autoNumber: true

@@ -1,6 +1,7 @@
 ---
 layout: article
-title: "Week 2 Coursera Note - Convolutional Neural Networks from deeplearning.ai"
+title: "[Deeplearning.ai] - Week 2 - Convolutional Neural Networks - Coursera Note"
+[Deeplearning.ai] - Week 1 - Convolutional Neural Networks - Coursera Note
 date: 2018-12-01
 modify_date: 2018-12-01
 excerpt: "Deep convolutional models: case studies"

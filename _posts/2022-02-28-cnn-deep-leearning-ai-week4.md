@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Week 4 Coursera Note - Convolutional Neural Networks from deeplearning.ai"
+title: "[Deeplearning.ai] - Week 4 - Convolutional Neural Networks - Coursera Note"
 date: 2022-02-28
 modify_date: 2022-02-28
 excerpt: "Special applications: Face recognition & Neural style transfer"
