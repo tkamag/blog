@@ -1,13 +1,13 @@
 ---
 layout: article
-title: "What you don't know about AWS API Gateway"
+title: "What to learn about AWS API Gateway"
 date: 2022-03-13
 modify_date: 2022-03-13
 excerpt: "Secure your microservices with AWS API Gateway for your Public-facing APIs"
 tags: [AWS, API Gateway]
 mathjax: false
 mathjax_autoNumber: false
-key: what-you-dont-know-about-aws-api-gateway
+key: what-to-learn-about-aws-api-gateway
 ---
 
 ## Access Control on API Gateway
