@@ -199,6 +199,6 @@ This Lake House approach consists of following key elements:
 - [Querying data with federated queries in Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/dg/federated-overview.html)
 - [Examples of using a federated query](https://docs.aws.amazon.com/redshift/latest/dg/federated_query_example.html)
 - [Best practices for Amazon Redshift Federated Query](https://aws.amazon.com/fr/blogs/big-data/amazon-redshift-federated-query-best-practices-and-performance-considerations/)
-- - [Getting started querying data on remote data sources](https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html)
-- - [https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html](https://aws.amazon.com/fr/blogs/big-data/announcing-amazon-redshift-federated-querying-to-amazon-aurora-mysql-and-amazon-rds-for-mysql/)
+- [Getting started querying data on remote data sources](https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html)
+- [https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html](https://aws.amazon.com/fr/blogs/big-data/announcing-amazon-redshift-federated-querying-to-amazon-aurora-mysql-and-amazon-rds-for-mysql/)
 - [Build a Lake House Architecture on AWS](https://aws.amazon.com/fr/blogs/big-data/build-a-lake-house-architecture-on-aws/)
