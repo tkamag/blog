@@ -172,7 +172,9 @@ Let's take a look at some differentiating features of Redshift.
 	<figcaption></figcaption>
 </figure>
 
-Consider a use case wherein you have set up a data warehousing solution which is Redshift and now a customer wants to run query on top of this data warehousing solution. Let's say it's a one time analytics query who will take existing data from the data warehouse join this data with an external data that may be sitting on S3. Maybe there is existing external data in ``S3`` that you want to connect to or maybe there is there are some transactional data that's happening in ``RDS`` maybe you want to capture that and you want to join the data from these three different sources and query the data to give you the results.
+``Amazon Redshift Federated Query`` enables you to use the analytic power of ``Amazon Redshift`` to directly query data stored in ``Amazon Aurora PostgreSQL`` and ``Amazon RDS for PostgreSQL`` databases. For more information about setting up an environment where you can try out Federated Query, see [Accelerate Amazon Redshift Federated Query adoption with AWS CloudFormation](https://aws.amazon.com/blogs/big-data/accelerate-amazon-redshift-federated-query-adoption-with-aws-cloudformation/).
+
+``Federated Query`` enables real-time data integration and simplified ETL processing. You can now connect live data sources directly in Amazon Redshift to provide real-time reporting and analysis. Previously, you needed to extract data from your PostgreSQL database to Amazon Simple Storage Service (Amazon S3) and load it to Amazon Redshift using ``COPY`` or query it from Amazon S3 with Amazon Redshift Spectrum. For more information about the benefits of Federated Query, see [Build a Simplified ETL and Live Data Query Solution using Amazon Redshift Federated Query](https://aws.amazon.com/blogs/big-data/build-a-simplified-etl-and-live-data-query-solution-using-redshift-federated-query/).
 
 
 ### Item 5.1: Lake House Architecture
@@ -182,10 +184,15 @@ Consider a use case wherein you have set up a data warehousing solution which is
 	<figcaption></figcaption>
 </figure>
 
+As a modern data architecture, the Lake House approach is not just about integrating your data lake and your data warehouse, but it’s about connecting your data lake, your data warehouse, and all your other purpose-built services into a coherent whole. The data lake allows you to have a single place you can run analytics across most of your data while the purpose-built analytics services provide the speed you need for specific use cases like real-time dashboards and log analytics.
 
-There are two types of secondary index in DynamoDB:
+This Lake House approach consists of following key elements:
 
-
+- Scalable Data Lakes
+- Purpose-built Data Services
+- Seamless Data Movement
+- Unified Governance
+- Performant and Cost-effective
 
 ## References
 
@@ -194,3 +201,4 @@ There are two types of secondary index in DynamoDB:
 - [Best practices for Amazon Redshift Federated Query](https://aws.amazon.com/fr/blogs/big-data/amazon-redshift-federated-query-best-practices-and-performance-considerations/)
 - - [Getting started querying data on remote data sources](https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html)
 - - [https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html](https://aws.amazon.com/fr/blogs/big-data/announcing-amazon-redshift-federated-querying-to-amazon-aurora-mysql-and-amazon-rds-for-mysql/)
+- [Build a Lake House Architecture on AWS](https://aws.amazon.com/fr/blogs/big-data/build-a-lake-house-architecture-on-aws/)
