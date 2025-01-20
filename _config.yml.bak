@@ -51,7 +51,7 @@ author:
   douban    : # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
   linkedin  : tkamag # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
   github    : tkamag # "user_name" the last part of your profile url, e.g. https://github.com/
-  bluesky   : @tkamag # "user_name" the last part of your profile url, e.g. https://bsky.app/profile/trkamag.bsky.social
+  bluesky   : tkamag # "user_name" the last part of your profile url, e.g. https://bsky.app/profile/trkamag.bsky.social
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
 
