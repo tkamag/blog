@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "Getting Started with Amazon Unified Data Studio"
-date: 2024-12-30
-modify_date: 2024-12-30
+date: 2024-12-10
+modify_date: 2024-12-10
 excerpt: "Getting Started with Amazon Unified Data Studio"
 tags: [AWS, Redshift]
 mathjax: false

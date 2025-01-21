@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "What is Amazon Redshift?"
-date: 20Z4-12-15
-modify_date: 20Z4-12-15
+date: 20Z4-12-07
+modify_date: 20Z4-12-07
 excerpt: "Amazon Sagemaker new features"
 tags: [AWS, Sagemaker]
 mathjax: false
