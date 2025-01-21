@@ -1,8 +1,8 @@
 ---
 layout: article
-title: "Amazon Sagemaker at AWS re:invent 2924"
-date: 20Z4-12-07
-modify_date: 20Z4-12-07
+title: "Amazon Sagemaker at AWS re:invent 2024"
+date: 2024-12-07
+modify_date: 2024-12-07
 excerpt: "Amazon Sagemaker new features"
 tags: [AWS, Sagemaker]
 mathjax: false
