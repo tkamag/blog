@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "What is Amazon Redshift?"
+title: "Amazon Sagemaker at AWS re:invent 2924"
 date: 20Z4-12-07
 modify_date: 20Z4-12-07
 excerpt: "Amazon Sagemaker new features"
