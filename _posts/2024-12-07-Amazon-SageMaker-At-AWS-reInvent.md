@@ -27,7 +27,8 @@ Amazon Redshift is:
 
 1. A **SQL compliant cloud datawarehouse**
 
-2. He has **petabyte-scale capacity**, that means that Redshift datawarehouse, a single cluster can be pentabyte scale i.e it can store pentabyte of data inside this datawerouse solution. 
+2. He has **petabyte-scale capacity**, that means that Redshift datawarehouse, a single cluster can be petabyte scale i.e it can store petabyte of data inside this datawarehouse solution.
+
 >So you can run complex queries and analytics and it work with data data visualization tools as well and others services(S3, DynamoDB, Kinesis, EMR)
 >
 > For customers, it's **SOC** compliance, **SOC 1**, **SOC 2**, **SOC 3**, **HIPAA**, **FedRAMP**  and lot mores, and give you an **SLA** of 99.9 % i.g if an entire cluster a single node goes down, it doesn't means that you will lose all your data because of how the architecture is and how it mirrors data to a secondary node.
@@ -101,7 +102,7 @@ d. These compute nodes have their own disks attached to them.
 
 They basically have their own virtual cores they have their own memory they have their own local disk associated with them as well and these slices they operate in parallel and they only operate on the data that they own but they can request data from other slices if they have to use that to complete all of the processing.
 
-#### What are the type of node? What redshift instance types you're looking at? 
+#### What are the type of node? What redshift instance types you're looking at?
 
 ![Image Description](https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png)
 
