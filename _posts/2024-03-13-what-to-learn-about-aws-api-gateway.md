@@ -20,11 +20,11 @@ By default, API Gateway will accept all requests to your services. This means th
 
 API Gateway supports Zero Trust Model by using "Authorizers". They are considered as an "Interceptor" which check each request's identification. API Gateway applies "Facade Design Pattern" to the authorization implementation so that the authorization logic can be abstracted away.
 
-> Not familiar wiht Facade Pattern? Check what I wrote before: [Design Patterns: Facade Pattern](https://zhenye-na.github.io/blog/2021/12/09/design-patterns-the-facade-pattern.html)
+> Not familiar with Facade Pattern? Check what I wrote before: [Design Patterns: Facade Pattern](https://zhenye-na.github.io/blog/2021/12/09/design-patterns-the-facade-pattern.html)
 
 [![](https://mermaid.ink/img/pako:eNqNkU1PAjEQhv_KpKclARNIuOzBhEU0JB4M6q2X2g5s4267tlPXlfDfnWVBiCfn0mbyPu987YX2BkUutpVvdakCweNGOumAI6a3XVBNCfdKK4NDsg9jA2qy3kHxcskWmRSLpzU8KMJWdVK6RaIy-G-LATb4kTASrB1h0NiQDyzIBueRFKOLj532RlpjjKC9o-ArqPzOagZs3VRYoyN1LD9lECY3k1sorvjZv_nZXx6dOU-_yFbOwGvEwBJWDK0ev8vsak5gWeOto9EvyZZ9FhLD0CpHEciDdZ_-HYFKhB7vqy4H4LRu6iqEgt_AuklrDZX5rPkanxJGRT5QUF0Oc5iLsagx1Moavt6-d5CCrWuUIuevwa1KFUkh3YGlqTHc7cpY3rvIt6qKOBYqkX_unBY5hYRn0Z1VfPX6pDr8AJH9ruw)](https://mermaid.live/edit#pako:eNqNkU1PAjEQhv_KpKclARNIuOzBhEU0JB4M6q2X2g5s4267tlPXlfDfnWVBiCfn0mbyPu987YX2BkUutpVvdakCweNGOumAI6a3XVBNCfdKK4NDsg9jA2qy3kHxcskWmRSLpzU8KMJWdVK6RaIy-G-LATb4kTASrB1h0NiQDyzIBueRFKOLj532RlpjjKC9o-ArqPzOagZs3VRYoyN1LD9lECY3k1sorvjZv_nZXx6dOU-_yFbOwGvEwBJWDK0ev8vsak5gWeOto9EvyZZ9FhLD0CpHEciDdZ_-HYFKhB7vqy4H4LRu6iqEgt_AuklrDZX5rPkanxJGRT5QUF0Oc5iLsagx1Moavt6-d5CCrWuUIuevwa1KFUkh3YGlqTHc7cpY3rvIt6qKOBYqkX_unBY5hYRn0Z1VfPX6pDr8AJH9ruw)
 
-There are three type of autorization methods
+There are three type of autorisation methods
 
 ### IAM Autorizer
 
@@ -42,7 +42,7 @@ In order to use Cognito for authorization, you must create a cognito user pool. 
 
 ### Customed Lambda Authorizer
 
-If you or your oganization already has the implementation of the Authorization, you can leverage Lambda (AWS Serverless Function) as the authorization implementation of your APi Gateway.
+If you or your organization already has the implementation of the Authorization, you can leverage Lambda (AWS Serverless Function) as the authorization implementation of your APi Gateway.
 
 Lambda authorizer requires identity information coming from request, so
 
@@ -78,7 +78,7 @@ If you want your Rate Limiting to be more fine-grained, there is also a stage-le
 
 > This topic will be covered in more details in the upcoming post.
 
-TLS helps validate the server uysing a standardized handshake and digital certificates signed by trusted certificate authorities for each domain.
+TLS helps validate the server using a standardized handshake and digital certificates signed by trusted certificate authorities for each domain.
 
 mTLS asks each client to authenticate every request they sent in to increase the security level
 
