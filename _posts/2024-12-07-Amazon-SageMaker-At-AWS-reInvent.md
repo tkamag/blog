@@ -26,6 +26,7 @@ Just a quick overview, what is Amazon Redshift ?
 	<figcaption></figcaption>
 </figure>
 
+![Image Description](https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png)
 
 Amazon Redshift is:
 
@@ -33,10 +34,10 @@ Amazon Redshift is:
 
 2. He has **petabyte-scale capacity**, that means that Redshift datawarehouse, a single cluster can be pentabyte scale i.e it can store pentabyte of data inside this datawerouse solution. 
 >So you can run complex queries and analytics and it work with data data visualization tools as well and others services(S3, DynamoDB, Kinesis, EMR)
-
+>
 > For customers, it's **SOC** compliance, **SOC 1**, **SOC 2**, **SOC 3**, **HIPAA**, **FedRAMP**  and lot mores, and give you an **SLA** of 99.9 % i.g if an entire cluster a single node goes down, it doesn't means that you will lose all your data because of how the architecture is and how it mirrors data to a secondary node.
 
-3. **Amazon Redshift** is basically base on open-source **postgres** database but it's completely rewritten and very cost efficient compared to traditionnal on-premises datawarehouse because customers here are not doing any maintenance of infrastructure, management at all.
+1. **Amazon Redshift** is basically base on open-source **postgres** database but it's completely rewritten and very cost efficient compared to traditionnal on-premises datawarehouse because customers here are not doing any maintenance of infrastructure, management at all.
 
 > To summarize, **Redshift** it has a **massively  parallel processing architecture** but to put it in a very simple terms, **one job is broken into small jobs and it's distributed accross different nodes
  to gives you result faster**.
@@ -48,9 +49,9 @@ Amazon Redshift is:
 	<figcaption></figcaption>
 </figure>
 
-* `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows. 
-* >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns** 
-* **Each node has its own storage, its own compute and it's independent of other nodes in the cluster** so there are not going to be single point of failures what it also means is **you can easily add new nodes in the cluster or remove based on your required.** 
+* `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows.
+* >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns**
+* **Each node has its own storage, its own compute and it's independent of other nodes in the cluster** so there are not going to be single point of failures what it also means is **you can easily add new nodes in the cluster or remove based on your required.**
 
 ***
 
@@ -61,16 +62,16 @@ Amazon Redshift is:
 	<figcaption></figcaption>
 </figure>
 
-What we are looking at is a Redshift cluster and this Redshift cluster is made-up of **leader nodes** that is a **single leader node** and **multiple compute nodes** it could be a single compute node or more than one compute node. 
+What we are looking at is a Redshift cluster and this Redshift cluster is made-up of **leader nodes** that is a **single leader node** and **multiple compute nodes** it could be a single compute node or more than one compute node.
 
 Your client applications(if they want to analyze and run analytical queries), could use a JDBC connectivity or ODBC connectivity to your Redshift cluster(leader node).So:
 
 a. Client application connect to the leader node
 
-b. Leader node gets all of those queries from the client applications 
+b. Leader node gets all of those queries from the client applications
 
-c. Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client 
-> This is a the **basic overview of this architecture or Redshift architecture** 
+c. Leader node **uses a mechanism to spread the queries across compute nodes**, get the results back aggregate those results and then give it back to the client
+> This is a the **basic overview of this architecture or Redshift architecture**
 
 ### Item 1.1: Leader node
 
@@ -79,8 +80,8 @@ c. Leader node **uses a mechanism to spread the queries across compute nodes**, 
 	<figcaption></figcaption>
 </figure>
 
-`Amazon redshift` cluster consists of 1 leader node and it could have multiple compute nodes. 
-a. This leader node is automatically provisioned and customers do not pay for this, 
+`Amazon redshift` cluster consists of 1 leader node and it could have multiple compute nodes.
+a. This leader node is automatically provisioned and customers do not pay for this,
 
 b.- it's **completely managed by AWS** and **automatically provisioned in every cluster**. Customers are not charged for the leader node and this leader node is basically your SQL entry point for your clients or for BI tools to access the cluster.
 
@@ -94,10 +95,11 @@ f. This leader node is responsible for storing metadata, it is responsible for c
 
 **For example:**  Let's say the client application sends a query to the leader node . Leader node will intelligently distribute and coordinate parallel running across compute nodes the SQL job,  so it takes that query and sends these queries to the compute nodes in the backend.
 
-The leader node then will gather the results back from this compute nodes, aggregates them before returning the results back to the client. 
+The leader node then will gather the results back from this compute nodes, aggregates them before returning the results back to the client.
 
 ### Item 1.2: Compute node
-What customers pay for? and what does all the work in the redshift cluster? **It is actually this compute nodes**, these are the SQL running powerhouses. 
+
+What customers pay for? and what does all the work in the redshift cluster? **It is actually this compute nodes**, these are the SQL running powerhouses.
 
 <figure>
   <img src="https://user-images.githubusercontent.com/14333637/214580461-5f1460b7-2886-4d51-9065-afc0c5c9aa6b.png" alt=".." title="Optional title" width="70%" height="70%"/>
@@ -127,7 +129,7 @@ a. ``Dense storage or DS2`` are type of nodes that is deprecated now, it's not r
 
 b. What is recommended now is these two node types, the first of all is the most recommended one which is **RA3**, the second is **DC2**.
 
-c. the first of all is **the most recommended one** is **RA3** which stands for **Redshift analytics 3** type of nodes and they have some features and maby capabilities. 
+c. the first of all is **the most recommended one** is **RA3** which stands for **Redshift analytics 3** type of nodes and they have some features and maby capabilities.
 
 d. The second one is called **DC-2 or dense compute** and they have their own SSD storage so if you take a look at the **DC2** large has about 160 GB per node **DC28X** large has about 2.6 TB per node.  
 
@@ -144,9 +146,9 @@ e. With **Redshift analytics 3** you can scale the compute and storage independe
 
 Remember how a customer may start off with two nodes but they might have a requirement of adding more nodes like another five or six nodes or there might be a requirement wherein now customers want to reduce the amount of nodes as well so initially there were two options which were provided **classic resize** and **elastic resize**.
 
-**``Classic resize``** initially was used to do resizing for those older node types but going forward the recommended approach and method is actually this elastic resize. So going forward whether you want to add a new nodes remove new or remove nodes from the cluster any of resizing that you are doing **this first approach is the recommended approach from AWS** you should always use ``elastic resize`` 
-> Adding or removing nodes to your clusters typically takes about a few minutes within 15 minutes it's achieved the second approach class security size is something that we don't recommend anymore because **elastic resize size can do everything that classic does as well**. So remember this important point as well 
- 
+**``Classic resize``** initially was used to do resizing for those older node types but going forward the recommended approach and method is actually this elastic resize. So going forward whether you want to add a new nodes remove new or remove nodes from the cluster any of resizing that you are doing **this first approach is the recommended approach from AWS** you should always use ``elastic resize``
+> Adding or removing nodes to your clusters typically takes about a few minutes within 15 minutes it's achieved the second approach class security size is something that we don't recommend anymore because **elastic resize size can do everything that classic does as well**. So remember this important point as well
+
 ## Item 3: Amazon Redshift Interfaces
 
 <figure>
@@ -154,7 +156,7 @@ Remember how a customer may start off with two nodes but they might have a requi
 	<figcaption></figcaption>
 </figure>
 
-``Amazon Redshift`` provides their built-in editor into the console as well so you can actually launch a cluster and there is an editor available for you to connect and run queries on top of your Redshift cluster. So we have the console to run some of these queries but you can also use ``CLI``, you can use ``SQL tools`` you can use ``Redshift  API`` itself these are commonly used by users to query your Redshift cluster. 
+``Amazon Redshift`` provides their built-in editor into the console as well so you can actually launch a cluster and there is an editor available for you to connect and run queries on top of your Redshift cluster. So we have the console to run some of these queries but you can also use ``CLI``, you can use ``SQL tools`` you can use ``Redshift  API`` itself these are commonly used by users to query your Redshift cluster.
 
 ## Item 4: Amazon Redshift differentiating features
 
@@ -176,7 +178,6 @@ Let's take a look at some differentiating features of Redshift.
 
 ``Federated Query`` enables real-time data integration and simplified ETL processing. You can now connect live data sources directly in Amazon Redshift to provide real-time reporting and analysis. Previously, you needed to extract data from your PostgreSQL database to Amazon Simple Storage Service (Amazon S3) and load it to Amazon Redshift using ``COPY`` or query it from Amazon S3 with Amazon Redshift Spectrum. For more information about the benefits of Federated Query, see [Build a Simplified ETL and Live Data Query Solution using Amazon Redshift Federated Query](https://aws.amazon.com/blogs/big-data/build-a-simplified-etl-and-live-data-query-solution-using-redshift-federated-query/).
 
-
 ### Item 4.2: Lake House Architecture
 
 <figure>
@@ -188,11 +189,11 @@ As a modern data architecture, the Lake House approach is not just about integra
 
 This Lake House approach consists of following key elements:
 
-- Scalable Data Lakes
-- Purpose-built Data Services
-- Seamless Data Movement
-- Unified Governance
-- Performant and Cost-effective
+* Scalable Data Lakes
+* Purpose-built Data Services
+* Seamless Data Movement
+* Unified Governance
+* Performant and Cost-effective
 
 ## References
 
