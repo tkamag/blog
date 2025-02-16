@@ -7,7 +7,7 @@ excerpt: "Getting Started with Amazon Unified Data Studio"
 tags: [AWS, Redshift]
 mathjax: false
 mathjax_autoNumber: false
-key: aws-redshift-tips
+key: aws-sagemaker-emr-glue-redshift-athena-bedrock-msk-kinesis-opensearch-quicksight-tips
 ---
 
 ***
