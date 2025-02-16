@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "What to learn about AWS API Gateway"
-date: 2022-03-13
-modify_date: 2022-03-13
+date: 2024-03-13
+modify_date: 2024-03-13
 excerpt: "Secure your microservices with AWS API Gateway for your Public-facing APIs"
 tags: [AWS, API Gateway]
 mathjax: false
