@@ -21,10 +21,7 @@ Just a quick overview, what is Amazon Redshift ?
 
 **Amazon Redshift** is very optimize, in fact he has this **MPP architecture** i.e that's **Massive Paralell Precessing Architecture**. What you are getting at is, whith **Amazon Redshift** today, it support open files formats like **parquet, JSON, csv, ORC** and because of it **MPP** ypu get all the performance you need.
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214537112-3a6ec816-f578-4975-8a5e-e5f6d7c3d0c8.png)
 
 Amazon Redshift is:
 
@@ -43,10 +40,7 @@ Amazon Redshift is:
 
  So if you have long running query and large processing jobs, it really speed performance.
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214536365-9b395b90-adbb-48d6-9a01-d55607bd9bc4.png)
 
 * `Amazon Redshift` has a **columnar storage** so it's very good when it comes to run analytics you don't have this data written in the form of rows.
 * >> **Data from each column is stored together so the data can be accessed faster, without scanning and sorting all other columns**
@@ -56,10 +50,7 @@ Amazon Redshift is:
 
 ## Item 1: Amazon Redshift architecture
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214539972-bc2767d6-239a-41e9-9025-cdcf4804ee6b.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214539972-bc2767d6-239a-41e9-9025-cdcf4804ee6b.png)
 
 What we are looking at is a Redshift cluster and this Redshift cluster is made-up of **leader nodes** that is a **single leader node** and **multiple compute nodes** it could be a single compute node or more than one compute node.
 
@@ -74,10 +65,7 @@ c. Leader node **uses a mechanism to spread the queries across compute nodes**, 
 
 ### Item 1.1: Leader node
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214544314-8020a60f-a8b1-4aad-842b-7f5c02b4e179.png)
 
 `Amazon redshift` cluster consists of 1 leader node and it could have multiple compute nodes.
 a. This leader node is automatically provisioned and customers do not pay for this,
@@ -100,10 +88,7 @@ The leader node then will gather the results back from this compute nodes, aggre
 
 What customers pay for? and what does all the work in the redshift cluster? **It is actually this compute nodes**, these are the SQL running powerhouses.
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214580461-5f1460b7-2886-4d51-9065-afc0c5c9aa6b.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214580461-5f1460b7-2886-4d51-9065-afc0c5c9aa6b.png)
 
 a. Compute nodes might even share data across each other to complete those queries, run those queries, take the results and immediately send the results back to the leader node when the computation is done.
 
@@ -119,10 +104,7 @@ They basically have their own virtual cores they have their own memory they have
 
 #### What are the type of node? What redshift instance types you're looking at?
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214585529-6bd11048-7fd3-4870-aefc-5b35accdbc2c.png)
 
 a. ``Dense storage or DS2`` are type of nodes that is deprecated now, it's not recommended to use this anymore but if customers have this it's still supported
 
@@ -138,10 +120,7 @@ e. With **Redshift analytics 3** you can scale the compute and storage independe
 
 ## Item 2: Amazon Redshift Cluster resizing
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214609325-39d185ee-00fe-49cf-8cff-3345854d906c.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214609325-39d185ee-00fe-49cf-8cff-3345854d906c.png)
 
 Remember how a customer may start off with two nodes but they might have a requirement of adding more nodes like another five or six nodes or there might be a requirement wherein now customers want to reduce the amount of nodes as well so initially there were two options which were provided **classic resize** and **elastic resize**.
 
@@ -150,28 +129,19 @@ Remember how a customer may start off with two nodes but they might have a requi
 
 ## Item 3: Amazon Redshift Interfaces
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214613338-af658a03-56dd-4b4f-9e7f-595b405e5576.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214613338-af658a03-56dd-4b4f-9e7f-595b405e5576.png)
 
 ``Amazon Redshift`` provides their built-in editor into the console as well so you can actually launch a cluster and there is an editor available for you to connect and run queries on top of your Redshift cluster. So we have the console to run some of these queries but you can also use ``CLI``, you can use ``SQL tools`` you can use ``Redshift  API`` itself these are commonly used by users to query your Redshift cluster.
 
 ## Item 4: Amazon Redshift differentiating features
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214615162-62990f35-efc1-4c3d-9d37-01af1f7f5f70.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214615162-62990f35-efc1-4c3d-9d37-01af1f7f5f70.png)
 
 Let's take a look at some differentiating features of Redshift.
 
 ### Item 4.1: Fererated Query
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214615804-7305a6fd-752d-4969-b73d-80bd2690d828.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214615804-7305a6fd-752d-4969-b73d-80bd2690d828.png)
 
 ``Amazon Redshift Federated Query`` enables you to use the analytic power of ``Amazon Redshift`` to directly query data stored in ``Amazon Aurora PostgreSQL`` and ``Amazon RDS for PostgreSQL`` databases. For more information about setting up an environment where you can try out Federated Query, see [Accelerate Amazon Redshift Federated Query adoption with AWS CloudFormation](https://aws.amazon.com/blogs/big-data/accelerate-amazon-redshift-federated-query-adoption-with-aws-cloudformation/).
 
@@ -179,10 +149,7 @@ Let's take a look at some differentiating features of Redshift.
 
 ### Item 4.2: Lake House Architecture
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/14333637/214645477-e0f81dd0-e077-440e-bd80-c44c35bd7af3.png" alt=".." title="Optional title" width="70%" height="70%"/>
- <figcaption></figcaption>
-</figure>
+![Image Description](https://user-images.githubusercontent.com/14333637/214645477-e0f81dd0-e077-440e-bd80-c44c35bd7af3.pn)
 
 As a modern data architecture, the Lake House approach is not just about integrating your data lake and your data warehouse, but it’s about connecting your data lake, your data warehouse, and all your other purpose-built services into a coherent whole. The data lake allows you to have a single place you can run analytics across most of your data while the purpose-built analytics services provide the speed you need for specific use cases like real-time dashboards and log analytics.
 
