@@ -7,7 +7,7 @@ excerpt: "Amazon Sagemaker new features"
 tags: [AWS, Sagemaker]
 mathjax: false
 mathjax_autoNumber: false
-key: aws-sagemaker-tips
+key: aws-sagemaker-EMR-Redshift-athena-bedrock-msk-kinesis-opensearch-quicksight-tips
 ---
 
 ***
