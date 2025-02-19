@@ -4,7 +4,7 @@ title: "Amazon Sagemaker at AWS re:invent 2024"
 date: 2024-12-07
 modify_date: 2024-12-07
 excerpt: "Amazon Sagemaker new features"
-tags: [AWS, Sagemaker, EMR, Redshift, Athena, Bedrock, MSK, Kinesis, OpenSearch, QuickSight]
+tags: [AWS, Sagemaker, EMR, Redshift, Athena, Bedrock, MSK, Kinesis, OpenSearch]
 mathjax: false
 mathjax_autoNumber: false
 key: aws-sagemaker-EMR-Redshift-athena-bedrock-msk-kinesis-opensearch-quicksight-tips
