@@ -17,7 +17,10 @@ Let's examine these in detail and attempt to clarify some of them.
 
 ## A.1 - Amazon SageMaker Unified Studio
 
-![Image](https://github.com/user-attachments/assets/1bf57255-16ce-40e3-9e2c-cc51975bd7f2)
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/5bc1b53e-68bd-41b2-a3de-fecc98d11e84raw=true" width="40%">
+    <p>Figure 2: VAEs training process.</p>
+</div>
 
 The first one that was [SageMaker Unified Studio](https://aws.amazon.com/sagemaker/unified-studio/). It's a new service that provides an integrated experience for data preparation, model building, and generative AI application development that unifies your tools across notebooks, query editors, and services like [GLUE](https://aws.amazon.com/glue/), [EMR](https://aws.amazon.com/emr/), [Athena](https://aws.amazon.com/athena/), [Redshift](https://aws.amazon.com/redshift/), SageMaker, [BedRock](https://aws.amazon.com/bedrock/), [Managed Streaming Kafka](https://aws.amazon.com/msk/), [Kinesis](https://aws.amazon.com/kinesis/), [OpenSearch](https://aws.amazon.com/opensearch-service/), and it integrates seamlessly with our AWS data processing, using the actual existing services as part of the experience.
 
