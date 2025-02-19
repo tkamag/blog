@@ -56,3 +56,23 @@ Data lineage in DataZone and SageMaker Unified Studio will allow you to visualiz
 ![Image](https://github.com/user-attachments/assets/83f67b15-1d7e-4d48-a692-831ac735b86f)
 
 SageMaker Lakehouse is also **leveraging a unified connectivity to third party tools with this zero ETL connection**. There are additional service integrations between DynamoDB and SageMaker Lakehouse, as well as SaaS applications like Salesforce, SAP, Zendesk, and ServiceNow that provide an integrated access without building custom ETL pipelines. This is due to a new and existing glue connections and new connections from the SageMaker Unified Studio.
+
+## A.7 Amazon Sagemaker HyperPod
+
+![Image](https://github.com/user-attachments/assets/edfbb6e9-51bc-465e-9516-2259d666aa83)
+
+AWS announced last year [SageMaker HyperPod](https://aws.amazon.com/fr/sagemaker-ai/hyperpod/). This is designed to streamline your distributed model training by effectively distributing your training activity across the accelerators in a cluster processing them in parallel.
+
+The HyperPods training cluster is also resilient and self-healing and allows you to pause and inspect training jobs, which is usually a lot more complicated if you've never done that.
+
+AWS know launched [SageMaker HyperPod Task governance](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-governance.html), which will dynamically allocate compute resources and provide real-time analytics and insights of your compute allocation and utilization.
+
+You can do things like define priorities, fine-tuning, training, and inference, and then you set up limits for the compute resources by teams and by projects.
+You can easily reach thousands of different configurations of the training stack and training performance can be very significantly based on your chosen configurations.
+
+## A.8 Sagemaker Hyperpod recepies
+
+![Image](https://github.com/user-attachments/assets/068304ec-65ae-4ed0-a630-9bb5973668e7)
+
+This year AWS introduced [SageMaker HyperPod Recipes](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-recipes.html) to provide a curated, ready-to-use, and customizable SageMaker recipe for pre-training and fine-tuning foundation models, models like llama, mistral, and so on. AWS will continue to add more recipes and more models to help you have a fully managed end-to-end training loop for those models.
+
