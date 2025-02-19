@@ -51,7 +51,7 @@ Understanding data lineage is a common ask for many people. They think of lineag
 
 Data lineage in DataZone and SageMaker Unified Studio will allow you to visualize your data's origins, transformations, and consumption so that you can enhance trust and verification of your data and those providing you the data, making it so that your evolving schemas are a lot more reliable.
 
-## A.6 05-Zero_ETL
+## A.6  Zero ETL
 
 ![Image](https://github.com/user-attachments/assets/83f67b15-1d7e-4d48-a692-831ac735b86f)
 
