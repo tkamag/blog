@@ -18,7 +18,7 @@ Let's examine these in detail and attempt to clarify some of them.
 ## A.1 - Amazon SageMaker Unified Studio
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/5bc1b53e-68bd-41b2-a3de-fecc98d11e84?raw=true" width="85%">
+    <img src="https://github.com/user-attachments/assets/5bc1b53e-68bd-41b2-a3de-fecc98d11e84?raw=true" width="95%">
     <p>Figure 2: VAEs training process.</p>
 </div>
 
