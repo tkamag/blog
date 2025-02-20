@@ -18,4 +18,4 @@ In this article, we will walk you through the steps to get started with Amazon U
 
 [![My image alt description](https://github.com/user-attachments/assets/78b3a5d9-eff9-42f4-9598-18d930b29b7b)](https://github.com/user-attachments/assets/78b3a5d9-eff9-42f4-9598-18d930b29b7b)
 
-[![My image alt description](/assets/images/posts-img/unified-studio/01.jpg)](/asset/images/posts-img/unified-studio/01.jpg)
+[![My image alt description](/assets/images/posts-img/unified-studio/01.jpg)](/assets/images/posts-img/unified-studio/01.jpg)
