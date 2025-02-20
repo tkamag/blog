@@ -18,7 +18,7 @@ In this article, we will walk you through the steps to get started with Amazon U
 
 [![My image alt description](/blog/assets/images/posts-img/unified-studio/03.jpg)](/blog/assets/images/posts-img/unified-studio/03.jpg)
 
-## Part 1 - Settings your account
+### Settings your account
 
 1. You have the choice between :
 
@@ -33,12 +33,12 @@ Let's start from scratch an create one unified studio domain.
    * **Quick setup (recommended for exploration)**
    * **Manual setup (recommended for organizations)**
 
-3. We can create a VOC or use an existing one.
+3. We can create a VPC or use an existing one.
 
     [![My image alt description](/blog/assets/images/posts-img/unified-studio/05.jpg)](/blog/assets/images/posts-img/unified-studio/05.jpg)
 
 4. Once w've setup our VPC (because everything is deploy in a VPC), we can know fill others forms.
 
-    [![My image alt description](/blog/assets/images/posts-img/unified-studio/06.jpg)](/blog/assets/images/posts-img/unified-studio/06.jpg)
+    [![My image alt description](/blog/assets/images/posts-img/unified-studio/06_.jpg)](/blog/assets/images/posts-img/unified-studio/06_.jpg)
 
 5. Once you have created your unified studio domain, you can start to use it to explore the data, model and application that you have created.
