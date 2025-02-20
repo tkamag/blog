@@ -17,4 +17,4 @@ Sagemaker Unified Data Studio is probably the only tool require to do both your 
 
 In this article, we will walk you through the steps to get started with Amazon Unified Data Studio and give you a high level overview and details aspects of the features you can use to get started.
 
-<a href="https://github.com/user-attachments/assets/78b3a5d9-eff9-42f4-9598-18d930b29b7b"><img src="https://github.com/user-attachments/assets/78b3a5d9-eff9-42f4-9598-18d930b29b7b" /></a>
+[![My image alt description]([/path/to/my-image.jpg](https://github.com/user-attachments/assets/78b3a5d9-eff9-42f4-9598-18d930b29b7b))]([/path/to/my-image.jpg](https://github.com/user-attachments/assets/78b3a5d9-eff9-42f4-9598-18d930b29b7b))
