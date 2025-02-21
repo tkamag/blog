@@ -21,7 +21,10 @@ key: aws-terraform-tips
 - [C. Resources](#c-resources)
 - [D. Initialize the directory](#d-initialize-the-directory)
   - [D.1 Format and validate the configuration](#d1-format-and-validate-the-configuration)
-  - [E. Build infrastructure](#e-build-infrastructure)
+- [E. Build infrastructure](#e-build-infrastructure)
+- [F. Inspect state](#f-inspect-state)
+  - [F.1 Manually Managing State](#f1-manually-managing-state)
+- [G. Destroy infrastructure](#g-destroy-infrastructure)
 
 ## A.What is Infrastructure as Code with Terraform?
 
@@ -125,7 +128,7 @@ The AWS Provider can source credentials and other settings from the shared confi
 
 If no named profile is specified, the default profile is used. Use the profile parameter or AWS_PROFILE environment variable to specify a named profile.
 
-The locations of the shared configuration and credentials files can be configured using either the parameters shared_config_files and shared_credentials_files or the environment variables AWS_CONFIG_FILE and AWS_SHARED_CREDENTIALS_FILE.
+The locations of the shared configuration and credentials files can be configured using either the parameters shared_config_files and shared_credentials_files or the environment variables ``AWS_CONFIG_FILE`` and ``AWS_SHARED_CREDENTIALS_FILE``.
 
 For example:
 
@@ -206,7 +209,7 @@ terraform validate
 Success! The configuration is valid.
  ````
 
-### E. Build infrastructure
+## E. Build infrastructure
 
 Apply the configuration now with the ``terraform apply`` command. Terraform will print output similar to what is shown below. We have truncated some of the output to save space.
 
@@ -248,4 +251,137 @@ aws_instance.app_server: Still creating... [30s elapsed]
 aws_instance.app_server: Creation complete after 36s [id=i-01e03375ba238b384]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+````
+
+## F. Inspect state
+
+When you applied your configuration, Terraform wrote data into a file called ``terraform.tfstate``.
+
+Terraform stores the IDs and properties of the resources it manages in this file, so that it can update or destroy those resources going forward.
+The Terraform state file is the only way Terraform can track which resources it manages, and often contains sensitive information, so you must store your state file securely and restrict access to only trusted team members who need to manage your infrastructure.
+
+> In production, we recommend storing your state remotely with Terraform Cloud or Terraform Enterprise.
+
+Terraform also supports several other remote backends you can use to store and manage your state.
+Inspect the current state using terraform show.
+
+````terraform
+terraform show
+
+# aws_instance.app_server:
+resource "aws_instance" "app_server" {
+    ami                          = "ami-830c94e3"
+    arn                          = "arn:aws:ec2:us-west-2:561656980159:instance/i-01e03375ba238b384"
+    associate_public_ip_address  = true
+    availability_zone            = "us-west-2c"
+    cpu_core_count               = 1
+    cpu_threads_per_core         = 1
+    disable_api_termination      = false
+    ebs_optimized                = false
+    get_password_data            = false
+    hibernation                  = false
+    id                           = "i-01e03375ba238b384"
+    instance_state               = "running"
+    instance_type                = "t2.micro"
+    ipv6_address_count           = 0
+    ipv6_addresses               = []
+    monitoring                   = false
+    primary_network_interface_id = "eni-068d850de6a4321b7"
+    private_dns                  = "ip-172-31-0-139.us-west-2.compute.internal"
+    private_ip                   = "172.31.0.139"
+    public_dns                   = "ec2-18-237-201-188.us-west-2.compute.amazonaws.com"
+    public_ip                    = "18.237.201.188"
+    secondary_private_ips        = []
+    security_groups              = [
+        "default",
+    ]
+    source_dest_check            = true
+    subnet_id                    = "subnet-31855d6c"
+    tags                         = {
+        "Name" = "ExampleAppServerInstance"
+    }
+    tenancy                      = "default"
+    vpc_security_group_ids       = [
+        "sg-0edc8a5a",
+    ]
+
+    credit_specification {
+        cpu_credits = "standard"
+    }
+
+    enclave_options {
+        enabled = false
+    }
+
+    metadata_options {
+        http_endpoint               = "enabled"
+        http_put_response_hop_limit = 1
+        http_tokens                 = "optional"
+    }
+
+    root_block_device {
+        delete_on_termination = true
+        device_name           = "/dev/sda1"
+        encrypted             = false
+        iops                  = 0
+        tags                  = {}
+        throughput            = 0
+        volume_id             = "vol-031d56cc45ea4a245"
+        volume_size           = 8
+        volume_type           = "standard"
+    }
+}
+````
+
+### F.1 Manually Managing State
+
+Terraform has a built-in command called ``terraform state`` **for advanced state management**. Use the list subcommand to list of the resources in your project's state.
+
+````terraform
+ terraform state list
+aws_instance.app_server
+````
+
+## G. Destroy infrastructure
+
+You have now created and updated an EC2 instance on AWS with Terraform. In this tutorial, you will use Terraform to destroy this infrastructure.
+Destroy the resources you created.
+
+````terraform
+terraform destroy
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+# aws_instance.app_server will be destroyed
+  - resource "aws_instance" "app_server" {
+      - ami                          = "ami-08d70e59c07c61a3a" -> null
+      - arn                          = "arn:aws:ec2:us-west-2:561656980159:instance/i-0fd4a35969bd21710" -> null
+##...
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value:
+  ````
+  
+The - prefix indicates that the instance will be destroyed. As with apply, Terraform shows its execution plan and waits for approval before making any changes.
+
+Answer **yes** to execute this plan and destroy the infrastructure.
+
+Enter a value: **yes**
+
+````terraform
+aws_instance.app_server: Destroying... [id=i-0fd4a35969bd21710]
+aws_instance.app_server: Still destroying... [id=i-0fd4a35969bd21710, 10s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0fd4a35969bd21710, 20s elapsed]
+aws_instance.app_server: Still destroying... [id=i-0fd4a35969bd21710, 30s elapsed]
+aws_instance.app_server: Destruction complete after 31s
+
+Destroy complete! Resources: 1 destroyed.
 ````
