@@ -46,3 +46,15 @@ Let's start from scratch an create one unified studio domain.
 5. Once you have created your unified studio domain, you can start to use it to explore the data, model and application that you have created.
 
     [![My image alt description](/blog/assets/images/posts-img/unified-studio/07.jpg)](/blog/assets/images/posts-img/unified-studio/07.jpg)
+
+6. We have an overview of the domain created
+
+[![My image alt description](/blog/assets/images/posts-img/unified-studio/08.jpg)](/blog/assets/images/posts-img/unified-studio/08.jpg)
+
+     1. **Domain details**:
+         * Amazon SageMaker Unified Studio URL
+         * Domain ARB
+         * Domain metadata
+     2. Next, we have a configuration with **IAM Identity center** where we can configure SSO credentials.
+
+1. We also have projects profiles. **Project profiles** define the tools and capabilities available in projects in Amazon SageMaker Unified Studio. Use a template below to create a project profile.
