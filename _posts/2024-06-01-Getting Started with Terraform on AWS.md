@@ -82,7 +82,8 @@ Configuration for the AWS Provider can be derived from several sources, which ar
 
 **Warning:**
 > Hard-coded credentials are not recommended in any Terraform configuration and risks secret leakage should this file ever be committed to a public version control system.
->
+
+
 Credentials can be provided by adding an access_key, secret_key, and optionally token, to the aws provider block.
 
 **Usage:**
@@ -97,7 +98,7 @@ provider "aws" {
 
 #### B.1.4 Environment Variables
 
-Credentials can be provided by using the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and optionally AWS_SESSION_TOKEN environment variables. The region can be set using the AWS_REGION or AWS_DEFAULT_REGION environment variables.
+Credentials can be provided by using the ``AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY``, and optionally A``WS_SESSION_TOKE``N environment variables. The region can be set using the ``AWS_REGION`` or ``AWS_DEFAULT_REGION`` environment variables.
 
 For example:
 
