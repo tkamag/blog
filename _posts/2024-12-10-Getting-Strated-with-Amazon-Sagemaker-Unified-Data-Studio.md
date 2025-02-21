@@ -60,5 +60,7 @@ Let's start from scratch an create one unified studio domain.
 7. We also have projects profiles. **Project profiles** define the tools and capabilities available in projects in Amazon SageMaker Unified Studio. Use a template below to create a project profile.
 
    a. **Data analytics and AI/ML model development**: Analyze data and build ML and GenAI models powered by Amazon EMR, AWS Glue, Amazon Athena, Amazon SageMaker AI and Amazon SageMaker Lakehouse.
+
    b. **Generative AI**: Explore, build, and collaborate on generative AI applications using Amazon Bedrock foundation models and tools.
+
    c. **SQL analytics**: Use the SQL editor to query data in Amazon SageMaker Lakehouse, Amazon Redshift and Amazon Athena.
