@@ -51,11 +51,7 @@ Let's start from scratch an create one unified studio domain.
 
     [![My image alt description](/blog/assets/images/posts-img/unified-studio/08.jpg)](/blog/assets/images/posts-img/unified-studio/08.jpg)
 
-    a. **Domain details**:
-
-        * Amazon SageMaker Unified Studio URL
-        * Domain ARB
-        * Domain metadata
+    a. **Domain details**: WIth Amazon SageMaker Unified Studio URL, Domain ARB, and Domain metadata.
   
     b. Next, we have a configuration with **IAM Identity center** where we can configure SSO credentials.
 
