@@ -49,12 +49,14 @@ Let's start from scratch an create one unified studio domain.
 
 6. We have an overview of the domain created
 
-[![My image alt description](/blog/assets/images/posts-img/unified-studio/08.jpg)](/blog/assets/images/posts-img/unified-studio/08.jpg)
+    [![My image alt description](/blog/assets/images/posts-img/unified-studio/08.jpg)](/blog/assets/images/posts-img/unified-studio/08.jpg)
 
     a. **Domain details**:
-         * Amazon SageMaker Unified Studio URL
-         * Domain ARB
-         * Domain metadata
+
+        * Amazon SageMaker Unified Studio URL
+        * Domain ARB
+        * Domain metadata
+  
     b. Next, we have a configuration with **IAM Identity center** where we can configure SSO credentials.
 
 7. We also have projects profiles. **Project profiles** define the tools and capabilities available in projects in Amazon SageMaker Unified Studio. Use a template below to create a project profile.
