@@ -16,7 +16,7 @@ Sagemaker Unified Data Studio is probably the only tool require to do both your 
 
 In this article, we will walk you through the steps to get started with Amazon Unified Data Studio and give you a high level overview and details aspects of the features you can use to get started.
 
-[![My image alt description](/blog/assets/images/posts-img/unified-studio/03.jpg)](/blog/assets/images/posts-img/unified-studio/03.jpg)
+[![My image alt description](/blog/assets/images/posts-img/unified-studio/01.jpg)](/blog/assets/images/posts-img/unified-studio/01.jpg)
 
 ### Settings your account
 
@@ -37,8 +37,12 @@ Let's start from scratch an create one unified studio domain.
 
     [![My image alt description](/blog/assets/images/posts-img/unified-studio/05.jpg)](/blog/assets/images/posts-img/unified-studio/05.jpg)
 
-4. Once w've setup our VPC (because everything is deploy in a VPC), we can know fill others forms.
+4. Once w've setup our VPC (because everything is deploy in a VPC), we can know fill others forms. Amazon also create some roles on your behalf.
+   1. For **Data analytics, machine learning, and SQL analytics resources**:These resources will allow users to consume, process, and produce data assets with SQL, AWS Glue, Amazon EMR, Amazon SageMaker, Amazon MWAA, and Amazon Redshift Serverless
+   2. For **Generative AI resources Info**: These resources will create a project profile that will allow users to explore, experiment, and collaborate on generative AI application development using the Amazon Bedrock foundation models and tool
 
     [![My image alt description](/blog/assets/images/posts-img/unified-studio/06_.jpg)](/blog/assets/images/posts-img/unified-studio/06_.jpg)
 
 5. Once you have created your unified studio domain, you can start to use it to explore the data, model and application that you have created.
+
+    [![My image alt description](/blog/assets/images/posts-img/unified-studio/07.jpg)](/blog/assets/images/posts-img/unified-studio/07.jpg)
