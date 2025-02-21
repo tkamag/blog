@@ -13,7 +13,7 @@ key: aws-terraform-tips
   - [A.1 Install terraform](#a1-install-terraform)
 - [C. Build infrastructure](#c-build-infrastructure)
 
-### A.What is Infrastructure as Code with Terraform?
+## A.What is Infrastructure as Code with Terraform?
 
 Infrastructure as Code (IaC) tools allows you to:
 
@@ -21,7 +21,7 @@ Infrastructure as Code (IaC) tools allows you to:
 - **Build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.**
 - **Track resource changes throughout your deployments.**
 
-#### A.1 Install terraform
+### A.1 Install terraform
 
 For a full installation guide, see [Terraform Installation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
