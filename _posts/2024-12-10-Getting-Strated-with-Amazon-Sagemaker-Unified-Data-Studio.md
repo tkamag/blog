@@ -53,9 +53,9 @@ Let's start from scratch an create one unified studio domain.
 
     a. **Domain details**: WIth Amazon SageMaker Unified Studio URL, Domain ARB, and Domain metadata.
   
-    b. Next, we have a configuration with **IAM Identity center** where we can configure SSO credentials.
+7. Next, we have a configuration with **IAM Identity center** where we can configure SSO credentials.
 
-7. We also have projects profiles. **Project profiles** define the tools and capabilities available in projects in Amazon SageMaker Unified Studio. Use a template below to create a project profile.
+8. We also have projects profiles. **Project profiles** define the tools and capabilities available in projects in Amazon SageMaker Unified Studio. Use a template below to create a project profile.
 
    a. **Data analytics and AI/ML model development**: Analyze data and build ML and GenAI models powered by Amazon EMR, AWS Glue, Amazon Athena, Amazon SageMaker AI and Amazon SageMaker Lakehouse.
 
