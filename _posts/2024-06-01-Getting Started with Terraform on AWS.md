@@ -16,9 +16,11 @@ key: aws-terraform-tips
     - [B.1.1 Configure AWS Provider](#b11-configure-aws-provider)
     - [B.1.2 Authentication and Configuration](#b12-authentication-and-configuration)
     - [B.1.3 Provider Configuration](#b13-provider-configuration)
-    - [B.1.4 Environment Variables](#b14-environment-variables)
-    - [B.1.6 Shared Configuration and Credentials Files](#b16-shared-configuration-and-credentials-files)
-  - [A.2 Build infrastructure](#a2-build-infrastructure)
+  - [B.2 Environment Variables](#b2-environment-variables)
+    - [B.2.1 Shared Configuration and Credentials Files](#b21-shared-configuration-and-credentials-files)
+- [C. Resources](#c-resources)
+- [D. Initialize the directory](#d-initialize-the-directory)
+  - [X.2 Build infrastructure](#x2-build-infrastructure)
 
 ## A.What is Infrastructure as Code with Terraform?
 
@@ -96,7 +98,7 @@ provider "aws" {
 }
 ````
 
-#### B.1.4 Environment Variables
+### B.2 Environment Variables
 
 Credentials can be provided by using the ``AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY``, and optionally A``WS_SESSION_TOKE``N environment variables. The region can be set using the ``AWS_REGION`` or ``AWS_DEFAULT_REGION`` environment variables.
 
@@ -110,7 +112,7 @@ provider "aws" {}
 % terraform plan
 ````
 
-#### B.1.6 Shared Configuration and Credentials Files
+#### B.2.1 Shared Configuration and Credentials Files
 
 The AWS Provider can source credentials and other settings from the shared configuration and credentials files. By default, these files are located at:
 
@@ -134,15 +136,29 @@ provider "aws" {
 }
 ````
 
+## C. Resources
+
+Use resource blocks to define components of your infrastructure.
+
+> A resource might be a physical or virtual component such as an EC2 instance, or it can be a logical resource such as a Heroku application.
+
+Resource blocks have two strings before the block:
+
+- The resource type here **aws_instance**
+  
+- The resource name here **app_server**
+
+
+## D. Initialize the directory
+
+When you create a new configuration — or check out an existing configuration from version control — you need to initialize the directory with ``terraform init``.
+
+> Initializing a configuration directory downloads and installs the providers defined in the configuration, which in this case is the aws provider.
 
 
 
 
-
-
-
-
-### A.2 Build infrastructure
+### X.2 Build infrastructure
 
 With Terraform installed, you are ready to create your first infrastructure.
 
