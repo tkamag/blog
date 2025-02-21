@@ -18,12 +18,12 @@ key: aws-terraform-tips
 Infrastructure as Code (IaC) tools allows you to:
 
 - **Manage infrastructure with configuration files rather than through a graphical user interface** on multiple cloud platforms.
-- **Build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share**
-- **Track resource changes throughout your deployments**.
+- **Build, change, and manage your infrastructure in a safe, consistent, and repeatable way by defining resource configurations that you can version, reuse, and share.**
+- **Track resource changes throughout your deployments.**
 
 #### A.1 Install terraform
 
-[Install terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+For a full installation guide, see [Terraform Installation](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 ## C. Build infrastructure
 
