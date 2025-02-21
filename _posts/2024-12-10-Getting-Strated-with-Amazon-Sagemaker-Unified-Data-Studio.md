@@ -68,14 +68,21 @@ Let's start from scratch an create one unified studio domain.
     [![My image alt description](/blog/assets/images/posts-img/unified-studio/09.jpg)](/blog/assets/images/posts-img/unified-studio/09.jpg)
 
     a. **Manage users**: Enable access to Amazon SageMaker Unified Studio for users with SSO credentials, or add an IAM user below. By default, this domain supports IAM user credentials.
+
     b. **Associate account**: You can associate another AWS account.
+
     c. **Blueprints**: You can leverage some blueprints( AmazonBedrockGenerativeAI blueprints, LakehouseCatalog blueprints; etc...).
+
     d. **Projects profiles**: As explained earlier, three projects profiles.
+
     e. **Amazon Bedrock models**: You can request access to some foundations models as soon as those models are part of Amazon Bedrock catalog models.
+
     f. **connections**: Allow you to connect to external stuff like GitHub, GitLab, etc... and store your code in these version control.
+
     g. **Amazon Q**: Enable Amazon Q, the generative AI-powered assistant that you can tailor to your business needs.
-    h; **Tags**: A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your AWS costs
 
-    As you see Sagemaker Unified Data Studio is a very powerful service who have access to a lot of others AWS services.
+    h. **Tags**: A tag is a label that you assign to an AWS resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your AWS costs
 
-    Next time we will dep dive into Sagemaker Unified Data Studio portal.
+As you see Sagemaker Unified Data Studio is a very powerful service who have access to a lot of others AWS services.
+
+Next time we will dep dive into Sagemaker Unified Data Studio portal.
