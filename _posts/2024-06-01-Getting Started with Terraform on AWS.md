@@ -20,7 +20,8 @@ key: aws-terraform-tips
     - [B.2.1 Shared Configuration and Credentials Files](#b21-shared-configuration-and-credentials-files)
 - [C. Resources](#c-resources)
 - [D. Initialize the directory](#d-initialize-the-directory)
-  - [X.2 Build infrastructure](#x2-build-infrastructure)
+  - [D.1 Format and validate the configuration](#d1-format-and-validate-the-configuration)
+  - [E. Build infrastructure](#e-build-infrastructure)
 
 ## A.What is Infrastructure as Code with Terraform?
 
@@ -148,7 +149,6 @@ Resource blocks have two strings before the block:
   
 - The resource name here **app_server**
 
-
 ## D. Initialize the directory
 
 When you create a new configuration (or check out an existing configuration from version control), you need to initialize the directory with ``terraform init``.
@@ -187,12 +187,65 @@ commands will detect it and remind you to do so if necessary.
 1. The ``terraform init`` command prints out which version of the provider was installed.
 1. Terraform also creates a lock file named ``.terraform.lock.hcl`` **which specifies the exact provider versions used**, so that you can control when you want to update the providers used for your project.
 
+### D.1 Format and validate the configuration
 
+We recommend using consistent formatting in all of your configuration files. The ``terraform fmt`` **command automatically updates configurations in the current directory for readability and consistency**.
 
+Format your configuration. Terraform will print out the names of the files it modified, if any. In this case, your configuration file was already formatted correctly, so Terraform won't return any file names.
 
-### X.2 Build infrastructure
+````terraform
+ terraform fmt
+ ````
 
-With Terraform installed, you are ready to create your first infrastructure.
+You can also make sure your configuration is syntactically valid and internally consistent by using the terraform validate command.
 
-In this tutorial, you will provision an EC2 instance on Amazon Web Services (AWS). EC2 instances are virtual machines running on AWS, and a common component of many infrastructure projects.
+Validate your configuration. The example configuration provided above is valid, so Terraform will return a success message.
 
+````terraform
+terraform validate
+Success! The configuration is valid.
+ ````
+
+### E. Build infrastructure
+
+Apply the configuration now with the ``terraform apply`` command. Terraform will print output similar to what is shown below. We have truncated some of the output to save space.
+
+````terraform
+ terraform apply
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+   aws_instance.app_server will be created
+  + resource "aws_instance" "app_server" {
+      + ami                          = "ami-830c94e3"
+      + arn                          = (known after apply)
+#...
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value:
+````
+
+Before it applies any changes,
+
+> Terraform prints out the execution plan which describes the actions Terraform will take in order to change your infrastructure to match the configuration.
+
+````terraform
+  Enter a value: yes
+
+aws_instance.app_server: Creating...
+aws_instance.app_server: Still creating... [10s elapsed]
+aws_instance.app_server: Still creating... [20s elapsed]
+aws_instance.app_server: Still creating... [30s elapsed]
+aws_instance.app_server: Creation complete after 36s [id=i-01e03375ba238b384]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+````
