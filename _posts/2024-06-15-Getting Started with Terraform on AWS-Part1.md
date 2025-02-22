@@ -223,6 +223,10 @@ Error: Failed to get existing workspaces: S3 bucket "tfstate-bucket-tka-19" does
 │ was created within the last minute, please wait for a minute or two and try
 │ again.
 │
-│ Error: operation error S3: ListObjectsV2, https response error StatusCode: 404, RequestID: J2YFVD9K8JTHTA1R, HostID: ToWXadaZGcM5g2QYlR67Z+hoJ/wM/OhMxxw6cWBYLZ1Lvl73/S5IgsTQwI144wYaDajxpSyF3eI=, NoSuchBucket:
+│ Error:    operation error S3: ListObjectsV2, 
+            https response error StatusCode: 404, 
+            RequestID: J2YFVD9K8JTHTA1R, 
+            HostID: ToWXadaZGcM5g2QYlR67Z+hoJ/wM/OhMxxw6cWBYLZ1Lvl73/S5IgsTQwI144wYaDajxpSyF3eI=, 
+            NoSuchBucket:
 ````
 [![My image alt description](/blog/assets/images/posts-img/terraform/07.jpg)](/blog/assets/images/posts-img/terraform/07_.jpg)
