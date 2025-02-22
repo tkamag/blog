@@ -15,7 +15,8 @@ key: aws-terraform-tips
 
 Before deep dive into creating resources, let's take a look at some prerequisites.
 
-1. As we're working with ``git``, let's update our ``.gitignore`` file by adding this:
+1. Assume you've already configure your aws cli.
+2. As we're working with ``git``, let's update our ``.gitignore`` file by adding this:
 
     ````bash
     # Local .terraform directories
@@ -55,7 +56,7 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     terraform.rc
     ````
 
-2. Let's create an alias in our ``.bashrc`` or ``.zshrc`` file:
+3. Let's create an alias in our ``.bashrc`` or ``.zshrc`` file:
 
     ```` bash
     echo -n "alias tf='terraform'" >> ~/.bashrc
@@ -65,8 +66,28 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     echo -n "alias tf='terraform'" >> ~/.zshrc
     ````
 
-3. Create a folder ``Learn_Terraform_With_AWS`` and log in to that folder.
+4. Create a folder ``Learn_Terraform_With_AWS`` and log in to that folder.
 
     ````bash
     mkdir Learn_Terraform_With_AWS && cd Learn_Terraform_With_AWS
+    ````
+
+5. Before crating some resources, we need to define and configure providers in our ``providers.tf`` file.
+
+    ````bash
+        cat <<EOF > providers.tf
+        terraform {
+            required_providers {
+                aws = {
+                    source  = "hashicorp/aws"
+                    version = "~> 5.0"
+                }
+            }
+        }
+
+        # Configure the AWS Provider
+        provider "aws" {
+            region = "us-east-1"
+        }
+        EOF
     ````
