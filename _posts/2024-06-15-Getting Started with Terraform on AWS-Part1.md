@@ -61,8 +61,6 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     echo -n "alias tf='terraform'" >> ~/.bashrc
     ````
 
-    or
-
     ```` bash
     echo -n "alias tf='terraform'" >> ~/.zshrc
     ````
