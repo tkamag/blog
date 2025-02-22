@@ -94,6 +94,12 @@ Before deep dive into creating resources, let's take a look at some prerequisite
 
      [![My image alt description](/blog/assets/images/posts-img/terraform/01__.jpg)](/blog/assets/images/posts-img/terraform/01.jpg)
 
+
+    <div align="center">
+    <img src="/blog/assets/images/posts-img/terraform/01__.jpg" width="40%">
+    <p>Figure 2: VAEs training process.</p>
+</div>
+
 After adding providers details, you have to initialize Terraform project by running terraform init
 
 - ``terraform init`` will download providers plugins and will create a .terraform folder in your workspace.
