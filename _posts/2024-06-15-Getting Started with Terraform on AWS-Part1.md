@@ -10,6 +10,7 @@ mathjax_autoNumber: false
 key: aws-terraform-tips
 ---
 - [A.Creating Resources and Terraform Fundamentals](#acreating-resources-and-terraform-fundamentals)
+  - [A.1 Creating Resources](#a1-creating-resources)
 
 ## A.Creating Resources and Terraform Fundamentals
 
@@ -92,8 +93,7 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     EOF
     ````
 
-     [![My image alt description](/blog/assets/images/posts-img/terraform/02.jpg)](/blog/assets/images/posts-img/terraform/02_.jpg)
-
+[![My image alt description](/blog/assets/images/posts-img/terraform/02.jpg)](/blog/assets/images/posts-img/terraform/02_.jpg)
 
 After adding providers details, you have to initialize Terraform project by running terraform init
 
@@ -102,3 +102,49 @@ After adding providers details, you have to initialize Terraform project by runn
 - ``terraform init`` are not run very often , but each time it is run, it will download the version of the specified provider.
 
 [![My image alt description](/blog/assets/images/posts-img/terraform/03.jpg)](/blog/assets/images/posts-img/terraform/03_.jpg)
+
+### A.1 Creating Resources
+
+For creating resources, let's first create a file name ``main.tf`` and add the following code.
+
+````bash
+cat <<EOF > main.tf
+    resource "aws_vpc" "my_vpc" {
+        cidr_block = "10.0.0.0/16"
+        instance_tenancy = "default"
+
+        tags = {
+            Name        = "Oliana-Vpc"
+            Environment = "Dev"
+            Location    = "Paris - France"
+        }
+    }
+EOF
+````
+
+The structure of Terraform resource is:
+
+- ``resource`` the key world
+- The type of resource we are interest in ``aws_vpc``
+- Logical name ``my_vpc``
+
+Documentation:
+
+- Resource: [aws_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc)
+- Resource: [Argument Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc#argument-reference) are argument uses to define a vpc resource.
+- Resource: [Attribute Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc#attribute-reference) are argument return after creating the vpc
+
+Now we can apply those changes by running terraform apply.
+
+````terraform
+terraform apply      
+````
+
+````terraform
+tf apply      
+````
+
+- Execute all scripts in the current folder
+- Give us the plan detail and all actions that will be perform.
+
+[![My image alt description](/blog/assets/images/posts-img/terraform/04.jpg)](/blog/assets/images/posts-img/terraform/04_.jpg)
