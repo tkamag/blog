@@ -67,4 +67,8 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     echo -n "alias tf='terraform'" >> ~/.zshrc
     ````
 
-3.
+3. Create a folder ``Learn_Terraform_With_AWS`` and log in to that folder.
+
+    ````bash
+    mkdir Learn_Terraform_With_AWS && cd Learn_Terraform_With_AWS
+    ````
