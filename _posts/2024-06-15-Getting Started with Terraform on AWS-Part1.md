@@ -75,7 +75,7 @@ Before deep dive into creating resources, let's take a look at some prerequisite
 5. Before crating some resources, we need to define and configure providers in our ``providers.tf`` file.
 
     ````bash
-        cat <<EOF > providers.tf
+    cat <<EOF > providers.tf
         terraform {
             required_providers {
                 aws = {
@@ -89,5 +89,7 @@ Before deep dive into creating resources, let's take a look at some prerequisite
         provider "aws" {
             region = "us-east-1"
         }
-        EOF
+    EOF
     ````
+
+     [![My image alt description](/blog/assets/images/posts-img/terraform/01.jpg)](/blog/assets/images/posts-img/terraform/01.jpg)
