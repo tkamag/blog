@@ -137,11 +137,11 @@ Documentation:
 
 Now we can apply those changes by running terraform apply.
 
-````terraform
+````bash
 terraform apply      
 ````
 
-````terraform
+````bash
 tf apply      
 ````
 
@@ -161,10 +161,12 @@ Note:
 
 ### A.1.1 Terraform Output
 
-Suppose we want to print the ``cidr block`` after ``terraform apply`` is complete, we need to modify a bit our code by adding this piece of code:
+Suppose we want to print the ``cidr block`` after ``terraform apply`` is complete, we need to modify a bit our code by adding this piece of code in our ``main.tf`` :
 
 ````bash
 output "vpc_cidr" {
-    value = "${aws_vpc.my_vpc.cidr_block}"
+    value = "${aws_vpc.my_vpc.cidr_block}" 
 }
 ````
+
+[![My image alt description](/blog/assets/images/posts-img/terraform/06.jpg)](/blog/assets/images/posts-img/terraform/08_.jpg)
