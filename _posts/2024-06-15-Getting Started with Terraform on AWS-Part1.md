@@ -92,7 +92,7 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     EOF
     ````
 
-     [![My image alt description](/blog/assets/images/posts-img/terraform/01.jpg)](/blog/assets/images/posts-img/terraform/01.jpg)
+     [![My image alt description](/blog/assets/images/posts-img/terraform/01_.jpg)](/blog/assets/images/posts-img/terraform/01_.jpg)
 
 After adding providers details, you have to initialize Terraform project by running terraform init
 
