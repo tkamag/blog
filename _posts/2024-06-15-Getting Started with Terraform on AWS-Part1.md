@@ -11,6 +11,7 @@ key: aws-terraform-tips
 ---
 - [A.Creating Resources and Terraform Fundamentals](#acreating-resources-and-terraform-fundamentals)
   - [A.1 Creating Resources](#a1-creating-resources)
+  - [A.1.1 Terraform Output](#a11-terraform-output)
 
 ## A.Creating Resources and Terraform Fundamentals
 
@@ -148,3 +149,22 @@ tf apply
 - Give us the plan detail and all actions that will be perform.
 
 [![My image alt description](/blog/assets/images/posts-img/terraform/04.jpg)](/blog/assets/images/posts-img/terraform/04_.jpg)
+
+And voila
+
+[![My image alt description](/blog/assets/images/posts-img/terraform/05.jpg)](/blog/assets/images/posts-img/terraform/05.jpg)
+
+Note:
+
+- If we run again ``terraform apply``, nothing will happens because resources has already been created.
+- Any change in the code(add more tags, change cidr block, etc...) will update our ressource.
+
+### A.1.1 Terraform Output
+
+Suppose we want to print the ``cidr block`` after ``terraform apply`` is complete, we need to modify a bit our code by adding this piece of code:
+
+````bash
+output "vpc_cidr" {
+    value = "${aws_vpc.my_vpc.cidr_block}"
+}
+````
