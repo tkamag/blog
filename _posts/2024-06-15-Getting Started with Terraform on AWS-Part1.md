@@ -57,13 +57,13 @@ Before deep dive into creating resources, let's take a look at some prerequisite
 
 2. Let's create an alias in our ``.bashrc`` or ``.zshrc`` file:
 
-```` bash
+    ```` bash
     echo -n "alias tf='terraform'" >> ~/.bashrc
     ````
 
-or
+    or
 
-```` bash
+    ```` bash
     echo -n "alias tf='terraform'" >> ~/.zshrc
     ````
 
