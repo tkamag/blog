@@ -12,6 +12,8 @@ key: aws-terraform-tips
 - [A.Creating Resources and Terraform Fundamentals](#acreating-resources-and-terraform-fundamentals)
   - [A.1 Creating Resources](#a1-creating-resources)
   - [A.1.1 Terraform Output](#a11-terraform-output)
+  - [A.1.2 Terraform Local State file](#a12-terraform-local-state-file)
+  - [A.1.3 Terraform Remote State file](#a13-terraform-remote-state-file)
 
 ## A.Creating Resources and Terraform Fundamentals
 
@@ -170,3 +172,57 @@ output "vpc_cidr" {
 ````
 
 [![My image alt description](/blog/assets/images/posts-img/terraform/06.jpg)](/blog/assets/images/posts-img/terraform/06_.jpg)
+
+### A.1.2 Terraform Local State file
+
+All resources creates using Terraform script is maintain inside one JSON file format and called by default ``terraform.tfstate`` and the default location is your workspace.
+
+When you hint ``terraform apply`` , it compare the terraform script with the state file.
+
+> Any difference between the files would allow terraform to add, update or destroy ressource in the state file.
+>
+> If you delete your state file, whatever resource he's create previously, he's loose connexion to that. The ressource remain into your account but Terraform will not have access or control to that ressource.
+
+### A.1.3 Terraform Remote State file
+
+When many developers are working together on the same state file, it's very difficult to use a local state file.
+
+- A good practice is to use S3 as a remote state file location and activate versioning on S3 bucket to keep previous version of the file.
+
+- It's also a good practice to enable encryption.
+
+- [S3 Backend.](https://developer.hashicorp.com/terraform/language/settings/backends/s3)
+
+By adding this piece of code, the problem will be solve.
+
+````bash
+cat <<EOF > main.tf
+  terraform {
+    backend "s3" {
+        bucket = "tfstate-bucket-tka-190"
+        key    = "terraform.tfstate"
+        region = "us-east-1"
+  }
+}
+EOF
+````
+
+Note:
+
+- You need to create a s3 bucket first by using aws cli or management console.
+- After uploading your local state file to S3, you can delete the local file because terraform will not longer wse this local file, **it will only work with the remote file**.
+
+Tips:
+
+- The referenced S3 bucket must have been previously created. Otherwise you'll get into this error
+  
+````bash
+Error: Failed to get existing workspaces: S3 bucket "tfstate-bucket-tka-19" does not exist.
+│
+│ The referenced S3 bucket must have been previously created. If the S3 bucket
+│ was created within the last minute, please wait for a minute or two and try
+│ again.
+│
+│ Error: operation error S3: ListObjectsV2, https response error StatusCode: 404, RequestID: J2YFVD9K8JTHTA1R, HostID: ToWXadaZGcM5g2QYlR67Z+hoJ/wM/OhMxxw6cWBYLZ1Lvl73/S5IgsTQwI144wYaDajxpSyF3eI=, NoSuchBucket:
+````
+[![My image alt description](/blog/assets/images/posts-img/terraform/07.jpg)](/blog/assets/images/posts-img/terraform/07_.jpg)
