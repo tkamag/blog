@@ -169,4 +169,4 @@ output "vpc_cidr" {
 }
 ````
 
-[![My image alt description](/blog/assets/images/posts-img/terraform/06.jpg)](/blog/assets/images/posts-img/terraform/08_.jpg)
+[![My image alt description](/blog/assets/images/posts-img/terraform/06.jpg)](/blog/assets/images/posts-img/terraform/06_.jpg)
