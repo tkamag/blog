@@ -93,3 +93,10 @@ Before deep dive into creating resources, let's take a look at some prerequisite
     ````
 
      [![My image alt description](/blog/assets/images/posts-img/terraform/01.jpg)](/blog/assets/images/posts-img/terraform/01.jpg)
+
+After adding providers details, you have to initialize Terraform project by running terraform init
+
+- ``terraform init`` will download providers plugins and will create a .terraform folder in your workspace.
+
+- ``terraform init`` are not run very often , but each time it is run, it will download the version of the specified provider.
+
