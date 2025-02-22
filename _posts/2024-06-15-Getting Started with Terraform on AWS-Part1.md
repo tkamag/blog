@@ -100,3 +100,5 @@ After adding providers details, you have to initialize Terraform project by runn
 - ``terraform init`` will download providers plugins and will create a .terraform folder in your workspace.
 
 - ``terraform init`` are not run very often , but each time it is run, it will download the version of the specified provider.
+
+[![My image alt description](/blog/assets/images/posts-img/terraform/03.jpg)](/blog/assets/images/posts-img/terraform/03_.jpg)
