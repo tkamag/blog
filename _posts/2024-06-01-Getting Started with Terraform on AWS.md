@@ -370,7 +370,7 @@ Do you really want to destroy all resources?
   Enter a value:
   ````
   
-The - prefix indicates that the instance will be destroyed. As with apply, Terraform shows its execution plan and waits for approval before making any changes.
+The ``- prefix`` indicates that the instance will be destroyed. As with apply, Terraform shows its execution plan and waits for approval before making any changes.
 
 Answer **yes** to execute this plan and destroy the infrastructure.
 
