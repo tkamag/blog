@@ -14,6 +14,8 @@ key: aws-terraform-tips
   - [A.1.1 Terraform Output](#a11-terraform-output)
   - [A.1.2 Terraform Local State file](#a12-terraform-local-state-file)
   - [A.1.3 Terraform Remote State file](#a13-terraform-remote-state-file)
+  - [A.1.4 Terraform Local State file](#a14-terraform-local-state-file)
+  - [A.1.5 Terraform Variables And tfvars](#a15-terraform-variables-and-tfvars)
 
 ## A.Creating Resources and Terraform Fundamentals
 
@@ -229,4 +231,65 @@ Error: Failed to get existing workspaces: S3 bucket "tfstate-bucket-tka-19" does
 │            HostID: ToWXadaZGcM5g2QYlR67Z+hoJ/wM/OhMxxw6cWBYLZ1Lvl73/S5IgsTQwI144wYaDajxpSyF3eI=, 
 │            NoSuchBucket:
 ````
+
 [![My image alt description](/blog/assets/images/posts-img/terraform/07.jpg)](/blog/assets/images/posts-img/terraform/07_.jpg)
+
+### A.1.4 Terraform Local State file
+
+If multiple developers applying concurrently, it can create inconsistent state file
+
+> It's always important to make a lock when a developer is performing an operation on that and block the remaining users until the current operation is completed.
+
+For state locking and consistency, we use a ``dynamo_db`` table.
+
+- [DynamoDB State Locking](https://developer.hashicorp.com/terraform/language/settings/backends/s3#dynamodb-state-locking)
+
+- The table must have a partition key named **LockID** with type of String. If not configured, state locking will be disabled.
+
+````bash
+cat <<EOF > main.tf
+  terraform {
+    backend "s3" {
+        bucket = "tfstate-bucket-tka-1900"
+        key    = "terraform.tfstate"
+        region = "us-east-1"
+        dynamodb_table = "table_name"
+  }
+}
+EOF
+````
+
+### A.1.5 Terraform Variables And tfvars
+
+In programmation, variables gives better maintainability and code reusability.
+
+1. First create a new file called ``variables.tf``
+1. In terraform the name of the file don't matter, only the extensions of the file.
+1. **Don't forget to segregate you code into multiple small script**.
+
+Note:
+
+- [Variables and Outputs](https://developer.hashicorp.com/terraform/language/values)
+
+````bash
+cat <<EOF > providers.tf
+    variable "vpc_cidr" {
+        default = "10.20.0.0/18"
+        description ="Choose cidr for VPC"
+        type = string
+}
+EOF
+````
+
+- Here we have define a variable ``vpc_cidr`` with his default value, type and description. This value can be overwrite at the compilation using ``-var`` 
+
+- Now we need to change ``providers.tf`` a lite bit.
+
+[![My image alt description](/blog/assets/images/posts-img/terraform/09.jpg)](/blog/assets/images/posts-img/terraform/09_.jpg)
+
+Note:
+
+- You can use command line extension ``-auto-complete`` to avoid the prompt when using terraform apply.
+- To pass variables when using ``terraform apply``, use the command line ``-var "vpc_cidr=10.30.0.0/16"``
+- When you have more than one variable, keep those value inside a file and pase the reference to that file using the comand line ``-var-file locatio_of_the_file``
+- Whatever the name of the file you use, it is mandatory to have ``.tfvars`` as a file's extension.
