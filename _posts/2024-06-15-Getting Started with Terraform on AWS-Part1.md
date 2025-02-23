@@ -287,6 +287,8 @@ EOF
 
 [![My image alt description](/blog/assets/images/posts-img/terraform/09.jpg)](/blog/assets/images/posts-img/terraform/09_.jpg)
 
+[![My image alt description](/blog/assets/images/posts-img/terraform/10.jpg)](/blog/assets/images/posts-img/terraform/10_.jpg)
+
 Note:
 
 - You can use command line extension ``-auto-complete`` to avoid the prompt when using terraform apply.
