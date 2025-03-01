@@ -11,11 +11,15 @@ key: aws-terraform-tips
 ---
 - [A.Creating Resources and Terraform Fundamentals](#acreating-resources-and-terraform-fundamentals)
   - [A.1 Creating Resources](#a1-creating-resources)
-  - [A.1.1 Terraform Output](#a11-terraform-output)
-  - [A.1.2 Terraform Local State file](#a12-terraform-local-state-file)
-  - [A.1.3 Terraform Remote State file](#a13-terraform-remote-state-file)
-  - [A.1.4 Terraform Local State file](#a14-terraform-local-state-file)
-  - [A.1.5 Terraform Variables And tfvars](#a15-terraform-variables-and-tfvars)
+    - [A.1.1 Terraform Output](#a11-terraform-output)
+    - [A.1.2 Terraform Local State file](#a12-terraform-local-state-file)
+    - [A.1.3 Terraform Remote State file](#a13-terraform-remote-state-file)
+    - [A.1.4 Terraform Local State file](#a14-terraform-local-state-file)
+    - [A.1.5 Terraform Variables And tfvars](#a15-terraform-variables-and-tfvars)
+  - [A.2 Terraform Workspaces](#a2-terraform-workspaces)
+    - [A.2.1 Terraform Loops](#a21-terraform-loops)
+    - [A.7 Terraform Conditions](#a7-terraform-conditions)
+    - [A.2.2 Terraform Locals](#a22-terraform-locals)
 
 ## A.Creating Resources and Terraform Fundamentals
 
@@ -163,7 +167,7 @@ Note:
 - If we run again ``terraform apply``, nothing will happens because resources has already been created.
 - Any change in the code(add more tags, change cidr block, etc...) will update our ressource.
 
-### A.1.1 Terraform Output
+#### A.1.1 Terraform Output
 
 Suppose we want to print the ``cidr block`` after ``terraform apply`` is complete, we need to modify a bit our code by adding this piece of code in our ``main.tf`` :
 
@@ -175,7 +179,7 @@ output "vpc_cidr" {
 
 [![My image alt description](/blog/assets/images/posts-img/terraform/06.jpg)](/blog/assets/images/posts-img/terraform/06_.jpg)
 
-### A.1.2 Terraform Local State file
+#### A.1.2 Terraform Local State file
 
 All resources creates using Terraform script is maintain inside one JSON file format and called by default ``terraform.tfstate`` and the default location is your workspace.
 
@@ -185,7 +189,7 @@ When you hint ``terraform apply`` , it compare the terraform script with the sta
 >
 > If you delete your state file, whatever resource he's create previously, he's loose connexion to that. The ressource remain into your account but Terraform will not have access or control to that ressource.
 
-### A.1.3 Terraform Remote State file
+#### A.1.3 Terraform Remote State file
 
 When many developers are working together on the same state file, it's very difficult to use a local state file.
 
@@ -234,7 +238,7 @@ Error: Failed to get existing workspaces: S3 bucket "tfstate-bucket-tka-19" does
 
 [![My image alt description](/blog/assets/images/posts-img/terraform/07.jpg)](/blog/assets/images/posts-img/terraform/07_.jpg)
 
-### A.1.4 Terraform Local State file
+#### A.1.4 Terraform Local State file
 
 If multiple developers applying concurrently, it can create inconsistent state file
 
@@ -259,7 +263,7 @@ cat <<EOF > main.tf
 EOF
 ````
 
-### A.1.5 Terraform Variables And tfvars
+#### A.1.5 Terraform Variables And tfvars
 
 In programmation, variables gives better maintainability and code reusability.
 
@@ -281,7 +285,7 @@ cat <<EOF > providers.tf
 EOF
 ````
 
-- Here we have define a variable ``vpc_cidr`` with his default value, type and description. This value can be overwrite at the compilation using ``-var`` 
+- Here we have define a variable ``vpc_cidr`` with his default value, type and description. This value can be overwrite at the compilation using ``-var`` command line.
 
 - Now we need to change ``providers.tf`` a lite bit.
 
@@ -293,5 +297,88 @@ Note:
 
 - You can use command line extension ``-auto-complete`` to avoid the prompt when using terraform apply.
 - To pass variables when using ``terraform apply``, use the command line ``-var "vpc_cidr=10.30.0.0/16"``
-- When you have more than one variable, keep those value inside a file and pase the reference to that file using the comand line ``-var-file locatio_of_the_file``
+- When you have more than one variable, keep those value inside a file and pase the reference to that file using the command line ``-var-file locatio_of_the_file``
 - Whatever the name of the file you use, it is mandatory to have ``.tfvars`` as a file's extension.
+
+### A.2 Terraform Workspaces
+
+Maintaining multiple environments is pretty handy. For developers we need too have **Dev**, **Uat** and **Prod** environments who have two different statements.
+
+Terraform by default maintain one workspace and created when initializing our project.
+
+- Use ``terraform workspace list`` to list all workspaces
+
+- Use ``terraform workspace new dev`` to create a new Dev workspace.
+
+> Terraform maintain separate state file four all environment.
+
+- Use ``terraform workspace select dev`` to navigate between workspace.
+
+When creating these workspaces,
+
+> Terraform will create **as many folders in the bucket as environments** you've decided to create
+
+[![My image alt description](/blog/assets/images/posts-img/terraform/11.jpg)](/blog/assets/images/posts-img/terraform/11.jpg)
+
+Resource ``aws_vpc`` has a **key value Environment which is Dev**, we can change it to make our script much more dynamic. So instead of:
+
+````bash
+Environment = "Dev"                     # we'll have 
+Environment = "${terraform.workspace}$
+````
+
+#### A.2.1 Terraform Loops
+
+You can use loops for example **when you want to create multiple same instance**, the only thing you have to do is **to mention the variable count inside your ressource**.
+
+````bash
+resource "aws_vpc" "my_vpc" {
+  count             = 3
+  cidr_block        = "${var.vpc_cidr}"
+  instance_tenancy  = "default"
+
+  tags              = {
+    Name            = "OlianaVpc"
+    Environment     = "${terraform.workspace}"
+    Location        = "Paris - France"
+  }
+}
+````
+
+#### A.7 Terraform Conditions
+
+In Terraform, we can create certains ressources conditionally i.e create a ressource in dev but not in production.
+For example:
+
+- We want to create 1 VPC in Prod and nothing in Dev. We can use this condition inside our vpc ressource.
+
+````bash
+count = "${terraform.workspace == "dev"? 0, 1}"
+```` 
+
+#### A.2.2 Terraform Locals
+
+If we have an expression with is repeatedly use in the code, we can declare them as part of the local variables and refer them in the code. So in the future, if you want to change the value, you don't have to change to value in the code but only where it's has been declared.
+
+For this, let's create a separate file call ``locals.tf``
+
+````bash
+locals {
+  vpc_name = "${terraform.workspace == "dev"? "Oliana-dev", "Oliana-prod"}"
+}
+
+resource "aws_vpc" "my_vpc" {
+  count             = 3
+  cidr_block        = "${var.vpc_cidr}"
+  instance_tenancy  = "default"
+
+  tags              = {
+    Name            = "${local.vpc_name}"
+    Environment     = "${terraform.workspace}"
+    Location        = "Paris - France"
+  }
+}
+````
+
+**Note**: 
+> Local values are created by a ``locals block`` (plural), **but you reference them as attributes on an object named local** (singular). Make sure to leave off the "s" when referencing a local value!
