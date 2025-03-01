@@ -297,7 +297,7 @@ Note:
 
 - You can use command line extension ``-auto-complete`` to avoid the prompt when using terraform apply.
 - To pass variables when using ``terraform apply``, use the command line ``-var "vpc_cidr=10.30.0.0/16"``
-- When you have more than one variable, keep those value inside a file and pase the reference to that file using the command line ``-var-file locatio_of_the_file``
+- When you have more than one variable, keep those value inside a file and pase the reference to that file using the command line ``-var-file location_of_the_file``
 - Whatever the name of the file you use, it is mandatory to have ``.tfvars`` as a file's extension.
 
 ### A.2 Terraform Workspaces
@@ -378,7 +378,8 @@ resource "aws_vpc" "my_vpc" {
     Location        = "Paris - France"
   }
 }
+
 ````
 
-**Note**: 
+**Note**:
 > Local values are created by a ``locals block`` (plural), **but you reference them as attributes on an object named local** (singular). Make sure to leave off the "s" when referencing a local value!
