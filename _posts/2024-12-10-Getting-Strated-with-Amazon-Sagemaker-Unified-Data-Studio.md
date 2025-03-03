@@ -74,6 +74,9 @@ Let's start from scratch an create one unified studio domain.
     c. **Blueprints**: You can leverage some blueprints( AmazonBedrockGenerativeAI blueprints, LakehouseCatalog blueprints; etc...).
 
     d. **Projects profiles**: As explained earlier, three projects profiles.
+        - **Data analytics and AI/ML model development**: Best suit for builders.
+        - **Generative AI**: Best Suit for business as well as data scientists who want to play with models.
+        - **SQL analytics**: Best suit for business.
 
     e. **Amazon Bedrock models**: You can request access to some foundations models as soon as those models are part of Amazon Bedrock catalog models.
 
