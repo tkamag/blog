@@ -60,15 +60,15 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
     <td>Coding agents and integrated development environment (IDE) integration, multi-file code editing, terminal automation and DevOps, long-chain tool orchestration, and agentic software development.</td>
   </tr>
 <tr>
-    <td rowspan="2">Google</td>
-    <td><a href="https://huggingface.co/google/gemma-3-4b-it" target="_blank">Gemma 3 4B</a></td>
-    <td>Efficient text and image model that runs locally on laptops. Multilingual support for on-device AI applications.</td>
-    <td>On-device AI for mobile and edge applications, privacy-sensitive local inference, multilingual chat assistants, image captioning and description, and lightweight content generation.</td>
+    <td rowspan="2">NVIDIA</td>
+    <td><a href="https://huggingface.co/google/gemma-3-4b-it" target="_blank">NVIDIA Nemotron Nano 2 9B</a></td>
+    <td>High efficiency LLM with hybrid transformer Mamba design, excelling in reasoning and agentic tasks.</td>
+    <td>Reasoning, tool calling, math, coding, and instruction following.</td>
   </tr>
   <tr>
-    <td><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank">Gemma 3 12B</a></td>
-    <td>Balanced text and image model for workstations. Multi-language understanding with local deployment for privacy-sensitive applications.</td>
-    <td>Workstation-based AI applications; local deployment for enterprises; multilingual document processing, image analysis and Q&A; and privacy-compliant AI assistants.</td>
+    <td><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank">NVIDIA Nemotron Nano 2 VL 12B</a></td>
+    <td>BAdvanced multimodal reasoning model for video understanding and document intelligence, powering Retrieval-Augmented Generation (RAG) and multimodal agentic applications.</td>
+    <td>Multi-image and video understanding, visual Q&A, and summarization.</td>
   </tr>
 </table>
 
