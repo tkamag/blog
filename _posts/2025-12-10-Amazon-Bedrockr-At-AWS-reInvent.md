@@ -87,6 +87,29 @@ These four Mistral AI models are now available first on Amazon Bedrock, each opt
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/05.png)](/blog/assets/images/posts-img/reInvent_2025/05.png)
 
-Amazon Bedrock reinforcement fine-tuning enables you to customize foundation models using human feedback, aligning them closely with your business objectives and brand voice. This RLHF-based approach goes beyond simple prompt engineering, allowing models to better understand your requirements and consistently generate more accurate and relevant outputs.
+**Amazon Bedrock reinforcement fine-tuning** enables you to customize foundation models using human feedback, aligning them closely with your business objectives and brand voice. This RLHF-based approach goes beyond simple prompt engineering, allowing models to better understand your requirements and consistently generate more accurate and relevant outputs.
 
 This guide is designed for ML engineers, data scientists, and cloud architects looking to enhance their AI applications through Amazon Bedrock model optimization. It explains how reinforcement learning–based fine-tuning works, why it delivers superior results compared to standard techniques, and how to apply it effectively in production environments.
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/06.png)](/blog/assets/images/posts-img/reInvent_2025/06.png)
+
+> So what is **reinforcement fine tuning**? It's a technique that enables you to customize models with the last need of data.
+
+> So compared to supervised fine tuning, right, **you would have to come up with a large data set of label data like telling the model, this is the good responses that I want**. And you would need thousands, maybe dozens of thousands of good responses to get the model, you know, prepared to handle these kind of answers.
+
+With **reinforcement fine tuning**, what you do is that you do a little more work in the data
+preparation, but you need a lot less data. You give them a representative set of
+data as an input and you let them know what good looks like, right? With a responses scoring strategy. So with that approach, you can customize the model, achieve greater accuracy with a lot of less data volume to be input to the model.
+
+### A.1.4 Amazon Bodrock Inference tiers
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/07.png)](/blog/assets/images/posts-img/reInvent_2025/07.png)
+
+The new Flex tier offers cost-effective pricing for non-time-critical applications like model evaluations and content summarization while the Priority tier provides premium performance and preferential processing for mission-critical applications. For most models that support Priority Tier, customers can realize up to 25% better output tokens per second (OTPS) latency compared to standard tier. These join the existing Standard tier for everyday AI applications with reliable performance.
+
+### A.1.4 Amazon Bodrock knowledge base multimodel Retreival
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/08.png)](/blog/assets/images/posts-img/reInvent_2025/08.png)
+
+Now you can have in the knowledge base data indexation, not only by the text search, but also by image and video similarity and all the similarity, **simplifying how you store and how you search
+data that you're going to use to augment your application.**
