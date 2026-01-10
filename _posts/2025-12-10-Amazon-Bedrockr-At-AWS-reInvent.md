@@ -19,11 +19,37 @@ In response to the rapid rise of **Generative AI** and machine learning workload
 
 ## A.1
 
-![Image](https://github.com/user-attachments/assets/1bf57255-16ce-40e3-9e2c-cc51975bd7f2)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/02.png)](/blog/assets/images/posts-img/reInvent_2025/02_.png)
 
-The first one that was [SageMaker Unified Studio](https://aws.amazon.com/sagemaker/unified-studio/). It's a new service that provides an integrated experience for data preparation, model building, and generative AI application development that unifies your tools across notebooks, query editors, and services like [GLUE](https://aws.amazon.com/glue/), [EMR](https://aws.amazon.com/emr/), [Athena](https://aws.amazon.com/athena/), [Redshift](https://aws.amazon.com/redshift/), SageMaker, [BedRock](https://aws.amazon.com/bedrock/), [Managed Streaming Kafka](https://aws.amazon.com/msk/), [Kinesis](https://aws.amazon.com/kinesis/), [OpenSearch](https://aws.amazon.com/opensearch-service/), and it integrates seamlessly with our AWS data processing, using the actual existing services as part of the experience.
 
-Customers today who are familiar with things like SQL Query Editor in Redshift or Athena, the Jupyter Notebook Experience in GLUE Studio, or the Experience in EMR Studio, or the existing SageMaker Studio, all of this tools is now available in the [Amazon SageMaker Unified Studio platform](https://aws.amazon.com/sagemaker/unified-studio/) so that **you can have one consistent notebook or query editor experience spanning across all of these different services with a single central UI.**
+At ReInvent 2025, Amazon announced the general availability of an additional 18 fully managed open weight models in Amazon Bedrock from new providers like Google, MiniMax AI, Mistral AI, Moonshot AI, NVIDIA, OpenAI, and Qwen, including the new Mistral Large 3 and Ministral 3 3B, 8B, and 14B models.
+
+<table>
+  <tr>
+    <th>Model provider</th>
+    <th colspan="1">Model name</th>
+    <th>Description</th>
+    <th>Use cases</th>
+  </tr>
+  <tr>
+    <td rowspan="3">Google</td>
+    <td><a href="https://huggingface.co/google/gemma-3-4b-it" target="_blank">Gemma 3 4B</a></td>
+    <td>Efficient text and image model that runs locally on laptops. Multilingual support for on-device AI applications.</td>
+    <td>On-device AI for mobile and edge applications, privacy-sensitive local inference, multilingual chat assistants, image captioning and description, and lightweight content generation.</td>
+  </tr>
+  <tr>
+    <td><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank">Gemma 3 12B</a></td>
+    <td>Balanced text and image model for workstations. Multi-language understanding with local deployment for privacy-sensitive applications.</td>
+    <td>Workstation-based AI applications; local deployment for enterprises; multilingual document processing, image analysis and Q&A; and privacy-compliant AI assistants.</td>
+  </tr>
+    <tr>
+    <td><a href="https://huggingface.co/collections/google/gemma-3-release" target="_blank">Gemma 3 27B</a></td>
+    <td>Powerful text and image model for enterprise applications. Multi-language support with local deployment for privacy and control..</td>
+    <td>Enterprise local deployment, high-performance multimodal applications, advanced image understanding, multilingual customer service, and data-sensitive AI workflows..</td>
+  </tr>
+</table>
+
+
 
 ## A.2
 
