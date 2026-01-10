@@ -26,7 +26,7 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
 
 a- **More open weight model options**: You can use these open weight models for a wide range of use cases across industries:
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/03_.png)](/blog/assets/images/posts-img/reInvent_2025/03.png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/03.png)](/blog/assets/images/posts-img/reInvent_2025/03.png)
 
 <table>
   <tr>
@@ -78,7 +78,7 @@ a- **More open weight model options**: You can use these open weight models for 
 
 b. **New Mistral AI models**: These four Mistral AI models are now available first on Amazon Bedrock, each optimized for different performance and cost requirements 
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04_.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
 
 ## A.2
 
