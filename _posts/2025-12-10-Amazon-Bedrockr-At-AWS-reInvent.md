@@ -90,6 +90,3 @@ These four Mistral AI models are now available first on Amazon Bedrock, each opt
 Amazon Bedrock reinforcement fine-tuning enables you to customize foundation models using human feedback, aligning them closely with your business objectives and brand voice. This RLHF-based approach goes beyond simple prompt engineering, allowing models to better understand your requirements and consistently generate more accurate and relevant outputs.
 
 This guide is designed for ML engineers, data scientists, and cloud architects looking to enhance their AI applications through Amazon Bedrock model optimization. It explains how reinforcement learning–based fine-tuning works, why it delivers superior results compared to standard techniques, and how to apply it effectively in production environments.
-
-We’ll explore the key concepts behind implementing RLHF with Amazon Bedrock and highlight the tangible training benefits that make this approach a valuable investment. In addition, you’ll gain practical insights into the underlying technical architecture and proven deployment strategies to ensure smooth and reliable production rollouts.
-
