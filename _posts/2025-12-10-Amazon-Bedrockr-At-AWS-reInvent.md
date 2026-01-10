@@ -83,11 +83,13 @@ These four Mistral AI models are now available first on Amazon Bedrock, each opt
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
 
-## A.2
+### A.1.3 Reinforcement Fine-tunning
 
-![Image](https://github.com/user-attachments/assets/b4286695-dea3-4b6b-97cd-7e6aeb14a682)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/05.png)](/blog/assets/images/posts-img/reInvent_2025/05.png)
 
-Next, we have [Amazon SageMaker Lakehouse](https://aws.amazon.com/sagemaker/lakehouse/) announcement **that unifies your data across multiple sources for your analytics and AI initiatives with a single copy of data, regardless of how your data is stored**.
+Amazon Bedrock reinforcement fine-tuning enables you to customize foundation models using human feedback, aligning them closely with your business objectives and brand voice. This RLHF-based approach goes beyond simple prompt engineering, allowing models to better understand your requirements and consistently generate more accurate and relevant outputs.
 
-Data in S3 and Redshift is unified through one copy of data, functionally combining all of your transactional, warehouse, and data-like data into one system. The lakehouse is built on AWS Glue Data Catalog and Lake Formation. Data from the operational database, such as Amazon Aurora, RDS, and DynamoDB, are also available in the lakehouse. The zero ETL integrations with third-party SaaS applications, such as Salesforce, SAP, and ServiceNow, are available in the lakehouse once the zero ETL connections are sent up.
+This guide is designed for ML engineers, data scientists, and cloud architects looking to enhance their AI applications through Amazon Bedrock model optimization. It explains how reinforcement learning–based fine-tuning works, why it delivers superior results compared to standard techniques, and how to apply it effectively in production environments.
+
+We’ll explore the key concepts behind implementing RLHF with Amazon Bedrock and highlight the tangible training benefits that make this approach a valuable investment. In addition, you’ll gain practical insights into the underlying technical architecture and proven deployment strategies to ensure smooth and reliable production rollouts.
 
