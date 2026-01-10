@@ -47,6 +47,32 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
     <td>Powerful text and image model for enterprise applications. Multi-language support with local deployment for privacy and control..</td>
     <td>Enterprise local deployment, high-performance multimodal applications, advanced image understanding, multilingual customer service, and data-sensitive AI workflows..</td>
   </tr>
+    <tr>
+    <td>Moonshot AI</td>
+    <td><a href="https://huggingface.co/moonshotai/Kimi-K2-Thinking" target="_blank">	Kimi K2 Thinking</a></td>
+    <td>Deep reasoning model that thinks while using tools. Handles research, coding and complex workflows requiring hundreds of sequential actions..</td>
+    <td>Complex coding projects requiring planning, multistep workflows, data analysis and computation, and long-form content creation with research.</td>
+  </tr>
+  
+  <tr>
+    <td>MiniMax AI</td>
+    <td><a href="https://huggingface.co/MiniMaxAI/MiniMax-M2" target="_blank">		MiniMax M2</a></td>
+    <td>Built for coding agents and automation. Excels at multi-file edits, terminal operations and executing long tool-calling chains efficiently.</td>
+    <td>Coding agents and integrated development environment (IDE) integration, multi-file code editing, terminal automation and DevOps, long-chain tool orchestration, and agentic software development.</td>
+  </tr>
+  
+  <td rowspan="2">NVIDIA</td>
+    <td><a href="https://huggingface.co/openai/gpt-oss-safeguard-20b" target="_blank">gpt-oss-safeguard-20b</a></td>
+    <td>Content safety model that applies your custom policies. Classifies harmful content with explanations for trust and safety workflows.</td>
+    <td>Content moderation and safety classification, custom policy enforcement, user-generated content filtering, trust and safety workflows, and automated content triage..</td>
+  </tr>
+  <tr>
+    <td><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank">gpt-oss-safeguard-120b/a></td>
+    <td>Larger content safety model for complex moderation. Applies custom policies with detailed reasoning for enterprise trust and safety teams.</td>
+    <td>Enterprise content moderation at scale, complex policy interpretation, multilayered safety classification, regulatory compliance checking, high-stakes content review.</td>
+  </tr>
+    
+  
 </table>
 
 
