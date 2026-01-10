@@ -53,7 +53,12 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
     <td>Deep reasoning model that thinks while using tools. Handles research, coding and complex workflows requiring hundreds of sequential actions..</td>
     <td>Complex coding projects requiring planning, multistep workflows, data analysis and computation, and long-form content creation with research.</td>
   </tr>
-
+  <tr>
+    <td>MiniMax AI</td>
+    <td><a href="https://huggingface.co/MiniMaxAI/MiniMax-M2" target="_blank">	MiniMax M2</a></td>
+    <td>Built for coding agents and automation. Excels at multi-file edits, terminal operations and executing long tool-calling chains efficiently.</td>
+    <td>Coding agents and integrated development environment (IDE) integration, multi-file code editing, terminal automation and DevOps, long-chain tool orchestration, and agentic software development.</td>
+  </tr>
 </table>
 
 
