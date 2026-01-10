@@ -116,6 +116,8 @@ data that you're going to use to augment your application.**
 
 ## A.2 Amazon Bedrock Agentcore
 
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/15.png)](/blog/assets/images/posts-img/reInvent_2025/15.png)
+
 **Agents** are autonomous softwares that leverage AI to reason, plan and complete tasks on behalf of human systems.
 
 The key value proposition of Agent Core is its support for any model and any agent framework. Whether you’re using Anthropic, OpenAI, Amazon Nova, or other foundation models, Agent Core works seamlessly with them. It also integrates with popular agent frameworks such as LangChain, CrewAI, and Amazon’s own Strands Agents. This broad compatibility makes Agent Core an ideal platform for building and scaling agent-based capabilities.
@@ -129,8 +131,6 @@ The key value proposition of Agent Core is its support for any model and any age
 For exammple, if you are a financial services firm, you can say agent cannot access customer banking data outside of business hours or from non-approved geographic regions. The system automatically converts this into enforceable policies.
 
 **How does it work??**
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/15.png)](/blog/assets/images/posts-img/reInvent_2025/15.png)
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12.png)](/blog/assets/images/posts-img/reInvent_2025/12.png)
 
