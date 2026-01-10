@@ -21,10 +21,11 @@ In response to the rapid rise of **Generative AI** and machine learning workload
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/02.png)](/blog/assets/images/posts-img/reInvent_2025/02.png)
 
-
 At ReInvent 2025, Amazon announced the general availability of an additional 18 fully managed open weight models in Amazon Bedrock from new providers like Google, MiniMax AI, Mistral AI, Moonshot AI, NVIDIA, OpenAI, and Qwen, including the new Mistral Large 3 and Ministral 3 3B, 8B, and 14B models.
 
-a- **More open weight model options**: You can use these open weight models for a wide range of use cases across industries:
+### A.1.1 **More open weight model options**:
+
+You can use these open weight models for a wide range of use cases across industries:
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/03.png)](/blog/assets/images/posts-img/reInvent_2025/03.png)
 
@@ -76,7 +77,9 @@ a- **More open weight model options**: You can use these open weight models for 
   </tr>
 </table>
 
-b. **New Mistral AI models**: These four Mistral AI models are now available first on Amazon Bedrock, each optimized for different performance and cost requirements 
+### A.1.2 **New Mistral AI models**
+
+These four Mistral AI models are now available first on Amazon Bedrock, each optimized for different performance and cost requirements.
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
 
