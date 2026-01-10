@@ -1,8 +1,8 @@
 ---
 layout: article
 title: "Getting Started with Terraform on AWS Part1"
-date: 2024-06-15
-modify_date: 2024-06-15
+date: 2025-06-14
+modify_date: 2025-06-15
 excerpt: "Getting Started with Terraform on AWS Part1"
 tags: [AWS, Terraform]
 mathjax: false
