@@ -12,7 +12,7 @@ key: aws-sagemaker-bedrock-opensearch-tips
 
 ***
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/01.png)](/blog/assets/images/posts-img/reInvent_2025/01.png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/01_.png)](/blog/assets/images/posts-img/reInvent_2025/01.png)
 
 
 In response to the rapid rise of **Generative AI** and machine learning workloads, AWS introduced numerous enhancements to Amazon Bedrock at AWS re:Invent 2025. We will examine these announcements in detail and provide clarity on their key aspects.
