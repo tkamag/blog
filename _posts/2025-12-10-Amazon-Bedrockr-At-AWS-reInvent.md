@@ -155,7 +155,7 @@ It provides the continuous automated quality monitoring with built-in evaluators
 
 ### A.2.3  Episodic Functionality of AgentCore Memory
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/13.png)](/blog/assets/images/posts-img/reInvent_2025/13.png)
 
 > **Episodic memory** enables agents to recognize patterns and learn from experience.
 
@@ -163,6 +163,6 @@ It provides the continuous automated quality monitoring with built-in evaluators
 
 ### A.2.4  Bi-directional streaming in AgentCore Runtime.
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/14.png)](/blog/assets/images/posts-img/reInvent_2025/14.png)
 
 > **Bi-directional streaming memory** enables rfeal-time conversational agents with seamless interruption handling.
