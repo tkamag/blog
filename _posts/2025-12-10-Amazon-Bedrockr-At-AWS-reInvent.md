@@ -4,10 +4,10 @@ title: "Amazon Bedrock at AWS re:invent 2025"
 date: 2025-12-10
 modify_date: 2025-12-10
 excerpt: "Amazon Bedrock new features"
-tags: [AWS, Sagemaker, Bedrock]
+tags: [AWS, Sagemaker, Bedrock, knowledgebase, Agentcore]
 mathjax: false
 mathjax_autoNumber: false
-key: aws-sagemaker-bedrock-opensearch-tips
+key: aws-sagemaker-bedrock-opensearch-tips-knowledgebase-Agentcore
 ---
 
 ***
@@ -101,15 +101,54 @@ With **reinforcement fine tuning**, what you do is that you do a little more wor
 preparation, but you need a lot less data. You give them a representative set of
 data as an input and you let them know what good looks like, right? With a responses scoring strategy. So with that approach, you can customize the model, achieve greater accuracy with a lot of less data volume to be input to the model.
 
-### A.1.4 Amazon Bodrock Inference tiers
+### A.1.4 Amazon Bedrock Inference tiers
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/07.png)](/blog/assets/images/posts-img/reInvent_2025/07.png)
 
 The new Flex tier offers cost-effective pricing for non-time-critical applications like model evaluations and content summarization while the Priority tier provides premium performance and preferential processing for mission-critical applications. For most models that support Priority Tier, customers can realize up to 25% better output tokens per second (OTPS) latency compared to standard tier. These join the existing Standard tier for everyday AI applications with reliable performance.
 
-### A.1.4 Amazon Bodrock knowledge base multimodel Retreival
+### A.1.5 Amazon Bedrock knowledge base multimodel Retreival
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/08.png)](/blog/assets/images/posts-img/reInvent_2025/08.png)
 
 Now you can have in the knowledge base data indexation, not only by the text search, but also by image and video similarity and all the similarity, **simplifying how you store and how you search
 data that you're going to use to augment your application.**
+
+## A.2 Amazon Bedrock Agentcore
+
+**Agents** are autonomous softwares that leverage AI to reason, plan and complete tasks on behalf of human systems.
+
+The key value proposition of Agent Core is its support for any model and any agent framework. Whether you’re using Anthropic, OpenAI, Amazon Nova, or other foundation models, Agent Core works seamlessly with them. It also integrates with popular agent frameworks such as LangChain, CrewAI, and Amazon’s own Strands Agents. This broad compatibility makes Agent Core an ideal platform for building and scaling agent-based capabilities.
+
+### A.2.1  Amazon Bedrock Agentcore Policy
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/11.png)](/blog/assets/images/posts-img/reInvent_2025/11.png)
+
+> It's a natural language policy engine that automatically converts your policies that you've written in natural language (in plain English, french, etc ....) into code.
+
+For exammple, if you are a financial services firm, you can say agent cannot access customer banking data outside of business hours or from non-approved geographic regions. The system automatically converts this into enforceable policies.
+
+**How does it work??**
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/15.png)](/blog/assets/images/posts-img/reInvent_2025/15.png)
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12.png)](/blog/assets/images/posts-img/reInvent_2025/12.png)
+
+So **agent core policy is tied to the gateway**, which is the gateway to access all the different APIs and resources. Every single request flows through gateway. 
+
+As you can see here, the policy intercepts it to evaluate against the defined rules that you have. 
+
+You can run it in two modes.
+
+* One is the log only mode for auditing and understanding agent behavior patterns 
+* Enforcement mode to actively block unauthorized actions. 
+
+This gives you complete control over which tools agents can access, what data they can interact with and what actions they permitted to perform.
+
+### A.2.2  Amazon Bedrock Agentcore Evaluations
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(1).png)](/blog/assets/images/posts-img/reInvent_2025/12(1).png)
+
+It provides the continuous automated quality monitoring with built-in evaluators. We have about 13 built-in evaluators that cover the full spectrum of agent performance.
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
