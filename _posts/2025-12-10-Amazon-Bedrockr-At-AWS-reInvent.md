@@ -24,8 +24,6 @@ In response to the rapid rise of **Generative AI** and machine learning workload
 
 At ReInvent 2025, Amazon announced the general availability of an additional 18 fully managed open weight models in Amazon Bedrock from new providers like Google, MiniMax AI, Mistral AI, Moonshot AI, NVIDIA, OpenAI, and Qwen, including the new Mistral Large 3 and Ministral 3 3B, 8B, and 14B models.
 
-
-
 <table>
   <tr>
     <th>Model provider</th>
@@ -57,7 +55,7 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
   </tr>
   <tr>
     <td>MiniMax AI</td>
-    <td><a href="https://huggingface.co/MiniMaxAI/MiniMax-M2" target="_blank">	MiniMax M2</a></td>
+    <td><a href="https://huggingface.co/MiniMaxAI/MiniMax-M2" target="_blank">MiniMax M2</a></td>
     <td>Built for coding agents and automation. Excels at multi-file edits, terminal operations and executing long tool-calling chains efficiently.</td>
     <td>Coding agents and integrated development environment (IDE) integration, multi-file code editing, terminal automation and DevOps, long-chain tool orchestration, and agentic software development.</td>
   </tr>
@@ -74,11 +72,14 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
   </tr>
 </table>
 
-
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/03_.png)](/blog/assets/images/posts-img/reInvent_2025/03.png)
 
-
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04_.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
+
+<div align="center">
+<img src="/blog/assets/images/posts-img/reInvent_2025/04_.png" alt="Centered Image" width="400">
+</div>
+
 ## A.2
 
 ![Image](https://github.com/user-attachments/assets/b4286695-dea3-4b6b-97cd-7e6aeb14a682)
