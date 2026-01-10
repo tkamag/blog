@@ -47,6 +47,12 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
     <td>Powerful text and image model for enterprise applications. Multi-language support with local deployment for privacy and control..</td>
     <td>Enterprise local deployment, high-performance multimodal applications, advanced image understanding, multilingual customer service, and data-sensitive AI workflows..</td>
   </tr>
+  <tr>
+    <td>Moonshot AI</td>
+    <td><a href="https://huggingface.co/moonshotai/Kimi-K2-Thinking" target="_blank">Kimi K2 Thinking</a></td>
+    <td>Deep reasoning model that thinks while using tools. Handles research, coding and complex workflows requiring hundreds of sequential actions..</td>
+    <td>Complex coding projects requiring planning, multistep workflows, data analysis and computation, and long-form content creation with research.</td>
+  </tr>
 
 </table>
 
