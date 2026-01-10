@@ -152,3 +152,17 @@ This gives you complete control over which tools agents can access, what data th
 It provides the continuous automated quality monitoring with built-in evaluators. We have about 13 built-in evaluators that cover the full spectrum of agent performance.
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
+
+### A.2.3  Episodic Functionality of AgentCore Memory
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
+
+> **Episodic memory** enables agents to recognize patterns and learn from experience.
+
+> Instead of storing every single raw event, it identifies important moments, summarizes them into compact records and organizes them as episodes.
+
+### A.2.4  Bi-directional streaming in AgentCore Runtime.
+
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
+
+> **Bi-directional streaming memory** enables rfeal-time conversational agents with seamless interruption handling.
