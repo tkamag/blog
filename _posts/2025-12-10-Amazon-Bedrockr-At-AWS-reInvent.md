@@ -77,7 +77,7 @@ At ReInvent 2025, Amazon announced the general availability of an additional 18 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04_.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
 
 <div align="center">
-<img src="/blog/assets/images/posts-img/reInvent_2025/04_.png" alt="Centered Image" width="400">
+<img src="/blog/assets/images/posts-img/reInvent_2025/04_.png" alt="Centered Image" width="600">
 </div>
 
 ## A.2
