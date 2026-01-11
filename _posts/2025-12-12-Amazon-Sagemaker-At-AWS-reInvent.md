@@ -72,7 +72,7 @@ To get started, visit the [Amazon SageMaker HyperPod](https://aws.amazon.com/sag
 
 ### A.4 Elastic trainig for HyperPod
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/28.png)](/blog/assets/images/posts-img/reInvent_2025/28.png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/29.png)](/blog/assets/images/posts-img/reInvent_2025/29.png)
 
 Elastic training is a new [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) capability that automatically scales training jobs based on compute resource availability and workload priority.
 > Elastic training jobs can start with minimum compute resources required for model training and dynamically scale up or down through automatic checkpointing and resumption across different node configurations (world size).
