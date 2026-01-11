@@ -1,39 +1,29 @@
 ---
 layout: article
-title: "Amazon Bedrock at AWS re:invent 2025"
-date: 2025-12-10
-modify_date: 2025-12-10
-excerpt: "Amazon Bedrock new features"
-tags: [AWS, Sagemaker, Bedrock, knowledgebase, Agentcore]
+title: "Amazon Sagemaker at AWS re:invent 2025"
+date: 2025-12-11
+modify_date: 2025-12-12
+excerpt: "Amazon Sagemaker new features"
+tags: [AWS, Sagemaker, Bedrock, Machine Learning]
 mathjax: false
 mathjax_autoNumber: false
-key: aws-sagemaker-bedrock-opensearch-tips-knowledgebase-Agentcore
+key: aws-sagemaker-bedrock-machineLearning-hyperpod
 ---
-- [A.Amazon Bedrock](#aamazon-bedrock)
-  - [A.1 More open weight model options](#a1-more-open-weight-model-options)
-  - [A.2 New Mistral AI models](#a2-new-mistral-ai-models)
-  - [A.3 Reinforcement Fine-tunning](#a3-reinforcement-fine-tunning)
-  - [A.4 Amazon Bedrock Inference tiers](#a4-amazon-bedrock-inference-tiers)
-  - [A.5 Amazon Bedrock knowledge base multimodel Retreival](#a5-amazon-bedrock-knowledge-base-multimodel-retreival)
-  - [A.6 Amazon Bedrock Agentcore](#a6-amazon-bedrock-agentcore)
-  - [A.7  Amazon Bedrock Agentcore Policy](#a7--amazon-bedrock-agentcore-policy)
-  - [A.8  Amazon Bedrock Agentcore Evaluations](#a8--amazon-bedrock-agentcore-evaluations)
-  - [A.9  Episodic Functionality of AgentCore Memory](#a9--episodic-functionality-of-agentcore-memory)
-  - [A.10  Bi-directional streaming in AgentCore Runtime](#a10--bi-directional-streaming-in-agentcore-runtime)
 
-
+***
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/01.png)](/blog/assets/images/posts-img/reInvent_2025/01.png)
 
+
 In response to the rapid rise of **Generative AI** and machine learning workloads, AWS introduced numerous enhancements to Amazon Bedrock at AWS re:Invent 2025. We will examine these announcements in detail and provide clarity on their key aspects.
 
-## A.Amazon Bedrock
+## A.1
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/02.png)](/blog/assets/images/posts-img/reInvent_2025/02.png)
 
 At ReInvent 2025, Amazon announced the general availability of an additional 18 fully managed open weight models in Amazon Bedrock from new providers like Google, MiniMax AI, Mistral AI, Moonshot AI, NVIDIA, OpenAI, and Qwen, including the new Mistral Large 3 and Ministral 3 3B, 8B, and 14B models.
 
-### A.1 More open weight model options
+### A.1.1 **More open weight model options**:
 
 You can use these open weight models for a wide range of use cases across industries:
 
@@ -87,13 +77,13 @@ You can use these open weight models for a wide range of use cases across indust
   </tr>
 </table>
 
-### A.2 New Mistral AI models
+### A.1.2 **New Mistral AI models**
 
 These four Mistral AI models are now available first on Amazon Bedrock, each optimized for different performance and cost requirements.
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
 
-### A.3 Reinforcement Fine-tunning
+### A.1.3 Reinforcement Fine-tunning
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/05.png)](/blog/assets/images/posts-img/reInvent_2025/05.png)
 
@@ -111,20 +101,20 @@ With **reinforcement fine tuning**, what you do is that you do a little more wor
 preparation, but you need a lot less data. You give them a representative set of
 data as an input and you let them know what good looks like, right? With a responses scoring strategy. So with that approach, you can customize the model, achieve greater accuracy with a lot of less data volume to be input to the model.
 
-### A.4 Amazon Bedrock Inference tiers
+### A.1.4 Amazon Bedrock Inference tiers
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/07.png)](/blog/assets/images/posts-img/reInvent_2025/07.png)
 
 The new Flex tier offers cost-effective pricing for non-time-critical applications like model evaluations and content summarization while the Priority tier provides premium performance and preferential processing for mission-critical applications. For most models that support Priority Tier, customers can realize up to 25% better output tokens per second (OTPS) latency compared to standard tier. These join the existing Standard tier for everyday AI applications with reliable performance.
 
-### A.5 Amazon Bedrock knowledge base multimodel Retreival
+### A.1.5 Amazon Bedrock knowledge base multimodel Retreival
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/08.png)](/blog/assets/images/posts-img/reInvent_2025/08.png)
 
 Now you can have in the knowledge base data indexation, not only by the text search, but also by image and video similarity and all the similarity, **simplifying how you store and how you search
 data that you're going to use to augment your application.**
 
-## A.6 Amazon Bedrock Agentcore
+## A.2 Amazon Bedrock Agentcore
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/15.png)](/blog/assets/images/posts-img/reInvent_2025/15.png)
 
@@ -132,7 +122,7 @@ data that you're going to use to augment your application.**
 
 The key value proposition of Agent Core is its support for any model and any agent framework. Whether you’re using Anthropic, OpenAI, Amazon Nova, or other foundation models, Agent Core works seamlessly with them. It also integrates with popular agent frameworks such as LangChain, CrewAI, and Amazon’s own Strands Agents. This broad compatibility makes Agent Core an ideal platform for building and scaling agent-based capabilities.
 
-### A.7  Amazon Bedrock Agentcore Policy
+### A.2.1  Amazon Bedrock Agentcore Policy
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/11.png)](/blog/assets/images/posts-img/reInvent_2025/11.png)
 
@@ -155,7 +145,7 @@ You can run it in two modes.
 
 This gives you complete control over which tools agents can access, what data they can interact with and what actions they permitted to perform.
 
-### A.8  Amazon Bedrock Agentcore Evaluations
+### A.2.2  Amazon Bedrock Agentcore Evaluations
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(1).png)](/blog/assets/images/posts-img/reInvent_2025/12(1).png)
 
@@ -163,7 +153,7 @@ It provides the continuous automated quality monitoring with built-in evaluators
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
 
-### A.9  Episodic Functionality of AgentCore Memory
+### A.2.3  Episodic Functionality of AgentCore Memory
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/13.png)](/blog/assets/images/posts-img/reInvent_2025/13.png)
 
@@ -171,7 +161,7 @@ It provides the continuous automated quality monitoring with built-in evaluators
 
 > Instead of storing every single raw event, it identifies important moments, summarizes them into compact records and organizes them as episodes.
 
-### A.10  Bi-directional streaming in AgentCore Runtime
+### A.2.4  Bi-directional streaming in AgentCore Runtime.
 
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/14.png)](/blog/assets/images/posts-img/reInvent_2025/14.png)
 
