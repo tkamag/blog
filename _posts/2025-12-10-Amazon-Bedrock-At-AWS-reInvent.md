@@ -21,8 +21,6 @@ key: aws-sagemaker-bedrock-opensearch-tips-knowledgebase-Agentcore
     - [A.6.3  Episodic Functionality of AgentCore Memory](#a63--episodic-functionality-of-agentcore-memory)
     - [A.6.4  Bi-directional streaming in AgentCore Runtime](#a64--bi-directional-streaming-in-agentcore-runtime)
 
-
-
 [![My image alt description](/blog/assets/images/posts-img/reInvent_2025/01.png)](/blog/assets/images/posts-img/reInvent_2025/01.png)
 
 In response to the rapid rise of **Generative AI** and machine learning workloads, AWS introduced numerous enhancements to Amazon Bedrock at AWS re:Invent 2025. We will examine these announcements in detail and provide clarity on their key aspects.

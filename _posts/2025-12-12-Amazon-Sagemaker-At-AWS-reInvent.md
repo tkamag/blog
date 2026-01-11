@@ -9,160 +9,74 @@ mathjax: false
 mathjax_autoNumber: false
 key: aws-sagemaker-bedrock-machineLearning-hyperpod
 ---
+- [A. Amazon Sagemaker](#aamazon-sagemaker)
+  - [A.1 Sagemaker AI serverless Model Customization](#a1-sagemaker-ai-serverless-model-customization)
+  - [A.2 Sagemaker AI Serverless MLflow](#a2-sagemaker-ai-serverless-mlflow)
+  - [A.3 Sagemaker HyperPod Checkpointless Training](#a3-sagemaker-hyperpod-checkpointless-training)
+  - [A.4 Elastic trainig for HyperPod](#a4-elastic-trainig-for-hyperpod)
 
-***
+## A.Amazon Sagemaker
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/01.png)](/blog/assets/images/posts-img/reInvent_2025/01.png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/27.png)](/blog/assets/images/posts-img/reInvent_2025/27.png)
 
+SageMaker is a fully managed platform for building an ML and AI models and lot of customers interested in using the power of SageMaker to do model refining customization using fine tuning and reinforcement learning.
 
-In response to the rapid rise of **Generative AI** and machine learning workloads, AWS introduced numerous enhancements to Amazon Bedrock at AWS re:Invent 2025. We will examine these announcements in detail and provide clarity on their key aspects.
+Customers, especially with AI agents, are interested in further improving on accuracy latency and cost optimization. So they are willing to invest in model customization starting from, you know, a bigger model and loading with their own data and information to make it task-specific, task-oriented.
 
-## A.1
+### A.1 Sagemaker AI serverless Model Customization
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/02.png)](/blog/assets/images/posts-img/reInvent_2025/02.png)
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/27(1).png)](/blog/assets/images/posts-img/reInvent_2025/27(1).png)
 
-At ReInvent 2025, Amazon announced the general availability of an additional 18 fully managed open weight models in Amazon Bedrock from new providers like Google, MiniMax AI, Mistral AI, Moonshot AI, NVIDIA, OpenAI, and Qwen, including the new Mistral Large 3 and Ministral 3 3B, 8B, and 14B models.
+The new [Sagemaker AI serverless Model Customization](https://aws.amazon.com/sagemaker/ai/model-customization/) capability provides an easy-to-use interface for the latest fine-tuning techniques like reinforcement learning, so you can accelerate the AI model customization process from months to days.
 
-### A.1.1 **More open weight model options**:
+With a few clicks, you can seamlessly select a model and customization technique, and handle model evaluation and deployment—all entirely serverless so you can focus on model tuning rather than managing infrastructure. When you choose serverless customization, SageMaker AI automatically selects and provisions the appropriate compute resources based on the model and data size.
 
-You can use these open weight models for a wide range of use cases across industries:
+Model customization made simple
+Comprehensive capabilities to customize models across the end-to-end workflow.
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/03.png)](/blog/assets/images/posts-img/reInvent_2025/03.png)
+- **Data preparation (in preview)**: If real-world data is limited, you can easily generate synthetic data. If needed, the AI agent in SageMaker AI generates datasets based on data samples and contextual documents in the required format and structure for your selected model customization technique.
 
-<table>
-  <tr>
-    <th>Model provider</th>
-    <th colspan="1">Model name</th>
-    <th>Description</th>
-    <th>Use cases</th>
-  </tr>
-  <tr>
-    <td rowspan="3">Google</td>
-    <td><a href="https://huggingface.co/google/gemma-3-4b-it" target="_blank">Gemma 3 4B</a></td>
-    <td>Efficient text and image model that runs locally on laptops. Multilingual support for on-device AI applications.</td>
-    <td>On-device AI for mobile and edge applications, privacy-sensitive local inference, multilingual chat assistants, image captioning and description, and lightweight content generation.</td>
-  </tr>
-  <tr>
-    <td><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank">Gemma 3 12B</a></td>
-    <td>Balanced text and image model for workstations. Multi-language understanding with local deployment for privacy-sensitive applications.</td>
-    <td>Workstation-based AI applications; local deployment for enterprises; multilingual document processing, image analysis and Q&A; and privacy-compliant AI assistants.</td>
-  </tr>
-    <tr>
-    <td><a href="https://huggingface.co/collections/google/gemma-3-release" target="_blank">Gemma 3 27B</a></td>
-    <td>Powerful text and image model for enterprise applications. Multi-language support with local deployment for privacy and control..</td>
-    <td>Enterprise local deployment, high-performance multimodal applications, advanced image understanding, multilingual customer service, and data-sensitive AI workflows..</td>
-  </tr>
-  <tr>
-    <td>Moonshot AI</td>
-    <td><a href="https://huggingface.co/moonshotai/Kimi-K2-Thinking" target="_blank">Kimi K2 Thinking</a></td>
-    <td>Deep reasoning model that thinks while using tools. Handles research, coding and complex workflows requiring hundreds of sequential actions..</td>
-    <td>Complex coding projects requiring planning, multistep workflows, data analysis and computation, and long-form content creation with research.</td>
-  </tr>
-  <tr>
-    <td>MiniMax AI</td>
-    <td><a href="https://huggingface.co/MiniMaxAI/MiniMax-M2" target="_blank">MiniMax M2</a></td>
-    <td>Built for coding agents and automation. Excels at multi-file edits, terminal operations and executing long tool-calling chains efficiently.</td>
-    <td>Coding agents and integrated development environment (IDE) integration, multi-file code editing, terminal automation and DevOps, long-chain tool orchestration, and agentic software development.</td>
-  </tr>
-<tr>
-    <td rowspan="2">NVIDIA</td>
-    <td><a href="https://huggingface.co/google/gemma-3-4b-it" target="_blank">NVIDIA Nemotron Nano 2 9B</a></td>
-    <td>High efficiency LLM with hybrid transformer Mamba design, excelling in reasoning and agentic tasks.</td>
-    <td>Reasoning, tool calling, math, coding, and instruction following.</td>
-  </tr>
-  <tr>
-    <td><a href="https://huggingface.co/google/gemma-3-12b-it" target="_blank">NVIDIA Nemotron Nano 2 VL 12B</a></td>
-    <td>BAdvanced multimodal reasoning model for video understanding and document intelligence, powering Retrieval-Augmented Generation (RAG) and multimodal agentic applications.</td>
-    <td>Multi-image and video understanding, visual Q&A, and summarization.</td>
-  </tr>
-</table>
+- **Advanced customization techniques**: SageMaker AI supports the latest model customization techniques including supervised fine-tuning (SFT), direct preference optimization (DPO), and reinforcement learning from AI feedback (RLAIF) and verifiable rewards (RLVR).
 
-### A.1.2 **New Mistral AI models**
+- **End-to-end serverless model customization**: SageMaker AI automatically selects and provisions the appropriate compute resources based on the model and data size—all without requiring you to select and manage instances.
 
-These four Mistral AI models are now available first on Amazon Bedrock, each optimized for different performance and cost requirements.
+- **Inference**: Once you have achieved your desired accuracy and performance goals, you can deploy models to production in a few clicks to either SageMaker AI inference endpoints or Amazon Bedrock for serverless inference.
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/04.png)](/blog/assets/images/posts-img/reInvent_2025/04.png)
+- **LLMOps**: You can automatically log all critical experiment metrics all without provisioning a tracking server or modifying code. Integration with MLflow also provides rich visualizations and an ingress into the MLflow user interface for further analysis.
 
-### A.1.3 Reinforcement Fine-tunning
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/28.png)](/blog/assets/images/posts-img/reInvent_2025/28.png)
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/05.png)](/blog/assets/images/posts-img/reInvent_2025/05.png)
+### A.2 Sagemaker AI Serverless MLflow
 
-**Amazon Bedrock reinforcement fine-tuning** enables you to customize foundation models using human feedback, aligning them closely with your business objectives and brand voice. This RLHF-based approach goes beyond simple prompt engineering, allowing models to better understand your requirements and consistently generate more accurate and relevant outputs.
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/28(1).png)](/blog/assets/images/posts-img/reInvent_2025/28(1).png)
 
-This guide is designed for ML engineers, data scientists, and cloud architects looking to enhance their AI applications through Amazon Bedrock model optimization. It explains how reinforcement learning–based fine-tuning works, why it delivers superior results compared to standard techniques, and how to apply it effectively in production environments.
+[Amazon SageMaker AI](https://aws.amazon.com/sagemaker/ai/?trk=8d6208e0-d44a-43ff-b272-99d77e5686ba&sc_channel=ps&ef_id=EAIaIQobChMIspe-3a76kAMVHx6tBh0bxC6ZEAAYASAAEgL5__D_BwE:G:s&s_kwcid=AL!4422!3!724218586019!e!!g!!sagemaker%20ai!19852662230!170020191325&gad_campaignid=19852662230&gbraid=0AAAAADjHtp80pxb_Rn07Vq5cdkqzQr3-Z&gclid=EAIaIQobChMIspe-3a76kAMVHx6tBh0bxC6ZEAAYASAAEgL5__D_BwE) with MLflow a serverless capability that dynamically manages infrastructure provisioning, scaling, and operations for artificial intelligence and machine learning (AI/ML) development tasks.
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/06.png)](/blog/assets/images/posts-img/reInvent_2025/06.png)
+It scales resources up during intensive experimentation and down to zero when not in use, reducing operational overhead.
 
-> So what is **reinforcement fine tuning**? It's a technique that enables you to customize models with the last need of data.
+It introduces enterprise-scale features including seamless access management with cross-account sharing, automated version upgrades, and integration with SageMaker AI capabilities like model customization and pipelines.
 
-> So compared to supervised fine tuning, right, **you would have to come up with a large data set of label data like telling the model, this is the good responses that I want**. And you would need thousands, maybe dozens of thousands of good responses to get the model, you know, prepared to handle these kind of answers.
+### A.3 Sagemaker HyperPod Checkpointless Training
 
-With **reinforcement fine tuning**, what you do is that you do a little more work in the data
-preparation, but you need a lot less data. You give them a representative set of
-data as an input and you let them know what good looks like, right? With a responses scoring strategy. So with that approach, you can customize the model, achieve greater accuracy with a lot of less data volume to be input to the model.
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/28(2).png)](/blog/assets/images/posts-img/reInvent_2025/28(2).png)
 
-### A.1.4 Amazon Bedrock Inference tiers
+[Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) now introduces checkpointless training, a **foundational capability for large-scale foundation model training that eliminates the need for checkpoint-based, job-level restarts during fault recovery**. 
+> Instead of interrupting training workflows, **this approach preserves forward training progress in the presence of failures**, reducing recovery times from hours to minutes.
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/07.png)](/blog/assets/images/posts-img/reInvent_2025/07.png)
+Traditional checkpoint-based recovery requires halting the entire training cluster, manually diagnosing failures, and restoring model state from persisted checkpoints—often leaving high-cost AI accelerators underutilized for extended periods.
+> Checkpointless training fundamentally changes this model by maintaining training state across the distributed cluster and enabling seamless, in-place recovery.
 
-The new Flex tier offers cost-effective pricing for non-time-critical applications like model evaluations and content summarization while the Priority tier provides premium performance and preferential processing for mission-critical applications. For most models that support Priority Tier, customers can realize up to 25% better output tokens per second (OTPS) latency compared to standard tier. These join the existing Standard tier for everyday AI applications with reliable performance.
+With **checkpointless training**, failed nodes are automatically replaced during runtime, and model state is recovered via peer-to-peer state transfer from healthy accelerators, without relying on external checkpoint restoration. By removing checkpoint dependencies from the recovery path, **this approach significantly reduces idle accelerator time, lowers operational costs, and shortens overall training cycles**. At scale, [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) achieves over 95% training goodput on clusters comprising thousands of AI accelerators.
 
-### A.1.5 Amazon Bedrock knowledge base multimodel Retreival
+To get started, visit the [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) product page and see the [checkpointless training GitHub page](https://github.com/aws/sagemaker-hyperpod-checkpointless-training) for implementation guidance.
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/08.png)](/blog/assets/images/posts-img/reInvent_2025/08.png)
+### A.4 Elastic trainig for HyperPod
 
-Now you can have in the knowledge base data indexation, not only by the text search, but also by image and video similarity and all the similarity, **simplifying how you store and how you search
-data that you're going to use to augment your application.**
+[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/28.png)](/blog/assets/images/posts-img/reInvent_2025/28.png)
 
-## A.2 Amazon Bedrock Agentcore
+Elastic training is a new [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) capability that automatically scales training jobs based on compute resource availability and workload priority.
+> Elastic training jobs can start with minimum compute resources required for model training and dynamically scale up or down through automatic checkpointing and resumption across different node configurations (world size).
 
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/15.png)](/blog/assets/images/posts-img/reInvent_2025/15.png)
+Scaling is achieved by automatically adjusting the number of data-parallel replicas.
 
-**Agents** are autonomous softwares that leverage AI to reason, plan and complete tasks on behalf of human systems.
-
-The key value proposition of Agent Core is its support for any model and any agent framework. Whether you’re using Anthropic, OpenAI, Amazon Nova, or other foundation models, Agent Core works seamlessly with them. It also integrates with popular agent frameworks such as LangChain, CrewAI, and Amazon’s own Strands Agents. This broad compatibility makes Agent Core an ideal platform for building and scaling agent-based capabilities.
-
-### A.2.1  Amazon Bedrock Agentcore Policy
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/11.png)](/blog/assets/images/posts-img/reInvent_2025/11.png)
-
-> It's a natural language policy engine that automatically converts your policies that you've written in natural language (in plain English, french, etc ....) into code.
-
-For exammple, if you are a financial services firm, you can say agent cannot access customer banking data outside of business hours or from non-approved geographic regions. The system automatically converts this into enforceable policies.
-
-**How does it work??**
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12.png)](/blog/assets/images/posts-img/reInvent_2025/12.png)
-
-So **agent core policy is tied to the gateway**, which is the gateway to access all the different APIs and resources. Every single request flows through gateway. 
-
-As you can see here, the policy intercepts it to evaluate against the defined rules that you have. 
-
-You can run it in two modes.
-
-* One is the log only mode for auditing and understanding agent behavior patterns 
-* Enforcement mode to actively block unauthorized actions. 
-
-This gives you complete control over which tools agents can access, what data they can interact with and what actions they permitted to perform.
-
-### A.2.2  Amazon Bedrock Agentcore Evaluations
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(1).png)](/blog/assets/images/posts-img/reInvent_2025/12(1).png)
-
-It provides the continuous automated quality monitoring with built-in evaluators. We have about 13 built-in evaluators that cover the full spectrum of agent performance.
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/12(2).png)](/blog/assets/images/posts-img/reInvent_2025/12(2).png)
-
-### A.2.3  Episodic Functionality of AgentCore Memory
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/13.png)](/blog/assets/images/posts-img/reInvent_2025/13.png)
-
-> **Episodic memory** enables agents to recognize patterns and learn from experience.
-
-> Instead of storing every single raw event, it identifies important moments, summarizes them into compact records and organizes them as episodes.
-
-### A.2.4  Bi-directional streaming in AgentCore Runtime.
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/14.png)](/blog/assets/images/posts-img/reInvent_2025/14.png)
-
-> **Bi-directional streaming memory** enables rfeal-time conversational agents with seamless interruption handling.
+During high cluster utilization periods, elastic training jobs can be configured to automatically scale down in response to resource requests from higher-priority jobs, freeing up compute for critical workloads. When resources free up during off-peak periods, elastic training jobs automatically scale back up to accelerate training, then scale back down when higher-priority workloads need resources again.
