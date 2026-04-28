@@ -72,3 +72,8 @@ What really happens?
     > It's also called **Inbound OAuth**
 
   > At this stage, identity services can be invoke again, **as the agent may need to interact with external systems**. This corresponds to **outbound communication**, where proper authentication and authorization are required before making those calls.
+* The agent may need to invoke external tools, such as APIs, which are increasingly packaged as MCP endpoints. In this context, the **AgentCore gateway** facilitates this process by enabling seamless integration and access to those endpoints. So we can now turn APIs into MCP and then connect them to our agents.
+* The agent may also need to store short-term interactions with the user, retrieve past conversations, or derive insights from previous exchanges. To support these capabilities, **AgentCore memory** component is integrated into the system.
+* Finally, when additional capabilities are required—such as a **code interpreter or a browser—the agent** can invoke these through dedicated tool integrations. All of these components remain interconnected within the runtime environment.
+
+## B. Overview of each components
