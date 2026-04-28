@@ -61,8 +61,6 @@ There are 4 mains steps to achieve:
 - Context = session metadata
 - Return dict serialized to JSON
 
-[![My image alt description](/blog/assets/images/posts-img/agentcore/11.png)](/blog/assets/images/posts-img/agentcore/11.png)
-
 - 🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
 
 <table>
