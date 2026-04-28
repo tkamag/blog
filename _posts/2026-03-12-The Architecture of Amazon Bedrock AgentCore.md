@@ -54,27 +54,4 @@ Amazon Bedrock AgentCore is:
   * 💻 AgentCore Code Interpreter - Secure code execution in isolated sandboxes where agent can create code snippet for data transformation, ...
   * 🌐 AgentCore Browser - Fast, secure cloud-based browser for web interaction with agent.
 
-### A.3 Sagemaker HyperPod Checkpointless Training
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/28(2).png)](/blog/assets/images/posts-img/reInvent_2025/28(2).png)
-
-[Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) now introduces checkpointless training, a **foundational capability for large-scale foundation model training that eliminates the need for checkpoint-based, job-level restarts during fault recovery**. 
-> Instead of interrupting training workflows, **this approach preserves forward training progress in the presence of failures**, reducing recovery times from hours to minutes.
-
-Traditional checkpoint-based recovery requires halting the entire training cluster, manually diagnosing failures, and restoring model state from persisted checkpoints—often leaving high-cost AI accelerators underutilized for extended periods.
-> Checkpointless training fundamentally changes this model by maintaining training state across the distributed cluster and enabling seamless, in-place recovery.
-
-With **checkpointless training**, failed nodes are automatically replaced during runtime, and model state is recovered via peer-to-peer state transfer from healthy accelerators, without relying on external checkpoint restoration. By removing checkpoint dependencies from the recovery path, **this approach significantly reduces idle accelerator time, lowers operational costs, and shortens overall training cycles**. At scale, [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) achieves over 95% training goodput on clusters comprising thousands of AI accelerators.
-
-To get started, visit the [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) product page and see the [checkpointless training GitHub page](https://github.com/aws/sagemaker-hyperpod-checkpointless-training) for implementation guidance.
-
-### A.4 Elastic trainig for HyperPod
-
-[![My image alt description](/blog/assets/images/posts-img/reInvent_2025/29.png)](/blog/assets/images/posts-img/reInvent_2025/29.png)
-
-Elastic training is a new [Amazon SageMaker HyperPod](https://aws.amazon.com/sagemaker/ai/hyperpod/) capability that automatically scales training jobs based on compute resource availability and workload priority.
-> Elastic training jobs can start with minimum compute resources required for model training and dynamically scale up or down through automatic checkpointing and resumption across different node configurations (world size).
-
-Scaling is achieved by automatically adjusting the number of data-parallel replicas.
-
-During high cluster utilization periods, elastic training jobs can be configured to automatically scale down in response to resource requests from higher-priority jobs, freeing up compute for critical workloads. When resources free up during off-peak periods, elastic training jobs automatically scale back up to accelerate training, then scale back down when higher-priority workloads need resources again.
+[![My image alt description](/blog/assets/images/posts-img/agentcore/03.png)](/blog/assets/images/posts-img/agentcore/03.png)
