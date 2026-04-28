@@ -65,13 +65,12 @@ There are 4 mains steps to achieve:
 
 - 🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
 
-
 <table>
   <tr>
-    <td rowspan="4">
-      <img src="https://tkamag.github.io/blog/assets/images/posts-img/agentcore/11.png" width="750"/>
-    </td>
     <td>Same signature for ALL frameworks</td>
+    <td rowspan="4">
+      <img src="https://tkamag.github.io/blog/assets/images/posts-img/agentcore/11.png" width="900"/>
+    </td>
   </tr>
   <tr>
     <td>Payload = user input (100MB max)</td>
