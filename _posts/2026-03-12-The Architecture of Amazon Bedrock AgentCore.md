@@ -21,6 +21,9 @@ According to AWS, [Amazon Bedrock AgentCore](https://docs.aws.amazon.com/bedrock
 
 [![My image alt description](/assets/images/posts-img/agentcore/01.png)](assets/images/posts-img/agentcore/01.png)
 
+second
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/01.png)](assets/images/posts-img/agentcore/01.png)
 
 ### A.1 Sagemaker AI serverless Model Customization
 
