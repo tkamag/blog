@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Amazon Bedrock AgentCore - The Architecture"
+title: "Amazon Bedrock AgentCore Architecture"
 date: 2026-03-11
 modify_date: 2026-04-27
 excerpt: "Amazon Bedrock AgentCore"
@@ -57,4 +57,10 @@ Amazon Bedrock AgentCore is presented as a comprehensive set of capabilities for
 
   * 🌐 **AgentCore Browser** - Provides a fast, secure, cloud-based browser environment for agent-driven web interactions.
 
+The image below illustrates how these features interconnect and operate together within the overall architecture.
+
 [![My image alt description](/blog/assets/images/posts-img/agentcore/03.png)](/blog/assets/images/posts-img/agentcore/03.png)
+
+What really happens?
+
+* You have a user or frontend calling the agent. What it does? It call the invoke API. What is happening is we are typically starting with the **AgentCore runtime**.
