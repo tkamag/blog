@@ -128,4 +128,6 @@ What really happens?
 
 ## C. Select a services
 
+ You always start with a runtime to put in your agent logic and deploy the agent.
+
 [![My image alt description](/blog/assets/images/posts-img/agentcore/10.png)](/blog/assets/images/posts-img/agentcore/10.png)
