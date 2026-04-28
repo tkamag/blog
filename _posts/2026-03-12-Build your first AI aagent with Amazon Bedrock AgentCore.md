@@ -9,8 +9,18 @@ mathjax: false
 mathjax_autoNumber: false
 key: aws-sagemaker-bedrock-agentcore-runtime-gateway-identity-memory
 ---
-- [A. Amazon Bedrock Agentcore](#aamazon-bedrock-agentcore)
-  - [A.1 AgentCore components](#a1-agentcore-components)
+
+- [A. Introducing AI Agents](#a-introducing-ai-agents)
+- [B. Building AI Agents with LangGraph](#b-building-ai-agents-with-langgraph)
+  - [B.1 How it works](#b1-how-it-works)
+  - [B.2 The entrypoint pattern](#b2-the-entrypoint-pattern)
+  - [B.3 Examples](#b3-examples)
+- [C. Runtime Advantages](#c-runtime-advantages)
+  - [C.1 Purpose-built for Agents](#c1-purpose-built-for-agents)
+  - [C.2 Lambda vs. AgentCore Runtime](#c2-lambda-vs-agentcore-runtime)
+- [D. Payload Structure](#d-payload-structure)
+- [E. Multi-modal support](#e-multi-modal-support)
+- [F. Context object](#f-context-object)
 
 ## A. Introducing AI Agents
 
@@ -174,3 +184,74 @@ def agent_invocation(payload, context):
     )
     return {"result": response.content[0].text}
 ````
+## C. Runtime Advantages
+
+### C.1 Purpose-built for Agents
+- 🔒 MicroVM Isolation - Each session separate
+- ⚡ Fast Cold Starts - Sub-second initialization
+- ⏱️ 8-Hour Runtime - Long-running agents supported
+- 📦 100MB Payloads - Multi-modal content
+- 🔐 Session Isolation - CPU, memory, filesystem separated
+
+### C.2 Lambda vs. AgentCore Runtime
+- ❌ Lambda: 15 min max, 6MB payload
+- ✅ Runtime: 8 hour max, 100MB payload
+
+## D. Payload Structure
+
+In Amazon Bedrock, the structure of the payload (**maximum size 100 MB**) depends on the API you are using (e.g., ``InvokeModel``, ``InvokeAgent``, or Converse). However, there is a common pattern: a JSON body that contains the 
+- **input**, 
+- **optional configuration**, and 
+- sometimes **context** or **session data**.
+
+````JSON
+{
+  "prompt": "User's question or instruction",
+  "context": {...},   # Optional
+  "parameters": {...} # Optional
+}
+````
+## E. Multi-modal support
+``AgentCore runtime`` support many input type(up to 100MB).
+- 📝 Text (prompts, documents, PDFs- )
+- 🖼️ Images (PNG, JPEG, WebP)
+- 🎵 Audio files
+- 🎥 Video content
+- 📊 Large datasets
+
+## F. Context object
+The ``context object`` represents metadata about the request and execution environment, rather than the user’s input itself.
+
+While the exact structure can vary slightly depending on the runtime or framework, it typically follows a pattern like this:
+
+````json
+{
+  "request_id": "string",
+  "session_id": "string",
+  "identity": {
+    "principal": "user/role",
+    "auth_type": "OAuth | API_KEY | IAM",
+    "token": "..."
+  },
+  "headers": {
+    "key": "value"
+  },
+  "memory": {
+    "session_attributes": {...},
+    "long_term_reference": "..."
+  },
+  "tools": {
+    "available": ["tool1", "tool2"]
+  },
+  "runtime": {
+    "region": "us-east-1",
+    "timestamp": "ISO8601"
+  }
+}
+````
+
+**Use cases**
+- 🔐 Access Authorization headers (OAuth)
+- 📊 Track sessions for analytics
+- 🏷️ Tag resources with session_id
+- 🔗 Pass custom metadata
