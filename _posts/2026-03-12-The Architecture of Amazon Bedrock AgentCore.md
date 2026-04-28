@@ -11,6 +11,15 @@ key: aws-sagemaker-bedrock-agentcore-runtime-gateway-identity-memory
 ---
 - [A. Amazon Bedrock Agentcore](#aamazon-bedrock-agentcore)
   - [A.1 AgentCore components](#a1-agentcore-components)
+- [B. Overview of each components](#b-overview-of-each-components)
+  - [B.1 Runtime](#b1-runtime)
+  - [B.2 Runtime](#b2-gateway)
+  - [B.3 Memory](#b3-memory)
+  - [B.4 Identity](#b4-identity)
+  - [B.5 Tools](#b5-tools)
+  - [B.6 Observability](#b6-observability)
+- [C. Select a services](#c-select-a-services)
+
 
 ## A.Amazon Bedrock AgentCore
 
@@ -86,7 +95,7 @@ What really happens?
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/04_.png)](/blog/assets/images/posts-img/agentcore/04_.png)
 
-### B.2 Gaateway
+### B.2 Gateway
 
 **Amazon Bedrock AgentCore Gateway** provides an easy and secure way for developers to build, deploy, discover, and connect to tools at scale. AI agents need tools to perform real-world tasks—from querying databases to sending messages to analyzing documents. With Gateway, developers can convert APIs, Lambda functions, and existing services into Model Context Protocol (MCP)-compatible tools and make them available to agents through Gateway endpoints.
 
