@@ -51,7 +51,6 @@ There are 4 mains steps to achieve:
 - ✅ Define`` @app.entrypoint``
 - ✅ Deploy with agentcore CLI
 
-
 ### B.2 The entrypoint pattern
 
 **Key Points:**
@@ -61,23 +60,117 @@ There are 4 mains steps to achieve:
 - Context = session metadata
 - Return dict serialized to JSON
 
-- 🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
+🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
 
-<table>
-  <tr>
-    <td>Same signature for ALL frameworks</td>
-    <td rowspan="4">
-      <img src="https://tkamag.github.io/blog/assets/images/posts-img/agentcore/11.png" width="900"/>
-    </td>
-  </tr>
-  <tr>
-    <td>Payload = user input (100MB max)</td>
-  </tr>
-  <tr>
-    <td>Context = session metadata</td>
-  </tr>
-  <tr>
-    <td>Return dict serialized to JSON</td>
-  </tr>
-</table>
+- Same signature for ALL frameworks
 
+- Payload = user input (100MB max)
+ 
+- Context = session metadata
+
+- Return dict serialized to JSON
+
+
+````python
+@app.entrypoint
+def agent_invocation(payload, context):
+    # Receives:
+    # - payload: dict with user input
+    # - context: RequestContext with headers, sessionid
+    
+    # Must return
+    # - dict with result
+    
+    return {"result": "Hello World"}
+````
+
+### B.3 Examples
+
+- Strands Agents example:
+
+````python
+from strands import Agent
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
+
+agent = Agent(tools=[file_read, file_write])  # Simple Agent with tool use
+app = BedrockAgentCoreApp(__name__)
+
+@app.entrypoint
+def agent_invocation(payload, context):
+    user_message = payload.get("prompt", "")
+    result = agent(user_message, context)     # Context is not mandatory
+
+    return {"result": result.message}
+````
+
+- LanGraph Agents example:
+
+````python
+from  langgraph.graph import StateGraph
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
+
+app = BedrockAgentCoreApp()
+
+# Build your graph
+graph_builder = StateGraph(State)
+graph_builder.add_node("agent", call_node)
+graph = graph_builder.compile()
+
+@app.entrypoint
+def agent_invocation(payload, context):
+    message = [{"role": "text", "context": payload.get("prompt", "")}]
+    result = graph.invoke({"message": message})
+    return {"result"; result["message"][-1].content}
+````
+
+- CrewAI Agents example:
+
+````python
+from crewai import Agent, Crew, Task
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
+
+app = BedrockAgentCoreApp()
+
+# Define agent and crew
+researcher = Agent(
+    role="Research",
+    goal="Analyze market trends and provide insights",
+    backstory="Expert in market research with deep analytical skills")
+
+Writer = Agent(
+    role="Writer",
+    goal="Create engaging content based on research",
+    backstory="Skilled writer with experience in technical content")
+
+crew = Crew(agents=[researcher, Writer], tasks=[task1, task2], verbose=2)
+
+@app.entrypoint
+def agent_invocation(payload, context):
+    result = crew.kickoff(inputs={"topic": payload.get("prompt", "")})
+    return {"result": result}
+````
+
+- Custom Framework example:
+
+````python
+from bedrock_agentcore.runtime import BedrockAgentCoreApp
+import anthropic
+
+app = BedrockAgentCoreApp()
+client = anthropic.Anthropic 
+
+@app.entrypoint
+def agent_invocation(payload, context):
+    # Custom logic - no framework needs
+    message = payload.get("prompt", "")
+
+    # Build your own Agent logic
+    response = client.messages.create(
+        model="claude-3-haiku-20240307",
+        max_tokens=1000,
+        messages=[
+            {"role": "user", "content": message}
+        ]
+    )
+    return {"result": response.content[0].text}
+````

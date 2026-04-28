@@ -189,3 +189,7 @@ _site/
 .sass-cache/
 .jekyll-metadata
 .qodo
+
+# Python file
+.py 
+/code/
