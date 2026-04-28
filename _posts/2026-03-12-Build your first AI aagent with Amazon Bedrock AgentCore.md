@@ -255,3 +255,7 @@ While the exact structure can vary slightly depending on the runtime or framewor
 - 📊 Track sessions for analytics
 - 🏷️ Tag resources with session_id
 - 🔗 Pass custom metadata
+
+"" G. [Custom headers](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-header-allowlist.html)
+
+In **Amazon Bedrock / AgentCore runtime**, ``custom headers`` are not strictly standardized as a fixed schema—they are typically passed through the context object as a key-value map of HTTP headers coming from the client or upstream service.
