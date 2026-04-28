@@ -45,8 +45,14 @@ Amazon Bedrock AgentCore is:
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/02.png)](/blog/assets/images/posts-img/agentcore/02.png)
 
-
-
+* 🚀 AgentCore Runtime - Serverless deployment to host and scaling AI agents
+* 🧠 AgentCore Memory - Allows us to create Long-term and Short-term memory for the agent, Persistent knowledge with event and semantic memory
+* 🔗 AgentCore Gateway - Transform existing APIs into agent tools or MCP, help us to build our own MCP server in just few steps
+* 📊 AgentCore Observability - Real-time tracing and monitoring your agent.
+* 🔐 AgentCore Identity - Secure authentication, access management and setup securely OAuth flow, API keys and save those informations in a vault.
+* AgentCore Tools: Which include
+  * 💻 AgentCore Code Interpreter - Secure code execution in isolated sandboxes where agent can create code snippet for data transformation, ...
+  * 🌐 AgentCore Browser - Fast, secure cloud-based browser for web interaction with agent.
 
 ### A.3 Sagemaker HyperPod Checkpointless Training
 
