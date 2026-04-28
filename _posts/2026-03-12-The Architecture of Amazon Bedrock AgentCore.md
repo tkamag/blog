@@ -63,4 +63,4 @@ The image below illustrates how these features interconnect and operate together
 
 What really happens?
 
-* You have a user or frontend calling the agent. What it does? It call the invoke API. What is happening is we are typically starting with the **AgentCore runtime**.
+* A user or frontend application initiates a request to the agent by calling the **invoke API**. This interaction typically begins within the **AgentCore runtime**, where the agent is hosted and executed. From there, the agent can either directly interact with a large language model(LLM) or leverage an underlying framework to orchestrate and manage those interactions.
