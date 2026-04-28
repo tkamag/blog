@@ -367,7 +367,7 @@ Therefore ``BedrockAgentCoreApp`` handles this automatically.
 
 ## J. Session management
 
-[![My image alt description](/blog/assets/images/posts-img/agentcore/01.png)](/blog/assets/images/posts-img/agentcore/12.png)
+[![My image alt description](/blog/assets/images/posts-img/agentcore/12.png)](/blog/assets/images/posts-img/agentcore/12.png)
 
 **Session Isolation & Context**
 
