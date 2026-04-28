@@ -25,6 +25,7 @@ key: aws-sagemaker-bedrock-agentcore-runtime-gateway-identity-memory
 - [H. Deployment pattern](#h-deployment-pattern)
 - [I. Container requirements](#i-container-requirements)
 - [J. Session management](#j-session-management)
+- [K. Testing locally](#k-testing-locally)
 
 ## A. Introducing AI Agents
 
@@ -366,7 +367,6 @@ Therefore ``BedrockAgentCoreApp`` handles this automatically.
 
 ## J. Session management
 
-
 [![My image alt description](/blog/assets/images/posts-img/agentcore/01.png)](/blog/assets/images/posts-img/agentcore/12.png)
 
 **Session Isolation & Context**
@@ -376,3 +376,27 @@ Therefore ``BedrockAgentCoreApp`` handles this automatically.
 - 🏷️ Unique session_id
 - 🔗 15-min idle timeout → 8-hour max
 - 🔗 Accessible in context of Runtime payload
+
+## K. Testing locally
+
+**Benefits Run locally of testing locally**
+
+- 🔐 Test before deploying
+- 📊 Fast iteration
+- 🏷️ No AWS costs, (besides LLMs that you invoke)
+- 🔗 Easy debugging
+- 🔗 Matches production exactly
+
+**Run locally**
+
+````python
+agentcore run
+````
+
+**Test with curl**
+
+````python
+curl -X POST http://localhosy:8080/invocations \
+  -H 'Content-Type: application/json' \
+  -d '{"prompt": "Hello!!"}'
+````
