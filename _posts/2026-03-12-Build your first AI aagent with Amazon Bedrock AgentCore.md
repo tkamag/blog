@@ -69,3 +69,23 @@ There are 4 mains steps to achieve:
 |--------|-------------|
 | [![My image alt description](/blog/assets/images/posts-img/agentcore/11.png)](/blog/assets/images/posts-img/agentcore/11.png) | - Same signature for ALL frameworks
 |  | - Same signature for ALL frameworks
+
+
+<table>
+  <tr>
+    <td rowspan="4">
+      <img src="https://tkamag.github.io/blog/assets/images/posts-img/agentcore/11.png" width="550"/>
+    </td>
+    <td>Same signature for ALL frameworks</td>
+  </tr>
+  <tr>
+    <td>Payload = user input (100MB max)</td>
+  </tr>
+  <tr>
+    <td>Context = session metadata</td>
+  </tr>
+  <tr>
+    <td>Return dict serialized to JSON</td>
+  </tr>
+</table>
+
