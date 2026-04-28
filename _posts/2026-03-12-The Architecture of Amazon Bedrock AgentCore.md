@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Amazon Bedrock AgentCore Architecture"
-date: 2026-03-11
+date: 2026-02-11
 modify_date: 2026-04-27
 excerpt: "Amazon Bedrock AgentCore"
 tags: [AWS, Sagemaker, Bedrock, Machine Learning, AgentCore]
@@ -20,7 +20,6 @@ key: aws-sagemaker-bedrock-agentcore-runtime-gateway-identity-memory
   - [B.6 Observability](#b6-observability)
 - [C. Select a services](#c-select-a-services)
 
-
 ## A.Amazon Bedrock AgentCore
 
 According to AWS, [Amazon Bedrock AgentCore](https://docs.aws.amazon.com/bedrock-agentcore/) is a **fully managed, agnostic** service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model.
@@ -31,19 +30,19 @@ Amazon Bedrock AgentCore is presented as a comprehensive set of capabilities for
 
 **Amazon Bedrock AgentCore** is:
 
-* ✅ Framework agnostic: Works with deployed agents from multiple frameworks (Strands, LangGraph, CrewAI, custom MCP)
+- ✅ Framework agnostic: Works with deployed agents from multiple frameworks (Strands, LangGraph, CrewAI, custom MCP)
 
-* ✅ Sophisticated authentication: Dual inbound/outbound auth with OAuth 2.0/3.0 support
+- ✅ Sophisticated authentication: Dual inbound/outbound auth with OAuth 2.0/3.0 support
 
-* ✅ Session isolation: Each session runs in dedicated microVMs with complete security boundaries
+- ✅ Session isolation: Each session runs in dedicated microVMs with complete security boundaries
 
-* ✅ API transformation: Gateway automatically converts existing APIs/Lambda to MCP tools
+- ✅ API transformation: Gateway automatically converts existing APIs/Lambda to MCP tools
 
-* ✅ Enterprise security: VM-level isolation, comprehensive audit trails, SSO integration
+- ✅ Enterprise security: VM-level isolation, comprehensive audit trails, SSO integration
 
-* ✅ Production ready from day one: Scaling, security, observability
+- ✅ Production ready from day one: Scaling, security, observability
 
-* ✅ Work with Any LLM(Claude, GPT, Llama, Bedrock, etc...)
+- ✅ Work with Any LLM(Claude, GPT, Llama, Bedrock, etc...)
 
 ### A.1 AgentCore components
 
@@ -51,20 +50,20 @@ Amazon Bedrock AgentCore is presented as a comprehensive set of capabilities for
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/02.png)](/blog/assets/images/posts-img/agentcore/02.png)
 
-* 🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
+- 🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
 
-* 🧠 **AgentCore Memory** - Enables the creation of both long-term and short-term memory for agents, supporting persistent knowledge through event-based and semantic memory mechanisms.
+- 🧠 **AgentCore Memory** - Enables the creation of both long-term and short-term memory for agents, supporting persistent knowledge through event-based and semantic memory mechanisms.
 
-* 🔗 **AgentCore Gateway** - Facilitates the transformation of existing APIs into agent-compatible tools or MCP components, and streamlines the creation of custom MCP servers in just a few steps.
+- 🔗 **AgentCore Gateway** - Facilitates the transformation of existing APIs into agent-compatible tools or MCP components, and streamlines the creation of custom MCP servers in just a few steps.
 
-* 📊 **AgentCore Observability** - Provides real-time tracing and monitoring capabilities for AI agents, ensuring visibility into their behavior, performance, and execution flows.
+- 📊 **AgentCore Observability** - Provides real-time tracing and monitoring capabilities for AI agents, ensuring visibility into their behavior, performance, and execution flows.
 
-* 🔐 **AgentCore Identity** - Provides secure authentication and access management capabilities, including support for OAuth flows and API key configuration, while ensuring sensitive credentials are stored securely in a vault.
+- 🔐 **AgentCore Identity** - Provides secure authentication and access management capabilities, including support for OAuth flows and API key configuration, while ensuring sensitive credentials are stored securely in a vault.
 
-* **AgentCore Tools**: Which include
-  * 💻 **AgentCore Code Interpreter** - Enables secure code execution within isolated sandbox environments, allowing agents to generate and run code snippets for tasks such as data transformation while maintaining strict security boundaries.
+- **AgentCore Tools**: Which include
+  - 💻 **AgentCore Code Interpreter** - Enables secure code execution within isolated sandbox environments, allowing agents to generate and run code snippets for tasks such as data transformation while maintaining strict security boundaries.
 
-  * 🌐 **AgentCore Browser** - Provides a fast, secure, cloud-based browser environment for agent-driven web interactions.
+  - 🌐 **AgentCore Browser** - Provides a fast, secure, cloud-based browser environment for agent-driven web interactions.
 
 The image below illustrates how these features interconnect and operate together within the overall architecture.
 
@@ -72,18 +71,19 @@ The image below illustrates how these features interconnect and operate together
 
 What really happens?
 
-* A user or frontend application initiates a request to the agent by calling the **invoke API**. This interaction typically begins within the **AgentCore runtime**, where the agent is hosted and executed. From there, the agent can either directly interact with a large language model(LLM) or leverage an underlying framework to orchestrate and manage those interactions.
+- A user or frontend application initiates a request to the agent by calling the **invoke API**. This interaction typically begins within the **AgentCore runtime**, where the agent is hosted and executed. From there, the agent can either directly interact with a large language model(LLM) or leverage an underlying framework to orchestrate and manage those interactions.
 
-* The next thing is that we need observability(this is automatically activated) for you in AWS Cloudwatch.
+- The next thing is that we need observability(this is automatically activated) for you in AWS Cloudwatch.
 
-* How can we make sure that the user that is calling the agent is a user that is allowed to call the agent? For that  we can use **OAuth, an API key or even IAM permissions and roles**. And this is handled by **AgentCore identity**.
+- How can we make sure that the user that is calling the agent is a user that is allowed to call the agent? For that  we can use **OAuth, an API key or even IAM permissions and roles**. And this is handled by **AgentCore identity**.
 
     > It's also called **Inbound OAuth**
 
+
   > At this stage, identity services can be invoke again, **as the agent may need to interact with external systems**. This corresponds to **outbound communication**, where proper authentication and authorization are required before making those calls.
-* The agent may need to invoke external tools, such as APIs, which are increasingly packaged as MCP endpoints. In this context, the **AgentCore gateway** facilitates this process by enabling seamless integration and access to those endpoints. So we can now turn APIs into MCP and then connect them to our agents.
-* The agent may also need to store short-term interactions with the user, retrieve past conversations, or derive insights from previous exchanges. To support these capabilities, **AgentCore memory** component is integrated into the system.
-* Finally, when additional capabilities are required—such as a **code interpreter or a browser—the agent** can invoke these through dedicated tool integrations. All of these components remain interconnected within the runtime environment.
+- The agent may need to invoke external tools, such as APIs, which are increasingly packaged as MCP endpoints. In this context, the **AgentCore gateway** facilitates this process by enabling seamless integration and access to those endpoints. So we can now turn APIs into MCP and then connect them to our agents.
+- The agent may also need to store short-term interactions with the user, retrieve past conversations, or derive insights from previous exchanges. To support these capabilities, **AgentCore memory** component is integrated into the system.
+- Finally, when additional capabilities are required—such as a **code interpreter or a browser—the agent** can invoke these through dedicated tool integrations. All of these components remain interconnected within the runtime environment.
 
 ## B. Overview of each components
 
