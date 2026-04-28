@@ -67,9 +67,8 @@ What really happens?
 
 * The next thing is that we need observability(this is automatically activated) for you in AWS Cloudwatch.
 
-* The next thing is actually the identity. How can we make sure that the user that is calling the agent is a user that is allowed to call the agent? For that  we can use **OAuth, an API key or even IAM permissions and roles**. And this is handled by **AgentCore identity**.
+* How can we make sure that the user that is calling the agent is a user that is allowed to call the agent? For that  we can use **OAuth, an API key or even IAM permissions and roles**. And this is handled by **AgentCore identity**.
 
     > It's also called **Inbound OAuth**
-
 
   > At this stage, identity services can be invoke again, **as the agent may need to interact with external systems**. This corresponds to **outbound communication**, where proper authentication and authorization are required before making those calls.
