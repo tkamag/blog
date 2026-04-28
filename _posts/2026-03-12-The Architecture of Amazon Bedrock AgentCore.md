@@ -9,11 +9,8 @@ mathjax: false
 mathjax_autoNumber: false
 key: aws-sagemaker-bedrock-agentcore-runtime-gateway-identity-memory
 ---
-- [A. Amazon Bedrock Agentcore](#aamazon-bedrock)
-  - [A.1 Sagemaker AI serverless Model Customization](#a1-sagemaker-ai-serverless-model-customization)
-  - [A.2 Sagemaker AI Serverless MLflow](#a2-sagemaker-ai-serverless-mlflow)
-  - [A.3 Sagemaker HyperPod Checkpointless Training](#a3-sagemaker-hyperpod-checkpointless-training)
-  - [A.4 Elastic trainig for HyperPod](#a4-elastic-trainig-for-hyperpod)
+- [A. Amazon Bedrock Agentcore](#aamazon-bedrock-agentcore)
+  - [A.1 AgentCore components](#a1-agentcore-components)
 
 ## A.Amazon Bedrock AgentCore
 
@@ -23,7 +20,7 @@ Amazon Bedrock AgentCore is presented as a comprehensive set of capabilities for
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/01.png)](/blog/assets/images/posts-img/agentcore/01.png)
 
-Amazon Bedrock AgentCore is:
+**Amazon Bedrock AgentCore** is:
 
 * ✅ Framework agnostic: Works with deployed agents from multiple frameworks (Strands, LangGraph, CrewAI, custom MCP)
 
