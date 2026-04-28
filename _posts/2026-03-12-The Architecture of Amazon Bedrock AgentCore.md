@@ -77,3 +77,33 @@ What really happens?
 * Finally, when additional capabilities are required—such as a **code interpreter or a browser—the agent** can invoke these through dedicated tool integrations. All of these components remain interconnected within the runtime environment.
 
 ## B. Overview of each components
+
+### B.1 Runtime
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/04.png)](/blog/assets/images/posts-img/agentcore/04.png)
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/04_.png)](/blog/assets/images/posts-img/agentcore/04_.png)
+
+### B.2 Gaateway
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/05.png)](/blog/assets/images/posts-img/agentcore/05.png)
+
+### B.3 Memory
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/06.png)](/blog/assets/images/posts-img/agentcore/06.png)
+
+### B.4 Identity
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/07.png)](/blog/assets/images/posts-img/agentcore/07.png)
+
+### B.5 Tools
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/08.png)](/blog/assets/images/posts-img/agentcore/08.png)
+
+### B.6 Observability
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/09.png)](/blog/assets/images/posts-img/agentcore/09.png)
+
+## C. Select a services
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/10.png)](/blog/assets/images/posts-img/agentcore/10.png)
