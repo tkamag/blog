@@ -21,6 +21,10 @@ key: aws-sagemaker-bedrock-agentcore-runtime-gateway-identity-memory
 - [D. Payload Structure](#d-payload-structure)
 - [E. Multi-modal support](#e-multi-modal-support)
 - [F. Context object](#f-context-object)
+- [G. Custom headers](#g-custom-headers)
+- [H. Deployment pattern](#h-deployment-pattern)
+- [I. Container requirements](#i-container-requirements)
+- [J. Session management](#j-session-management)
 
 ## A. Introducing AI Agents
 
@@ -256,6 +260,119 @@ While the exact structure can vary slightly depending on the runtime or framewor
 - 🏷️ Tag resources with session_id
 - 🔗 Pass custom metadata
 
-"" G. [Custom headers](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-header-allowlist.html)
+## G. [Custom headers](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-header-allowlist.html)
 
 In **Amazon Bedrock / AgentCore runtime**, ``custom headers`` are not strictly standardized as a fixed schema—they are typically passed through the context object as a key-value map of HTTP headers coming from the client or upstream service.
+
+**Amazon Bedrock AgentCore Runtime** lets you pass headers in a request to your agent code provided the headers match the following criteria:
+
+- Header name is one of the following:
+
+  - Starts with ``X-Amzn-Bedrock-AgentCore-Runtime-Custom-
+``
+  - Equal to ``Authorization`` . This is reserved for agents with ``OAuth inbound ``access to pass in the incoming JWT token to the agent code.
+
+- Header value is not greater than 4KB in size.
+
+- Up to 20 headers can be configured per runtime.
+
+**Use cases:**
+
+- 🔐 Pass OAuth tokens
+- 📊 Custom tracking IDs
+- 🏷️ Tenant identifiers
+- 🔗 Feature flags
+
+A practical request flow looks like this:
+
+````yaml
+Frontend / App
+   |
+   |  POST InvokeAgentRuntime
+   |  Headers:
+   |   Authorization: Bearer <jwt>
+   |   X-Amzn-Bedrock-AgentCore-Runtime-Custom-UserId: user-123
+   |   X-Amzn-Bedrock-AgentCore-Runtime-Custom-Tenant: acme
+   |   X-Amzn-Trace-Id: ...
+   |
+   v
+AgentCore Runtime
+   |
+   |  checks runtime requestHeaderAllowlist
+   |  forwards only allowed headers
+   v
+Your agent entrypoint
+   |
+   |  payload -> user input
+   |  context.request_headers -> forwarded headers
+   v
+Agent logic / tools / memory / outbound calls
+````
+
+Two steps to configure custom headers:
+
+1- Configure Allowed Headers(here we're are using AWS CLI)
+````python
+agentcore configure \
+    --request-header-allowlist  # -rha for short \
+    # Comma-separated list of allowed request headers
+    "X-Amzn-Bedrock-AgentCore-Runtime-Custom-H1"
+````
+
+2- Access in Agent
+````python
+@app.entrypoint
+def handler(payload, context):
+  headers = context.request_headers
+  custom_value = headers.get("X-Amzn-Bedrock-AgentCore-Runtime-Custom-H1")
+
+````
+
+## H. Deployment pattern
+1- Run ``configure``, orchestrate docker creation in AWS
+
+````python
+agentcore configure
+  --entrypoint agent.py
+  --name my-agent
+  --execution-role <role-arn>
+````
+
+2- Launch container on AWS
+
+````python
+agentcore launch # Builds, containerizes, deploys)
+````
+
+3- Invoke the model
+
+```python
+agentcore invoke '{"prompt": "Hello!!"}'
+````
+## I. Container requirements
+
+> Unlike traditional ML endpoints, ``AgentCore Runtime`` does not require developers to expose /invocations routes, instead, **it relies on a standardized entrypoint function, with the runtime handling request routing and execution transparently**.
+
+**What Runtime Needs**:
+
+- 🔐 Port 8080 exposed
+- 📊 /invocations POST endpoint
+- 🏷️ /ping GET endpoint (health check)
+- 🔗 ARM64 architecture (linux/arm64)
+- 🔗 Image in AWS ECR
+
+Therefore ``BedrockAgentCoreApp`` handles this automatically.
+
+
+## J. Session management
+
+
+[![My image alt description](/blog/assets/images/posts-img/agentcore/01.png)](/blog/assets/images/posts-img/agentcore/12.png)
+
+**Session Isolation & Context**
+
+- 🔐 Isolated microVM
+- 📊 Dedicated CPU, memory, filesystem
+- 🏷️ Unique session_id
+- 🔗 15-min idle timeout → 8-hour max
+- 🔗 Accessible in context of Runtime payload
