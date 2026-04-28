@@ -45,13 +45,19 @@ Amazon Bedrock AgentCore is:
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/02.png)](/blog/assets/images/posts-img/agentcore/02.png)
 
-* 🚀 AgentCore Runtime - Serverless deployment to host and scaling AI agents
-* 🧠 AgentCore Memory - Allows us to create Long-term and Short-term memory for the agent, Persistent knowledge with event and semantic memory
-* 🔗 AgentCore Gateway - Transform existing APIs into agent tools or MCP, help us to build our own MCP server in just few steps
-* 📊 AgentCore Observability - Real-time tracing and monitoring your agent.
-* 🔐 AgentCore Identity - Secure authentication, access management and setup securely OAuth flow, API keys and save those informations in a vault.
-* AgentCore Tools: Which include
-  * 💻 AgentCore Code Interpreter - Secure code execution in isolated sandboxes where agent can create code snippet for data transformation, ...
-  * 🌐 AgentCore Browser - Fast, secure cloud-based browser for web interaction with agent.
+* 🚀 **AgentCore Runtime** - A serverless deployment model is provided to host and scale AI agents efficiently, eliminating the need for infrastructure management while ensuring automatic scalability and operational flexibility.
+
+* 🧠 **AgentCore Memory** - Enables the creation of both long-term and short-term memory for agents, supporting persistent knowledge through event-based and semantic memory mechanisms.
+
+* 🔗 **AgentCore Gateway** - Facilitates the transformation of existing APIs into agent-compatible tools or MCP components, and streamlines the creation of custom MCP servers in just a few steps.
+
+* 📊 **AgentCore Observability** - Provides real-time tracing and monitoring capabilities for AI agents, ensuring visibility into their behavior, performance, and execution flows.
+
+* 🔐 **AgentCore Identity** - Provides secure authentication and access management capabilities, including support for OAuth flows and API key configuration, while ensuring sensitive credentials are stored securely in a vault.
+
+* **AgentCore Tools**: Which include
+  * 💻 **AgentCore Code Interpreter** - Enables secure code execution within isolated sandbox environments, allowing agents to generate and run code snippets for tasks such as data transformation while maintaining strict security boundaries.
+
+  * 🌐 **AgentCore Browser** - Provides a fast, secure, cloud-based browser environment for agent-driven web interactions.
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/03.png)](/blog/assets/images/posts-img/agentcore/03.png)
