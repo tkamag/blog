@@ -64,3 +64,12 @@ The image below illustrates how these features interconnect and operate together
 What really happens?
 
 * A user or frontend application initiates a request to the agent by calling the **invoke API**. This interaction typically begins within the **AgentCore runtime**, where the agent is hosted and executed. From there, the agent can either directly interact with a large language model(LLM) or leverage an underlying framework to orchestrate and manage those interactions.
+
+* The next thing is that we need observability(this is automatically activated) for you in AWS Cloudwatch.
+
+* The next thing is actually the identity. How can we make sure that the user that is calling the agent is a user that is allowed to call the agent? For that  we can use **OAuth, an API key or even IAM permissions and roles**. And this is handled by **AgentCore identity**.
+
+    > It's also called **Inbound OAuth**
+
+
+  > At this stage, identity services can be invoke again, **as the agent may need to interact with external systems**. This corresponds to **outbound communication**, where proper authentication and authorization are required before making those calls.
