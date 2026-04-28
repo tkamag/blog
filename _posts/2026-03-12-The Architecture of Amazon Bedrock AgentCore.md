@@ -80,19 +80,30 @@ What really happens?
 
 ### B.1 Runtime
 
+**Amazon Bedrock AgentCore Runtime** provides a secure, serverless and purpose-built hosting environment for deploying and running AI agents or tools.
+
 [![My image alt description](/blog/assets/images/posts-img/agentcore/04.png)](/blog/assets/images/posts-img/agentcore/04.png)
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/04_.png)](/blog/assets/images/posts-img/agentcore/04_.png)
 
 ### B.2 Gaateway
 
+**Amazon Bedrock AgentCore Gateway** provides an easy and secure way for developers to build, deploy, discover, and connect to tools at scale. AI agents need tools to perform real-world tasks—from querying databases to sending messages to analyzing documents. With Gateway, developers can convert APIs, Lambda functions, and existing services into Model Context Protocol (MCP)-compatible tools and make them available to agents through Gateway endpoints.
+
 [![My image alt description](/blog/assets/images/posts-img/agentcore/05.png)](/blog/assets/images/posts-img/agentcore/05.png)
 
 ### B.3 Memory
 
+**AgentCore Memory** addresses a fundamental challenge in agentic AI: statelessness. 
+> Without memory capabilities, AI agents treat each interaction as a new instance with no knowledge of previous conversations. 
+
+**AgentCore Memory** provides this critical capability, allowing your agent to build a coherent understanding of users over time.
+
 [![My image alt description](/blog/assets/images/posts-img/agentcore/06.png)](/blog/assets/images/posts-img/agentcore/06.png)
 
 ### B.4 Identity
+
+**Amazon Bedrock AgentCore Identity** is an identity and credential management service designed specifically for AI agents and automated workloads. It provides secure authentication, authorization, and credential management capabilities that enable agents and tools to access AWS resources and third-party services on behalf of users while helping to maintain strict security controls and audit trails. 
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/07.png)](/blog/assets/images/posts-img/agentcore/07.png)
 
@@ -101,6 +112,8 @@ What really happens?
 [![My image alt description](/blog/assets/images/posts-img/agentcore/08.png)](/blog/assets/images/posts-img/agentcore/08.png)
 
 ### B.6 Observability
+
+**AgentCore Observability** helps you trace, debug, and monitor agent performance in production environments. It offers detailed visualizations of each step in the agent workflow, enabling you to inspect an agent’s execution path, audit intermediate outputs, and debug performance bottlenecks and failures.
 
 [![My image alt description](/blog/assets/images/posts-img/agentcore/09.png)](/blog/assets/images/posts-img/agentcore/09.png)
 
